@@ -1,0 +1,15 @@
+name: mongodb
+description: Work with MongoDB for NoSQL database operations
+version: 1.0.0
+triggers:
+  - "mongodb"
+  - "nosql"
+  - "mongoose"
+  - "aggregation"
+  - "document database"
+keywords:
+  - mongodb
+  - nosql
+  - mongoose
+  - database
+  - aggregation

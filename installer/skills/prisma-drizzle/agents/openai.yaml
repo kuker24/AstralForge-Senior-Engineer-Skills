@@ -1,0 +1,16 @@
+name: prisma-drizzle
+description: Work with Prisma or Drizzle ORM for database operations
+version: 1.0.0
+triggers:
+  - "prisma"
+  - "drizzle"
+  - "orm"
+  - "database schema"
+  - "migrations"
+keywords:
+  - prisma
+  - drizzle
+  - orm
+  - database
+  - migrations
+  - type-safe

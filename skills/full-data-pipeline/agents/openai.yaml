@@ -1,0 +1,15 @@
+name: full-data-pipeline
+description: Build data pipelines for ETL/ELT processes with data quality checks
+version: 1.0.0
+triggers:
+  - "data pipeline"
+  - "etl"
+  - "elt"
+  - "data transformation"
+  - "data quality"
+keywords:
+  - data
+  - pipeline
+  - etl
+  - elt
+  - transformation

@@ -1,0 +1,16 @@
+name: nodejs-express
+description: Build REST APIs and web servers with Node.js and Express
+version: 1.0.0
+triggers:
+  - "express api"
+  - "nodejs backend"
+  - "rest api node"
+  - "express middleware"
+  - "node server"
+keywords:
+  - nodejs
+  - express
+  - rest-api
+  - backend
+  - typescript
+  - middleware

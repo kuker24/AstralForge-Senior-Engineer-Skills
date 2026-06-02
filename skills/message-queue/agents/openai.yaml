@@ -1,0 +1,15 @@
+name: message-queue
+description: Implement message queues with RabbitMQ or Kafka for async processing
+version: 1.0.0
+triggers:
+  - "rabbitmq"
+  - "kafka"
+  - "message queue"
+  - "queue"
+  - "async processing"
+keywords:
+  - rabbitmq
+  - kafka
+  - message-queue
+  - async
+  - event-driven

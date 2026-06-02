@@ -1,0 +1,15 @@
+name: full-api-testing
+description: Test APIs with contract testing, load testing, and security testing
+version: 1.0.0
+triggers:
+  - "api testing"
+  - "contract testing"
+  - "load testing"
+  - "security testing"
+  - "pact"
+keywords:
+  - api
+  - testing
+  - contract
+  - load
+  - security

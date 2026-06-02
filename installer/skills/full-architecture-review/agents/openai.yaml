@@ -1,0 +1,14 @@
+name: full-architecture-review
+description: Review system architecture for scalability, reliability, and maintainability
+version: 1.0.0
+triggers:
+  - "architecture review"
+  - "system design"
+  - "scalability"
+  - "technical debt"
+keywords:
+  - architecture
+  - review
+  - scalability
+  - design
+  - technical-debt

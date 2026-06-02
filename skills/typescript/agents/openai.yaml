@@ -1,0 +1,15 @@
+name: typescript
+description: Write type-safe TypeScript code
+version: 1.0.0
+triggers:
+  - "typescript"
+  - "type safety"
+  - "tsconfig"
+  - "interface"
+  - "type definition"
+keywords:
+  - typescript
+  - types
+  - interface
+  - generics
+  - type-safety

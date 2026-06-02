@@ -1,0 +1,14 @@
+name: full-database-migration
+description: Plan and execute database migrations with zero downtime
+version: 1.0.0
+triggers:
+  - "database migration"
+  - "schema migration"
+  - "zero downtime"
+  - "migration strategy"
+keywords:
+  - database
+  - migration
+  - schema
+  - zero-downtime
+  - rollback

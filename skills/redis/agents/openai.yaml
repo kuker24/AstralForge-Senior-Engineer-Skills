@@ -1,0 +1,16 @@
+name: redis
+description: Use Redis for caching, session management, and real-time features
+version: 1.0.0
+triggers:
+  - "redis"
+  - "caching"
+  - "session store"
+  - "rate limiting"
+  - "pub/sub"
+  - "distributed lock"
+keywords:
+  - redis
+  - caching
+  - session
+  - rate-limiting
+  - pubsub

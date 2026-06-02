@@ -1,0 +1,14 @@
+name: tailwind-css
+description: Build responsive UI with Tailwind CSS
+version: 1.0.0
+triggers:
+  - "tailwind"
+  - "tailwind css"
+  - "utility-first css"
+  - "responsive design"
+keywords:
+  - tailwind
+  - css
+  - responsive
+  - utility-first
+  - design-system

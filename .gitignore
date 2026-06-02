@@ -1,0 +1,61 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Node modules (if any skill has them)
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.env/
+
+# Backup files
+*.bak
+*.backup
+backup-*/
+
+# Generated / local-only folders
+sources/
+dist/
+generated-skills/
+pi/
+
+# Secrets / auth material
+**/auth.json
+**/.env
+**/.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Runtime state
+sessions/
+trigger.txt

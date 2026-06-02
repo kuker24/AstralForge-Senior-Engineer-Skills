@@ -1,0 +1,15 @@
+name: websocket
+description: Implement real-time communication with WebSocket or Socket.IO
+version: 1.0.0
+triggers:
+  - "websocket"
+  - "socket.io"
+  - "real-time"
+  - "live updates"
+  - "chat"
+keywords:
+  - websocket
+  - socketio
+  - real-time
+  - chat
+  - live

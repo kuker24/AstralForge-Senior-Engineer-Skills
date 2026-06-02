@@ -1,0 +1,15 @@
+name: full-infrastructure-as-code
+description: Manage infrastructure as code with Terraform, Pulumi, or CloudFormation
+version: 1.0.0
+triggers:
+  - "terraform"
+  - "pulumi"
+  - "infrastructure as code"
+  - "iac"
+  - "cloudformation"
+keywords:
+  - terraform
+  - pulumi
+  - infrastructure
+  - iac
+  - devops

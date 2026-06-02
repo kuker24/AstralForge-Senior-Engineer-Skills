@@ -1,0 +1,17 @@
+name: monitoring-logging
+description: Implement monitoring, logging, and observability with structured logs and metrics
+version: 1.0.0
+triggers:
+  - "monitoring"
+  - "logging"
+  - "observability"
+  - "metrics"
+  - "tracing"
+  - "sentry"
+keywords:
+  - monitoring
+  - logging
+  - observability
+  - metrics
+  - tracing
+  - opentelemetry

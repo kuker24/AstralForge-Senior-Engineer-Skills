@@ -1,0 +1,14 @@
+name: full-api-design
+description: Design RESTful APIs with proper structure, versioning, and error handling
+version: 1.0.0
+triggers:
+  - "api design"
+  - "rest api"
+  - "api architecture"
+  - "openapi"
+keywords:
+  - api
+  - rest
+  - design
+  - openapi
+  - versioning

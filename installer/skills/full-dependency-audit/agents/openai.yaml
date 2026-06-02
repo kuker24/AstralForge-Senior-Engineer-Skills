@@ -1,0 +1,15 @@
+name: full-dependency-audit
+description: Audit dependencies for security vulnerabilities, license compliance, and updates
+version: 1.0.0
+triggers:
+  - "dependency audit"
+  - "security audit"
+  - "license compliance"
+  - "npm audit"
+  - "vulnerability"
+keywords:
+  - dependencies
+  - security
+  - audit
+  - license
+  - vulnerability

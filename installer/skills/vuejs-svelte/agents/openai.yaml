@@ -1,0 +1,15 @@
+name: vuejs-svelte
+description: Build frontend applications with Vue.js or Svelte
+version: 1.0.0
+triggers:
+  - "vue"
+  - "vuejs"
+  - "svelte"
+  - "sveltekit"
+  - "frontend framework"
+keywords:
+  - vue
+  - svelte
+  - frontend
+  - reactive
+  - component

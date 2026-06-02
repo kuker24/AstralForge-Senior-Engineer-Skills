@@ -1,0 +1,19 @@
+name: aws-cloud
+description: Deploy and manage applications on AWS with Lambda, API Gateway, S3, DynamoDB
+version: 1.0.0
+triggers:
+  - "aws"
+  - "lambda"
+  - "api gateway"
+  - "s3"
+  - "dynamodb"
+  - "serverless"
+  - "cloud"
+keywords:
+  - aws
+  - lambda
+  - api-gateway
+  - s3
+  - dynamodb
+  - serverless
+  - cloud

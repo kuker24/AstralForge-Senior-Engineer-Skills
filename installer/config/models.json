@@ -1,0 +1,56 @@
+{
+  "providers": {
+    "opencode-go": {
+      "modelOverrides": {
+        "mimo-v2.5-pro": {
+          "api": "anthropic-messages",
+          "baseUrl": "https://opencode.ai/zen/go",
+          "reasoning": true,
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        }
+      }
+    },
+    "gitlawb-opengateway": {
+      "name": "Gitlawb OpenGateway",
+      "baseUrl": "https://opengateway.gitlawb.com/v1",
+      "apiKey": "$OPENGATEWAY_API_KEY",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "mimo-v2.5-pro",
+          "name": "MiMo V2.5 Pro",
+          "reasoning": true,
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        },
+        {
+          "id": "mimo-v2-pro",
+          "name": "MiMo V2 Pro",
+          "reasoning": true,
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        },
+        {
+          "id": "mimo-v2.5",
+          "name": "MiMo V2.5",
+          "reasoning": true,
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        },
+        {
+          "id": "mimo-v2-omni",
+          "name": "MiMo V2 Omni",
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        },
+        {
+          "id": "mimo-v2-flash",
+          "name": "MiMo V2 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 131072
+        }
+      ]
+    }
+  }
+}

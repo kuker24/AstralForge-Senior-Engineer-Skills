@@ -1,0 +1,17 @@
+name: web3-blockchain
+description: Integrate Web3 and blockchain capabilities with wallet connections and smart contracts
+version: 1.0.0
+triggers:
+  - "web3"
+  - "blockchain"
+  - "ethereum"
+  - "smart contract"
+  - "wallet"
+  - "dapp"
+keywords:
+  - web3
+  - blockchain
+  - ethereum
+  - smart-contract
+  - wallet
+  - dapp

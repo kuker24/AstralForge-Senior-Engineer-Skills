@@ -1,0 +1,17 @@
+name: nextjs
+description: Build full-stack React applications with Next.js
+version: 1.0.0
+triggers:
+  - "nextjs"
+  - "next.js"
+  - "app router"
+  - "server components"
+  - "ssr"
+  - "ssg"
+keywords:
+  - nextjs
+  - react
+  - ssr
+  - ssg
+  - app-router
+  - server-components

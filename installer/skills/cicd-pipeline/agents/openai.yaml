@@ -1,0 +1,15 @@
+name: cicd-pipeline
+description: Set up CI/CD pipelines with GitHub Actions for automated testing and deployment
+version: 1.0.0
+triggers:
+  - "github actions"
+  - "ci/cd"
+  - "pipeline"
+  - "automated testing"
+  - "deployment"
+keywords:
+  - github-actions
+  - cicd
+  - pipeline
+  - devops
+  - automation

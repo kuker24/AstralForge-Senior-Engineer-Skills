@@ -1,0 +1,19 @@
+name: authentication
+description: Implement authentication and authorization with JWT, OAuth, passkeys
+version: 1.0.0
+triggers:
+  - "authentication"
+  - "auth"
+  - "jwt"
+  - "oauth"
+  - "passkey"
+  - "webauthn"
+  - "login"
+keywords:
+  - authentication
+  - authorization
+  - jwt
+  - oauth
+  - passkey
+  - session
+  - security

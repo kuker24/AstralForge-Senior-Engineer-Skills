@@ -1,0 +1,15 @@
+name: react-native-flutter
+description: Build mobile applications with React Native or Flutter
+version: 1.0.0
+triggers:
+  - "react native"
+  - "flutter"
+  - "mobile app"
+  - "cross-platform"
+  - "ios android"
+keywords:
+  - react-native
+  - flutter
+  - mobile
+  - ios
+  - android

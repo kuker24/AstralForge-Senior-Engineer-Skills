@@ -1,0 +1,15 @@
+name: graphql-impl
+description: Implement GraphQL APIs with Apollo Server, schemas, and resolvers
+version: 1.0.0
+triggers:
+  - "graphql"
+  - "apollo server"
+  - "schema"
+  - "resolvers"
+  - "graphql api"
+keywords:
+  - graphql
+  - apollo
+  - schema
+  - resolvers
+  - api

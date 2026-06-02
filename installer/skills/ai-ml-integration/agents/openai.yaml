@@ -1,0 +1,17 @@
+name: ai-ml-integration
+description: Integrate AI/ML capabilities with OpenAI API, embeddings, RAG, and tool calling
+version: 1.0.0
+triggers:
+  - "openai"
+  - "ai integration"
+  - "embeddings"
+  - "rag"
+  - "vector search"
+  - "llm"
+keywords:
+  - ai
+  - ml
+  - openai
+  - embeddings
+  - rag
+  - vector

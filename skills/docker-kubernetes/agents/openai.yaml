@@ -1,0 +1,17 @@
+name: docker-kubernetes
+description: Containerize applications with Docker and deploy to Kubernetes
+version: 1.0.0
+triggers:
+  - "docker"
+  - "kubernetes"
+  - "k8s"
+  - "container"
+  - "dockerfile"
+  - "docker-compose"
+keywords:
+  - docker
+  - kubernetes
+  - k8s
+  - container
+  - devops
+  - deployment
