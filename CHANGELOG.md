@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## Unreleased
+
+### Added
+- Added evidence inventory for tooling, skills, and installer verification.
+
+### Notes
+- No README support claims were upgraded in this phase.
+
+---
+
 ## 3.0.0 - AstralForge Senior Engineer Skills
 
 ### Added
