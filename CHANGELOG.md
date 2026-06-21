@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 - Added substantive skill audit script and generated skill audit reports.
 - Updated README verification status to distinguish Verified, Supported, Manual only, Needs review, and Unverified claims.
 - Added architecture documentation for AstralForge layers, stack boundaries, CI role, and Python file audit.
+- Added installer sandbox options, installer audit report, and installer verification workflow matrix.
 
 ### Notes
 - No README support claims were upgraded in phase 1.

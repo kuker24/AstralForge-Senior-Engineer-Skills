@@ -4,11 +4,15 @@
 # Verifies that all skills are properly installed
 #
 # Usage:
-#   .\verify.ps1
+#   .\verify.ps1 [-TargetDir <path>]
 # =============================================================================
 
+param(
+    [string]$TargetDir
+)
+
 # Configuration
-$SkillDir = "$env:USERPROFILE\.pi\agent\skills"
+$SkillDir = if ($TargetDir) { $TargetDir } elseif ($env:ASTRALFORGE_SKILL_DIR) { $env:ASTRALFORGE_SKILL_DIR } else { "$env:USERPROFILE\.pi\agent\skills" }
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $SourceDir = Join-Path $ScriptDir "skills"
 

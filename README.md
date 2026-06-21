@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/ci.yml/badge.svg)](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/ci.yml)
 [![Security](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/security.yml/badge.svg)](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/security.yml)
+[![Installers](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/installers.yml/badge.svg)](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/installers.yml)
 
 **Senior-grade AI engineering skills with local QA, security, and review gates.**
 
@@ -369,6 +370,7 @@ skill-name/
 - [reports/security-ci-setup-evidence.md](reports/security-ci-setup-evidence.md) - Evidence setup security CI
 - [reports/skill-audit-summary.md](reports/skill-audit-summary.md) - Ringkasan audit substansi skill
 - [reports/skill-audit-results.csv](reports/skill-audit-results.csv) - CSV hasil audit substansi skill
+- [reports/installer-audit.md](reports/installer-audit.md) - Audit installer dan rencana CI matrix
 - [reports/source-skill-index.md](reports/source-skill-index.md) - Index sumber skill
 - [reports/global-installation-report.md](reports/global-installation-report.md) - Report instalasi global
 

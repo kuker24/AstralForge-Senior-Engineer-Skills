@@ -7,20 +7,26 @@
 #   .\install-pi-windows.ps1
 #
 # Options:
-#   -Force      Overwrite existing installation
-#   -NoSkills   Skip skills installation
-#   -Help       Show this help message
+#   -Force       Overwrite existing installation
+#   -NoSkills    Skip skills installation
+#   -DryRun      Show intended actions without writing files
+#   -PiHome      Install into a custom Pi home directory
+#   -SkipPiCheck Skip checking for pi binary (for CI sandbox tests)
+#   -Help        Show this help message
 # =============================================================================
 
 param(
     [switch]$Force,
     [switch]$NoSkills,
+    [switch]$DryRun,
+    [string]$PiHome,
+    [switch]$SkipPiCheck,
     [switch]$Help
 )
 
 # Configuration
 $ErrorActionPreference = "Stop"
-$PI_HOME = "$env:USERPROFILE\.pi\agent"
+$PI_HOME = if ($PiHome) { $PiHome } elseif ($env:ASTRALFORGE_PI_HOME) { $env:ASTRALFORGE_PI_HOME } else { "$env:USERPROFILE\.pi\agent" }
 $SCRIPT_DIR = Split-Path -Parent $MyInvocation.MyCommand.Path
 $CONFIG_DIR = Join-Path $SCRIPT_DIR "config"
 $EXTENSIONS_DIR = Join-Path $SCRIPT_DIR "extensions"
@@ -33,9 +39,12 @@ if ($Help) {
     Write-Host "Usage: .\install-pi-windows.ps1 [OPTIONS]"
     Write-Host ""
     Write-Host "Options:"
-    Write-Host "  -Force      Overwrite existing installation"
-    Write-Host "  -NoSkills   Skip skills installation"
-    Write-Host "  -Help       Show this help message"
+    Write-Host "  -Force       Overwrite existing installation"
+    Write-Host "  -NoSkills    Skip skills installation"
+    Write-Host "  -DryRun      Show intended actions without writing files"
+    Write-Host "  -PiHome      Install into a custom Pi home directory"
+    Write-Host "  -SkipPiCheck Skip checking for pi binary (for CI sandbox tests)"
+    Write-Host "  -Help        Show this help message"
     exit 0
 }
 
@@ -63,19 +72,32 @@ Write-Host "  Windows Version" -ForegroundColor Blue
 Write-Host "=================================================" -ForegroundColor Blue
 Write-Host ""
 
+if ($DryRun) {
+    Write-Status "info" "DRY RUN - no files will be written"
+    Write-Status "info" "Target Pi home: $PI_HOME"
+    Write-Status "info" "Config files: $((Get-ChildItem -Path $CONFIG_DIR -File -ErrorAction SilentlyContinue).Count)"
+    Write-Status "info" "Extensions: $((Get-ChildItem -Path $EXTENSIONS_DIR -Filter '*.ts' -File -ErrorAction SilentlyContinue).Count)"
+    Write-Status "info" "Skills: $((Get-ChildItem -Path $SKILLS_DIR -Directory -ErrorAction SilentlyContinue).Count)"
+    exit 0
+}
+
 # Check if Pi is installed
 Write-Status "header" "Checking Pi installation..."
-try {
-    $piVersion = & pi --version 2>&1
-    Write-Status "ok" "Pi found: $piVersion"
-} catch {
-    Write-Status "error" "Pi not found in PATH"
-    Write-Host ""
-    Write-Host "Please install Pi first:"
-    Write-Host "  npm install -g @earendil-works/pi-coding-agent"
-    Write-Host ""
-    Write-Host "Or visit: https://github.com/anthropics/pi"
-    exit 1
+if ($SkipPiCheck) {
+    Write-Status "info" "Skipping Pi binary check"
+} else {
+    try {
+        $piVersion = & pi --version 2>&1
+        Write-Status "ok" "Pi found: $piVersion"
+    } catch {
+        Write-Status "error" "Pi not found in PATH"
+        Write-Host ""
+        Write-Host "Please install Pi first:"
+        Write-Host "  npm install -g @earendil-works/pi-coding-agent"
+        Write-Host ""
+        Write-Host "Or visit: https://github.com/anthropics/pi"
+        exit 1
+    }
 }
 
 # Create directory structure

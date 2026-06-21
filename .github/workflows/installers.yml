@@ -1,0 +1,116 @@
+name: Installers
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  shell-installers:
+    name: Shell installers (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Single-platform dry run
+        run: bash install.sh --dry-run --target-dir "$RUNNER_TEMP/pi-skills"
+
+      - name: Single-platform install to sandbox
+        run: bash install.sh --force --target-dir "$RUNNER_TEMP/pi-skills"
+
+      - name: Single-platform verify from sandbox
+        run: bash verify.sh --target-dir "$RUNNER_TEMP/pi-skills"
+
+      - name: Check single-platform skill count
+        run: |
+          count=$(find "$RUNNER_TEMP/pi-skills" -mindepth 1 -maxdepth 1 -type d | wc -l)
+          test "$count" -eq 83
+          test -s "$RUNNER_TEMP/pi-skills/nodejs-express/SKILL.md"
+
+      - name: Global dry run
+        run: bash install-global.sh --dry-run --home "$RUNNER_TEMP/astralforge-home"
+
+      - name: Global install to sandbox
+        run: bash install-global.sh --force --home "$RUNNER_TEMP/astralforge-home"
+
+      - name: Global verify from sandbox
+        run: bash verify-global.sh --home "$RUNNER_TEMP/astralforge-home"
+
+      - name: Complete Pi installer dry run
+        run: bash installer/install-pi-linux.sh --dry-run --pi-home "$RUNNER_TEMP/pi-home" --skip-pi-check
+
+      - name: Complete Pi installer sandbox install
+        run: bash installer/install-pi-linux.sh --force --pi-home "$RUNNER_TEMP/pi-home" --skip-pi-check
+
+      - name: Check complete Pi installer output
+        run: |
+          test -s "$RUNNER_TEMP/pi-home/settings.json"
+          test -s "$RUNNER_TEMP/pi-home/models.json"
+          test -s "$RUNNER_TEMP/pi-home/presets.json"
+          skill_count=$(find "$RUNNER_TEMP/pi-home/skills" -mindepth 1 -maxdepth 1 -type d | wc -l)
+          test "$skill_count" -eq 83
+          extension_count=$(find "$RUNNER_TEMP/pi-home/extensions" -maxdepth 1 -name '*.ts' -type f | wc -l)
+          test "$extension_count" -ge 20
+
+  windows-installers:
+    name: Windows installers
+    runs-on: windows-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Single-platform dry run
+        shell: pwsh
+        run: .\install.ps1 -DryRun -TargetDir "$env:RUNNER_TEMP\pi-skills"
+
+      - name: Single-platform install to sandbox
+        shell: pwsh
+        run: .\install.ps1 -Force -TargetDir "$env:RUNNER_TEMP\pi-skills"
+
+      - name: Single-platform verify from sandbox
+        shell: pwsh
+        run: .\verify.ps1 -TargetDir "$env:RUNNER_TEMP\pi-skills"
+
+      - name: Check single-platform skill count
+        shell: pwsh
+        run: |
+          $count = (Get-ChildItem -Path "$env:RUNNER_TEMP\pi-skills" -Directory).Count
+          if ($count -ne 83) { throw "Expected 83 skills, found $count" }
+          if (-not (Test-Path "$env:RUNNER_TEMP\pi-skills\nodejs-express\SKILL.md")) { throw "Missing nodejs-express SKILL.md" }
+
+      - name: Complete Pi installer dry run
+        shell: pwsh
+        run: .\installer\install-pi-windows.ps1 -DryRun -PiHome "$env:RUNNER_TEMP\pi-home" -SkipPiCheck
+
+      - name: Complete Pi installer sandbox install
+        shell: pwsh
+        run: .\installer\install-pi-windows.ps1 -Force -PiHome "$env:RUNNER_TEMP\pi-home" -SkipPiCheck
+
+      - name: Check complete Pi installer output
+        shell: pwsh
+        run: |
+          foreach ($file in @('settings.json', 'models.json', 'presets.json')) {
+            if (-not (Test-Path "$env:RUNNER_TEMP\pi-home\$file")) { throw "Missing $file" }
+          }
+          $skillCount = (Get-ChildItem -Path "$env:RUNNER_TEMP\pi-home\skills" -Directory).Count
+          if ($skillCount -ne 83) { throw "Expected 83 skills, found $skillCount" }
+          $extensionCount = (Get-ChildItem -Path "$env:RUNNER_TEMP\pi-home\extensions" -Filter '*.ts' -File).Count
+          if ($extensionCount -lt 20) { throw "Expected at least 20 extensions, found $extensionCount" }

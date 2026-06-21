@@ -108,6 +108,12 @@ chmod +x install-pi-linux.sh
 # Skip skills installation
 ./install-pi-linux.sh --no-skills
 
+# Dry-run without writing files
+./install-pi-linux.sh --dry-run
+
+# Sandbox install to a custom Pi home (safe for CI/tests)
+./install-pi-linux.sh --force --pi-home /tmp/astralforge-pi-home --skip-pi-check
+
 # Show help
 ./install-pi-linux.sh --help
 ```
@@ -120,6 +126,12 @@ chmod +x install-pi-linux.sh
 
 # Skip skills installation
 .\install-pi-windows.ps1 -NoSkills
+
+# Dry-run without writing files
+.\install-pi-windows.ps1 -DryRun
+
+# Sandbox install to a custom Pi home (safe for CI/tests)
+.\install-pi-windows.ps1 -Force -PiHome $env:TEMP\astralforge-pi-home -SkipPiCheck
 
 # Show help
 .\install-pi-windows.ps1 -Help

@@ -5,7 +5,7 @@
 # Verifies that all skills are properly installed on all platforms
 #
 # Usage:
-#   chmod +x verify-global.sh && ./verify-global.sh
+#   chmod +x verify-global.sh && ./verify-global.sh [--home DIR]
 # =============================================================================
 
 set -e
@@ -22,11 +22,38 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 SOURCE_DIR="$SCRIPT_DIR/skills"
 
 # Target directories
-PI_SKILLS="$HOME/.pi/agent/skills"
-OPENCODE_SKILLS="$HOME/.config/opencode/skills"
-CLAUDE_SKILLS="$HOME/.claude/skills"
-CODEX_SKILLS="$HOME/.codex/skills"
-AGENTS_SKILLS="$HOME/.agents/skills"
+TARGET_HOME="${ASTRALFORGE_HOME:-$HOME}"
+PI_SKILLS="$TARGET_HOME/.pi/agent/skills"
+OPENCODE_SKILLS="$TARGET_HOME/.config/opencode/skills"
+CLAUDE_SKILLS="$TARGET_HOME/.claude/skills"
+CODEX_SKILLS="$TARGET_HOME/.codex/skills"
+AGENTS_SKILLS="$TARGET_HOME/.agents/skills"
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --home)
+            if [[ $# -lt 2 ]]; then
+                echo -e "${RED}Missing value for --home${NC}"
+                exit 1
+            fi
+            TARGET_HOME="$2"
+            PI_SKILLS="$TARGET_HOME/.pi/agent/skills"
+            OPENCODE_SKILLS="$TARGET_HOME/.config/opencode/skills"
+            CLAUDE_SKILLS="$TARGET_HOME/.claude/skills"
+            CODEX_SKILLS="$TARGET_HOME/.codex/skills"
+            AGENTS_SKILLS="$TARGET_HOME/.agents/skills"
+            shift 2
+            ;;
+        --help|-h)
+            echo "Usage: $0 [--home DIR]"
+            exit 0
+            ;;
+        *)
+            echo -e "${RED}Unknown option: $1${NC}"
+            exit 1
+            ;;
+    esac
+done
 
 # Header
 echo ""

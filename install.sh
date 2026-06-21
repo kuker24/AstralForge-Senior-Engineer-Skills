@@ -8,9 +8,10 @@
 #   chmod +x install.sh && ./install.sh
 #
 # Options:
-#   --force    Overwrite existing skills
-#   --dry-run  Show what would be installed without actually installing
-#   --help     Show this help message
+#   --force           Overwrite existing skills
+#   --dry-run         Show what would be installed without actually installing
+#   --target-dir DIR  Install to DIR instead of ~/.pi/agent/skills
+#   --help            Show this help message
 # =============================================================================
 
 set -e
@@ -23,7 +24,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-SKILL_DIR="$HOME/.pi/agent/skills"
+SKILL_DIR="${ASTRALFORGE_SKILL_DIR:-$HOME/.pi/agent/skills}"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 SOURCE_DIR="$SCRIPT_DIR/skills"
 
@@ -31,8 +32,8 @@ SOURCE_DIR="$SCRIPT_DIR/skills"
 FORCE=false
 DRY_RUN=false
 
-for arg in "$@"; do
-    case $arg in
+while [[ $# -gt 0 ]]; do
+    case "$1" in
         --force)
             FORCE=true
             shift
@@ -41,17 +42,26 @@ for arg in "$@"; do
             DRY_RUN=true
             shift
             ;;
+        --target-dir)
+            if [[ $# -lt 2 ]]; then
+                echo -e "${RED}Missing value for --target-dir${NC}"
+                exit 1
+            fi
+            SKILL_DIR="$2"
+            shift 2
+            ;;
         --help|-h)
             echo "Usage: $0 [OPTIONS]"
             echo ""
             echo "Options:"
-            echo "  --force    Overwrite existing skills"
-            echo "  --dry-run  Show what would be installed without actually installing"
-            echo "  --help     Show this help message"
+            echo "  --force           Overwrite existing skills"
+            echo "  --dry-run         Show what would be installed without actually installing"
+            echo "  --target-dir DIR  Install to DIR instead of ~/.pi/agent/skills"
+            echo "  --help            Show this help message"
             exit 0
             ;;
         *)
-            echo -e "${RED}Unknown option: $arg${NC}"
+            echo -e "${RED}Unknown option: $1${NC}"
             echo "Use --help for usage information"
             exit 1
             ;;

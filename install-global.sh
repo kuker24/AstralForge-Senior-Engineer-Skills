@@ -8,9 +8,10 @@
 #   chmod +x install-global.sh && ./install-global.sh
 #
 # Options:
-#   --force    Overwrite existing skills
-#   --dry-run  Show what would be installed without actually installing
-#   --help     Show this help message
+#   --force     Overwrite existing skills
+#   --dry-run   Show what would be installed without actually installing
+#   --home DIR  Use DIR as HOME for sandboxed installs
+#   --help      Show this help message
 # =============================================================================
 
 set -e
@@ -27,18 +28,19 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 SOURCE_DIR="$SCRIPT_DIR/skills"
 
 # Target directories
-PI_SKILLS="$HOME/.pi/agent/skills"
-OPENCODE_SKILLS="$HOME/.config/opencode/skills"
-CLAUDE_SKILLS="$HOME/.claude/skills"
-CODEX_SKILLS="$HOME/.codex/skills"
-AGENTS_SKILLS="$HOME/.agents/skills"
+TARGET_HOME="${ASTRALFORGE_HOME:-$HOME}"
+PI_SKILLS="$TARGET_HOME/.pi/agent/skills"
+OPENCODE_SKILLS="$TARGET_HOME/.config/opencode/skills"
+CLAUDE_SKILLS="$TARGET_HOME/.claude/skills"
+CODEX_SKILLS="$TARGET_HOME/.codex/skills"
+AGENTS_SKILLS="$TARGET_HOME/.agents/skills"
 
 # Parse arguments
 FORCE=false
 DRY_RUN=false
 
-for arg in "$@"; do
-    case $arg in
+while [[ $# -gt 0 ]]; do
+    case "$1" in
         --force)
             FORCE=true
             shift
@@ -47,17 +49,31 @@ for arg in "$@"; do
             DRY_RUN=true
             shift
             ;;
+        --home)
+            if [[ $# -lt 2 ]]; then
+                echo -e "${RED}Missing value for --home${NC}"
+                exit 1
+            fi
+            TARGET_HOME="$2"
+            PI_SKILLS="$TARGET_HOME/.pi/agent/skills"
+            OPENCODE_SKILLS="$TARGET_HOME/.config/opencode/skills"
+            CLAUDE_SKILLS="$TARGET_HOME/.claude/skills"
+            CODEX_SKILLS="$TARGET_HOME/.codex/skills"
+            AGENTS_SKILLS="$TARGET_HOME/.agents/skills"
+            shift 2
+            ;;
         --help|-h)
             echo "Usage: $0 [OPTIONS]"
             echo ""
             echo "Options:"
-            echo "  --force    Overwrite existing skills"
-            echo "  --dry-run  Show what would be installed without actually installing"
-            echo "  --help     Show this help message"
+            echo "  --force     Overwrite existing skills"
+            echo "  --dry-run   Show what would be installed without actually installing"
+            echo "  --home DIR  Use DIR as HOME for sandboxed installs"
+            echo "  --help      Show this help message"
             exit 0
             ;;
         *)
-            echo -e "${RED}Unknown option: $arg${NC}"
+            echo -e "${RED}Unknown option: $1${NC}"
             echo "Use --help for usage information"
             exit 1
             ;;

@@ -8,9 +8,12 @@
 #   chmod +x install-pi-linux.sh && ./install-pi-linux.sh
 #
 # Options:
-#   --force      Overwrite existing installation
-#   --no-skills  Skip skills installation
-#   --help       Show this help message
+#   --force          Overwrite existing installation
+#   --no-skills      Skip skills installation
+#   --dry-run        Show intended actions without writing files
+#   --pi-home DIR    Install into DIR instead of ~/.pi/agent
+#   --skip-pi-check  Skip checking for pi binary (for CI sandbox tests)
+#   --help           Show this help message
 # =============================================================================
 
 set -e
@@ -25,7 +28,7 @@ NC='\033[0m' # No Color
 
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PI_HOME="$HOME/.pi/agent"
+PI_HOME="${ASTRALFORGE_PI_HOME:-$HOME/.pi/agent}"
 CONFIG_DIR="$SCRIPT_DIR/config"
 EXTENSIONS_DIR="$SCRIPT_DIR/extensions"
 PROMPTS_DIR="$SCRIPT_DIR/prompts"
@@ -35,9 +38,11 @@ SKILLS_DIR="$SCRIPT_DIR/skills"
 # Parse arguments
 FORCE=false
 NO_SKILLS=false
+DRY_RUN=false
+SKIP_PI_CHECK=false
 
-for arg in "$@"; do
-    case $arg in
+while [[ $# -gt 0 ]]; do
+    case "$1" in
         --force)
             FORCE=true
             shift
@@ -46,17 +51,36 @@ for arg in "$@"; do
             NO_SKILLS=true
             shift
             ;;
+        --dry-run)
+            DRY_RUN=true
+            shift
+            ;;
+        --pi-home)
+            if [[ $# -lt 2 ]]; then
+                echo -e "${RED}Missing value for --pi-home${NC}"
+                exit 1
+            fi
+            PI_HOME="$2"
+            shift 2
+            ;;
+        --skip-pi-check)
+            SKIP_PI_CHECK=true
+            shift
+            ;;
         --help|-h)
             echo "Usage: $0 [OPTIONS]"
             echo ""
             echo "Options:"
-            echo "  --force      Overwrite existing installation"
-            echo "  --no-skills  Skip skills installation"
-            echo "  --help       Show this help message"
+            echo "  --force          Overwrite existing installation"
+            echo "  --no-skills      Skip skills installation"
+            echo "  --dry-run        Show intended actions without writing files"
+            echo "  --pi-home DIR    Install into DIR instead of ~/.pi/agent"
+            echo "  --skip-pi-check  Skip checking for pi binary (for CI sandbox tests)"
+            echo "  --help           Show this help message"
             exit 0
             ;;
         *)
-            echo -e "${RED}Unknown option: $arg${NC}"
+            echo -e "${RED}Unknown option: $1${NC}"
             echo "Use --help for usage information"
             exit 1
             ;;
@@ -94,9 +118,20 @@ echo -e "${BLUE}  Linux/macOS Version${NC}"
 echo -e "${BLUE}=================================================${NC}"
 echo ""
 
+if [ "$DRY_RUN" = true ]; then
+    print_status "info" "DRY RUN - no files will be written"
+    print_status "info" "Target Pi home: $PI_HOME"
+    print_status "info" "Config files: $(find "$CONFIG_DIR" -maxdepth 1 -type f 2>/dev/null | wc -l)"
+    print_status "info" "Extensions: $(find "$EXTENSIONS_DIR" -maxdepth 1 -name '*.ts' -type f 2>/dev/null | wc -l)"
+    print_status "info" "Skills: $(find "$SKILLS_DIR" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)"
+    exit 0
+fi
+
 # Check if Pi is installed
 print_status "header" "Checking Pi installation..."
-if command -v pi &> /dev/null; then
+if [ "$SKIP_PI_CHECK" = true ]; then
+    print_status "info" "Skipping Pi binary check"
+elif command -v pi &> /dev/null; then
     PI_VERSION=$(pi --version 2>/dev/null || echo "unknown")
     print_status "ok" "Pi found: $PI_VERSION"
 else
