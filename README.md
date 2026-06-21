@@ -359,6 +359,7 @@ skill-name/
 
 ## 📄 Dokumentasi
 
+- [ARCHITECTURE.md](ARCHITECTURE.md) - Arsitektur repo dan batas stack
 - [installer/README.md](installer/README.md) - Dokumentasi installer Pi
 - [SKILLS_MANIFEST.md](SKILLS_MANIFEST.md) - Daftar lengkap semua skill
 - [MISSING_SKILLS_CHECKLIST.md](MISSING_SKILLS_CHECKLIST.md) - Checklist skill
