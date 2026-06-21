@@ -1,0 +1,17 @@
+{
+  "name": "customskill-fullstackdeveloperuiux",
+  "version": "2.3.0",
+  "private": true,
+  "description": "Portable full-stack developer AI skills and local no-login QA/security tooling.",
+  "scripts": {
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "e2e:report": "playwright show-report",
+    "knip": "knip",
+    "quality:ai": "bash scripts/ai-quality-checks.sh"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "knip": "^6.17.1"
+  }
+}

@@ -24,19 +24,30 @@ Repo ini juga menyertakan konfigurasi lokal untuk tool pendukung coding AI agent
 | Serena MCP | Supported | CLI/MCP via `uv tool install -p 3.13 serena-agent` |
 | Semgrep CE | Supported | Scan lokal tanpa login: `semgrep scan --config p/default --metrics=off` |
 | Repomix | Supported | Generate konteks repo: `repomix --compress` |
+| Playwright Test | Supported | E2E/browser testing lokal: `playwright test` atau `npx playwright test` |
+| OSV-Scanner | Supported | Dependency vulnerability scan lokal: `osv-scanner scan source -r . --format json --output-file osv-results.json` |
+| Gitleaks | Supported | Secret scan lokal: `gitleaks git --redact --report-format json --report-path gitleaks-report.json .` |
+| Knip | Supported | JS/TS unused file/dependency/export check: `knip` atau `npx knip` |
 | OMNI | Supported | Tetap aktif untuk distilasi output terminal |
 
 Helper lokal:
 
 ```bash
 bash scripts/ai-checks.sh
+bash scripts/ai-quality-checks.sh
 ```
 
 Output lokal yang diabaikan Git:
 
 ```txt
 semgrep-results.json
+osv-results.json
+gitleaks-report.json
+gitleaks-dir-report.json
 repomix-output.*
+playwright-report/
+test-results/
+.knip-cache/
 ```
 
 ---
@@ -308,6 +319,6 @@ Each skill may have its own license. Check individual `references/sources.md` fi
 
 ---
 
-**Version**: 2.2.0
+**Version**: 2.3.0
 **Last Updated**: 2026-06-21
 **Total Skills**: 83

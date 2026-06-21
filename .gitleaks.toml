@@ -1,0 +1,16 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Ignore local generated/reference folders and local scan outputs"
+paths = [
+  '''^sources/''',
+  '''^dist/''',
+  '''^generated-skills/''',
+  '''^pi/''',
+  '''^repomix-output\..*''',
+  '''^semgrep-results\.json$''',
+  '''^osv-results\.json$''',
+  '''^gitleaks-report\.json$''',
+  '''^gitleaks-dir-report\.json$'''
+]

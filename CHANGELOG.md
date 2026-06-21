@@ -4,6 +4,36 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [2.3.0] - 2026-06-21
+
+### Added
+- Added local/no-login QA and security tooling support:
+  - Playwright Test for browser/E2E testing.
+  - OSV-Scanner for local dependency vulnerability scanning.
+  - Gitleaks for local secret scanning.
+  - Knip for JS/TS unused files/dependencies/exports checks.
+- Added `package.json`/`package-lock.json` with local dev tooling scripts and dependencies for portable Playwright/Knip usage.
+- Added `playwright.config.ts` and skipped placeholder smoke test in `e2e/smoke.spec.ts` because this repository is not a runnable web app.
+- Added `knip.json` repository-aware configuration.
+- Added `.gitleaks.toml` to keep default Gitleaks rules while excluding local ignored reference/output paths.
+- Added `scripts/ai-quality-checks.sh` to run OMNI stats, Semgrep, OSV-Scanner, Gitleaks, Knip, and Playwright checks locally.
+
+### Updated
+- Updated `.gitignore` to ignore local reports and tool output:
+  - `osv-results.json`
+  - `gitleaks-report.json`
+  - `gitleaks-dir-report.json`
+  - `playwright-report/`
+  - `test-results/`
+  - `.knip-cache/`
+- Updated `AGENTS.md` and `README.md` with local QA/security tool usage.
+
+### Notes
+- No login, account creation, API key, TestSprite, or cloud upload was used.
+- OMNI, Context7 Pi, Serena, Semgrep, and Repomix existing integrations remain unchanged.
+
+---
+
 ## [2.2.0] - 2026-06-21
 
 ### Added

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": [
+    "scripts/**/*.sh",
+    "install*.sh",
+    "verify*.sh",
+    "e2e/**/*.spec.ts"
+  ],
+  "project": [
+    "**/*.{js,jsx,ts,tsx,mjs,cjs}"
+  ],
+  "ignore": [
+    "installer/extensions/**",
+    "installer/skills/**",
+    "skills/**"
+  ]
+}

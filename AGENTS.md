@@ -35,8 +35,41 @@
 
 ## Useful Local Commands
 - Run AI helper checks: `bash scripts/ai-checks.sh`
+- Run full local QA/security checks: `bash scripts/ai-quality-checks.sh`
 - Generate compressed repo context: `repomix --compress`
-- Run local security scan: `semgrep scan --config auto --metrics=off`
+- Run local security scan: `semgrep scan --config p/default --metrics=off`
+
+## Local QA / Security Tools
+
+Use these local no-login tools when relevant:
+
+- Playwright Test: browser/E2E testing.
+  - Run: `npx playwright test`
+  - Report: `npx playwright show-report`
+  - Prefer Chromium first for speed.
+
+- OSV-Scanner: dependency vulnerability scanning.
+  - Run: `osv-scanner scan source -r . --format json --output-file osv-results.json`
+  - Keep output local and ignored by git.
+
+- Gitleaks: secret scanning.
+  - Run git history scan: `gitleaks git --redact --report-format json --report-path gitleaks-report.json .`
+  - Run directory scan: `gitleaks dir --redact --report-format json --report-path gitleaks-dir-report.json .`
+  - Never commit secrets or report files.
+
+- Knip: unused files/dependencies/exports for JS/TS projects.
+  - Run: `npx knip`
+  - Do not delete reported items automatically. Review first.
+
+When finishing coding tasks:
+1. Run the smallest relevant build/test first.
+2. Use OMNI for long terminal output.
+3. Use Context7 for current docs/API.
+4. Use Semgrep for static security scan when relevant.
+5. Use Playwright for user-flow/browser checks when the app has UI.
+6. Use OSV-Scanner for dependency vulnerability checks.
+7. Use Gitleaks before commits or sharing code.
+8. Use Knip before cleanup/refactor.
 
 ## Review Output
 When finishing a task, report:

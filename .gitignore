@@ -60,6 +60,12 @@ pi/
 sessions/
 trigger.txt
 
-# Local tool outputs
+# Local AI/security/test reports
 semgrep-results.json
+osv-results.json
+gitleaks-report.json
+gitleaks-dir-report.json
 repomix-output.*
+playwright-report/
+test-results/
+.knip-cache/
