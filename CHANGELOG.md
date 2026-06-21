@@ -8,9 +8,12 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Added evidence inventory for tooling, skills, and installer verification.
+- Added baseline GitHub Actions CI workflow for typecheck, unit tests, coverage, skill verification, Knip, and pre-commit.
+- Added CI setup evidence document.
 
 ### Notes
-- No README support claims were upgraded in this phase.
+- No README support claims were upgraded in phase 1.
+- CI will be considered verified only after the workflow runs on GitHub Actions.
 
 ---
 

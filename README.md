@@ -1,5 +1,7 @@
 # AstralForge Senior Engineer Skills
 
+[![CI](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/ci.yml/badge.svg)](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/ci.yml)
+
 **Senior-grade AI engineering skills with local QA, security, and review gates.**
 
 AstralForge adalah paket **83 AI agent skills** untuk fullstack + UI/UX + senior engineering workflow, dilengkapi stack local no-login untuk QA, security, dependency review, secret scanning, type safety, unit testing, coverage, ADR, dan review packaging.
