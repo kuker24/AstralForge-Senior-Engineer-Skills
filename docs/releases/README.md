@@ -49,6 +49,10 @@ bash install-global.sh --dry-run --home "$(mktemp -d)/home"
 bash installer/install-pi-linux.sh --dry-run --pi-home "$(mktemp -d)/pi-home" --skip-pi-check
 ```
 
+## Runbooks
+
+- [`push-ci-verification.md`](push-ci-verification.md) — read-only post-push GitHub Actions verification flow.
+
 ## Drafts
 
 - [`v3.1.0-draft.md`](v3.1.0-draft.md) — current v3.1.0 release draft.

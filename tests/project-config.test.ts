@@ -30,6 +30,7 @@ describe('project quality configuration', () => {
     expect(existsSync(join(repoRoot, 'AGENTS.md'))).toBe(true);
     expect(existsSync(join(repoRoot, 'README.md'))).toBe(true);
     expect(existsSync(join(repoRoot, 'docs/adr/README.md'))).toBe(true);
+    expect(existsSync(join(repoRoot, 'docs/releases/README.md'))).toBe(true);
   });
 
   it('has required package scripts', () => {
@@ -47,6 +48,7 @@ describe('project quality configuration', () => {
       'quality:ai',
       'quality:senior',
       'mutation',
+      'release:check-actions',
     ];
 
     for (const script of requiredScripts) {

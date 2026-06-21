@@ -8,7 +8,7 @@ Phase: 10 — v3.1.0 release draft and readiness checklist
 | Dimension | Status | Notes |
 |-----------|--------|-------|
 | Release notes | Drafted | `docs/releases/v3.1.0-draft.md` |
-| Release process docs | Drafted | `docs/releases/README.md` |
+| Release process docs | Drafted | `docs/releases/README.md`, `docs/releases/push-ci-verification.md` |
 | Local baseline checks | PASS | Phase 10 final validation passed locally. |
 | Security evidence | Available from Phase 8 | Semgrep/OSV/Gitleaks had 0 findings in `reports/tool-evidence/`. |
 | Installer evidence | Available from Phase 7 | Local Linux shell sandbox checks passed; Windows covered by CI workflow. |
@@ -47,6 +47,8 @@ de915f4 test: add substantive skill audit report
 | Local tool dogfooding evidence | `reports/tool-evidence/README.md` |
 | Contribution readiness | `reports/contribution-readiness.md` |
 | Architecture and stack boundaries | `ARCHITECTURE.md` |
+| Push/CI verification runbook | `docs/releases/push-ci-verification.md` |
+| Push/CI readiness report | `reports/push-ci-verification-readiness.md` |
 
 ## Validation Evidence
 

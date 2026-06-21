@@ -15,7 +15,8 @@
     "typecheck": "tsc --noEmit",
     "quality:senior": "bash scripts/ai-senior-checks.sh",
     "mutation": "stryker run",
-    "verify:skills": "bash scripts/verify-source-skills.sh"
+    "verify:skills": "bash scripts/verify-source-skills.sh",
+    "release:check-actions": "bash scripts/check-github-actions.sh"
   },
   "devDependencies": {
     "@playwright/test": "^1.61.0",
