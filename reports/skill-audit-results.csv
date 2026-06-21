@@ -1,0 +1,84 @@
+skill_name,has_skill_md,frontmatter_valid,has_name,has_description,word_count,has_agent_config,agent_config_nonempty,has_sources,sources_nonempty,links_checked,broken_links,verdict,notes
+ai-ml-integration,True,True,True,True,203,True,True,True,True,6,0,PASS,
+algorithmic-art,True,True,True,True,2362,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+api-patterns,True,True,True,True,308,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+authentication,True,True,True,True,276,True,True,True,True,7,0,PASS,
+autonomous-skill,True,True,True,True,297,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+aws-cloud,True,True,True,True,261,True,True,True,True,8,0,PASS,
+brand-guidelines,True,True,True,True,238,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+canvas-design,True,True,True,True,1648,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+cicd-pipeline,True,True,True,True,202,True,True,True,True,5,0,PASS,
+claude-api,True,True,True,True,4238,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+claude-frontend-design,True,True,True,True,539,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+claude-skill,True,True,True,True,790,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+claude-skill-creator,True,True,True,True,4824,False,False,False,False,0,0,STUB,placeholder/template content detected; missing agents/openai.yaml; missing references/sources.md
+database-design,True,True,True,True,217,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+deep-research,True,True,True,True,844,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+deployment-procedures,True,True,True,True,580,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+doc-coauthoring,True,True,True,True,2323,False,False,False,False,0,0,STUB,placeholder/template content detected; missing agents/openai.yaml; missing references/sources.md
+docker-kubernetes,True,True,True,True,220,True,True,True,True,5,0,PASS,
+docx,True,True,True,True,1025,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+frontend-design,True,True,True,True,512,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+full-api-design,True,True,True,True,232,True,True,True,True,5,0,PASS,
+full-api-testing,True,True,True,True,197,True,True,True,True,6,0,PASS,
+full-architecture-review,True,True,True,True,197,True,True,True,True,4,1,BROKEN,broken links: https://github.com/architecture-decision-records/adr-tools (404)
+full-audit-keamanan,True,True,True,True,646,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-brainstorm,True,True,True,True,185,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-bug-hunter,True,True,True,True,238,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-data-pipeline,True,True,True,True,176,True,True,True,True,5,0,PASS,
+full-database-migration,True,True,True,True,199,True,True,True,True,5,0,PASS,
+full-debug,True,True,True,True,217,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-dependency-audit,True,True,True,True,203,True,True,True,True,5,0,PASS,
+full-infrastructure-as-code,True,True,True,True,201,True,True,True,True,5,0,PASS,
+full-init,True,True,True,True,279,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-master-plan,True,True,True,True,167,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-optimize-performa,True,True,True,True,217,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-orchestrator-max-otonom,True,True,True,True,200,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-performance-audit,True,True,True,True,195,True,True,True,True,5,0,PASS,
+full-refactoring-max,True,True,True,True,167,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-review,True,True,True,True,163,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-security,True,True,True,True,507,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-setup-project,True,True,True,True,177,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+full-test,True,True,True,True,175,False,False,True,True,2,0,BROKEN,missing agents/openai.yaml
+gh-fix-ci,True,True,True,True,458,True,True,False,False,0,0,BROKEN,missing references/sources.md
+github,True,True,True,True,115,True,True,False,False,0,0,STUB,word count below 150 (115); missing references/sources.md
+graphql-impl,True,True,True,True,209,True,True,True,True,5,0,PASS,
+imagegen,True,True,True,True,2040,True,True,False,False,0,0,STUB,placeholder/template content detected; missing references/sources.md
+internal-comms,True,True,True,True,143,False,False,False,False,0,0,STUB,word count below 150 (143); missing agents/openai.yaml; missing references/sources.md
+kiro-skill,True,True,True,True,797,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+lint-and-validate,True,True,True,True,252,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+mcp-builder,True,True,True,True,976,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+message-queue,True,True,True,True,214,True,True,True,True,6,0,PASS,
+microservices,True,True,True,True,205,True,True,True,True,4,1,BROKEN,broken links: https://github.com/Netflix/microservices-examples (404)
+mongodb,True,True,True,True,233,True,True,True,True,5,0,PASS,
+monitoring-logging,True,True,True,True,219,True,True,True,True,7,0,PASS,
+nanobanana-skill,True,True,True,True,377,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+nextjs,True,True,True,True,263,True,True,True,True,5,0,PASS,
+nodejs-express,True,True,True,True,218,True,True,True,True,5,0,PASS,
+openai-docs,True,True,True,True,953,True,True,False,False,0,0,BROKEN,missing references/sources.md
+pdf,True,True,True,True,273,True,True,False,False,0,0,STUB,placeholder/template content detected; missing references/sources.md
+playwright,True,True,True,True,352,True,True,False,False,0,0,STUB,placeholder/template content detected; missing references/sources.md
+plugin-creator,True,True,True,True,528,True,True,False,False,0,0,STUB,placeholder/template content detected; missing references/sources.md
+pptx,True,True,True,True,895,False,False,False,False,0,0,STUB,placeholder/template content detected; missing agents/openai.yaml; missing references/sources.md
+prisma-drizzle,True,True,True,True,246,True,True,True,True,5,1,BROKEN,broken links: https://orm.drizzle.team/docs/get-started/postgresql (404)
+python-patterns,True,True,True,True,457,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+react-best-practices,True,True,True,True,700,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+react-native-flutter,True,True,True,True,225,True,True,True,True,5,0,PASS,
+redis,True,True,True,True,226,True,True,True,True,4,0,PASS,
+skill-creator,True,True,True,True,4797,True,True,False,False,0,0,STUB,placeholder/template content detected; missing references/sources.md
+skill-installer,True,True,True,True,376,True,True,False,False,0,0,BROKEN,missing references/sources.md
+slack-gif-creator,True,True,True,True,726,False,False,False,False,0,0,STUB,placeholder/template content detected; missing agents/openai.yaml; missing references/sources.md
+spec-kit-skill,True,True,True,True,1116,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+supabase-postgres-best-practices,True,True,True,True,161,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+tailwind-css,True,True,True,True,205,True,True,True,True,5,0,PASS,
+template-skill,True,True,True,True,3,False,False,False,False,0,0,STUB,word count below 150 (3); placeholder/template content detected; missing agents/openai.yaml; missing references/sources.md
+theme-factory,True,True,True,True,415,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+typescript,True,True,True,True,246,True,True,True,True,5,0,PASS,
+ui-ux-pro-max,True,True,True,True,1356,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+vuejs-svelte,True,True,True,True,223,True,True,True,True,6,0,PASS,
+web-artifacts-builder,True,True,True,True,366,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+web3-blockchain,True,True,True,True,212,True,True,True,True,6,0,PASS,
+webapp-testing,True,True,True,True,266,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+websocket,True,True,True,True,213,True,True,True,True,4,0,PASS,
+xlsx,True,True,True,True,1055,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
+youtube-transcribe-skill,True,True,True,True,510,False,False,False,False,0,0,BROKEN,missing agents/openai.yaml; missing references/sources.md
