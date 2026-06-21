@@ -360,6 +360,9 @@ skill-name/
 
 ## 📄 Dokumentasi
 
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Panduan kontribusi, checklist review, dan aturan evidence
+- [SECURITY.md](SECURITY.md) - Kebijakan security reporting dan local security checks
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) - Ekspektasi kolaborasi komunitas
 - [ARCHITECTURE.md](ARCHITECTURE.md) - Arsitektur repo dan batas stack
 - [installer/README.md](installer/README.md) - Dokumentasi installer Pi
 - [SKILLS_MANIFEST.md](SKILLS_MANIFEST.md) - Daftar lengkap semua skill
@@ -372,6 +375,7 @@ skill-name/
 - [reports/skill-audit-summary.md](reports/skill-audit-summary.md) - Ringkasan audit substansi skill
 - [reports/skill-audit-results.csv](reports/skill-audit-results.csv) - CSV hasil audit substansi skill
 - [reports/installer-audit.md](reports/installer-audit.md) - Audit installer dan rencana CI matrix
+- [reports/contribution-readiness.md](reports/contribution-readiness.md) - Evidence contribution/readiness docs
 - [reports/source-skill-index.md](reports/source-skill-index.md) - Index sumber skill
 - [reports/global-installation-report.md](reports/global-installation-report.md) - Report instalasi global
 
@@ -385,17 +389,20 @@ Each skill may have its own license. Check individual `references/sources.md` fi
 
 ## 🤝 Kontribusi
 
-1. Fork repository
-2. Buat skill baru di folder `skills/`
-3. Pastikan memiliki SKILL.md dengan frontmatter
-4. Jalankan `./verify.sh`
-5. Submit Pull Request
+Lihat [CONTRIBUTING.md](CONTRIBUTING.md) sebelum membuka PR. Ringkasnya:
+
+1. Jaga perubahan kecil dan reviewable.
+2. Jangan commit secrets, `.env`, private config, atau output besar.
+3. Jalankan checks yang relevan, minimal `npm run typecheck`, `npm run test:unit`, dan `npm run verify:skills`.
+4. Jangan upgrade klaim `Verified`/`Supported` tanpa evidence di `reports/` atau CI.
+5. Gunakan template issue/PR di `.github/`.
 
 ---
 
 ## 📞 Support
 
 - GitHub Issues: [Create Issue](../../issues)
+- Security reporting: [SECURITY.md](SECURITY.md)
 - Documentation: [README.md](README.md)
 
 ---

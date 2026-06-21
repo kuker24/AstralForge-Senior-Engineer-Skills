@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/security/advisories/new
+    about: Please report suspected vulnerabilities privately when possible.
+  - name: Evidence and verification status
+    url: https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/blob/main/reports/evidence-inventory.md
+    about: Review existing evidence before requesting a support-claim change.

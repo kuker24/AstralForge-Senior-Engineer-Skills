@@ -1,0 +1,58 @@
+name: Feature request
+description: Propose a new skill, installer improvement, QA gate, or documentation enhancement.
+title: "feat: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What problem should this solve?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - new skill
+        - existing skill improvement
+        - installer
+        - verification/audit tooling
+        - CI/security workflow
+        - documentation
+        - release process
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the smallest useful change.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or references
+      description: Link existing reports, docs, or prior issues when available.
+    validations:
+      required: false
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and constraints
+      description: Include portability, security, install, or maintenance concerns.
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I understand support claims should not be upgraded without evidence.
+          required: true
+        - label: I did not include secrets, tokens, API keys, `.env` values, or private data.
+          required: true

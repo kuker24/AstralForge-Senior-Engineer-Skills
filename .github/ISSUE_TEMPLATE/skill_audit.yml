@@ -1,0 +1,57 @@
+name: Skill audit or quality gap
+description: Report a stub, broken, duplicate, incomplete, or overclaimed skill.
+title: "skill: "
+labels:
+  - skill-audit
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to keep skill quality gaps visible instead of hiding them.
+  - type: input
+    id: skill
+    attributes:
+      label: Skill name
+      description: Folder name under `skills/`, if known.
+      placeholder: nodejs-express
+    validations:
+      required: true
+  - type: dropdown
+    id: finding
+    attributes:
+      label: Finding type
+      options:
+        - STUB
+        - BROKEN
+        - NEEDS_REVIEW
+        - duplicate/overlap
+        - inaccurate claim
+        - missing references
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link to files/lines or paste concise output. Do not include secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed fix
+      description: How should this skill be improved or reclassified?
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmation
+      options:
+        - label: I checked `reports/skill-audit-summary.md` before filing.
+          required: true
+        - label: I am not asking to hide or delete a known gap without an explicit migration/review plan.
+          required: true
+        - label: I did not include secrets, tokens, API keys, `.env` values, or private data.
+          required: true
