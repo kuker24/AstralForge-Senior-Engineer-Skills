@@ -158,8 +158,7 @@ check_once() {
       return 3
     fi
 
-    set +e
-    node - "$tmp_file" "$SHA" "$workflow" <<'NODE'
+    if node - "$tmp_file" "$SHA" "$workflow" <<'NODE'
 const fs = require('node:fs');
 const [file, sha, workflow] = process.argv.slice(2);
 const runs = JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -181,8 +180,11 @@ if (run.conclusion !== 'success') {
   process.exit(22);
 }
 NODE
-    node_status=$?
-    set -e
+    then
+      node_status=0
+    else
+      node_status=$?
+    fi
     case $node_status in
       0)
         echo "PASS: $workflow"

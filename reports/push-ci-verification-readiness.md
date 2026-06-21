@@ -27,6 +27,7 @@ This phase adds a read-only verification script and runbook for checking GitHub 
 - It defaults to checking `ci.yml`, `security.yml`, and `installers.yml`.
 - It matches runs by exact commit SHA.
 - It supports `--watch` for polling until success/failure/timeout.
+- Pending workflow polling was rechecked after push and patched to preserve watch-loop behavior.
 - It supports `--dry-run` for local validation without GitHub API calls.
 - It exits nonzero when workflows are missing, pending, failed, or not queryable.
 

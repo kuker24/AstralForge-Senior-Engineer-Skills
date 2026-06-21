@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file.
 - Added contribution, security, conduct, issue/PR templates, and contribution readiness evidence.
 - Added v3.1.0 draft release notes, release-process docs, and release-readiness report.
 - Added read-only GitHub Actions verification script, npm alias, and push/CI verification runbook.
+- Fixed GitHub Actions verification watcher so pending workflows can poll instead of exiting immediately.
 
 ### Notes
 - No README support claims were upgraded in phase 1.
