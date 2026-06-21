@@ -5,7 +5,9 @@
 
 **Senior-grade AI engineering skills with local QA, security, and review gates.**
 
-AstralForge adalah paket **83 AI agent skills** untuk fullstack + UI/UX + senior engineering workflow, dilengkapi stack local no-login untuk QA, security, dependency review, secret scanning, type safety, unit testing, coverage, ADR, dan review packaging.
+AstralForge adalah paket **83 source skill folders** untuk fullstack + UI/UX + senior engineering workflow, dilengkapi stack local no-login untuk QA, security, dependency review, secret scanning, type safety, unit testing, coverage, ADR, dan review packaging.
+
+Status verifikasi dibedakan secara eksplisit: **Verified**, **Supported**, **Manual only**, **Needs review**, dan **Unverified**. Audit substantif saat ini menemukan **25 PASS**, **12 STUB**, dan **46 BROKEN** dari 83 folder skill; lihat [reports/skill-audit-summary.md](reports/skill-audit-summary.md). Karena itu README tidak mengklaim semua 83 skill sudah fully verified.
 
 - Package name: `astralforge-senior-engineer-skills`
 - Current target repository: `https://github.com/kuker24/AstralForge-Senior-Engineer-Skills`
@@ -17,32 +19,36 @@ AstralForge adalah paket **83 AI agent skills** untuk fullstack + UI/UX + senior
 
 | Component | Description |
 |-----------|-------------|
-| **Skills** | 83 agent skills for full stack development |
-| **Installer** | Complete Pi installer with all configurations |
-| **Global Install** | Install to all platforms (Pi, OpenCode, Claude, Codex, Agents) |
+| **Skills** | 83 source skill folders; 25 currently pass the substantive audit |
+| **Installer** | Pi installer package files are present; sandbox/CI installer verification is pending |
+| **Global Install** | Global install scripts are present; sandbox/CI installer verification is pending |
 
 ---
 
 ## 🧰 AI Agent Tooling
 
-Repo ini juga menyertakan konfigurasi lokal untuk tool pendukung coding AI agent:
+Repo ini juga menyertakan konfigurasi lokal untuk tool pendukung coding AI agent. Status di bawah mengikuti evidence di `reports/` dan command lokal yang benar-benar dijalankan.
 
-| Tool | Status | Catatan |
-|------|--------|---------|
-| Context7 Pi | Supported | Install via `pi install npm:@upstash/context7-pi` tanpa API key/login |
-| Serena MCP | Supported | CLI/MCP via `uv tool install -p 3.13 serena-agent` |
-| Semgrep CE | Supported | Scan lokal tanpa login: `semgrep scan --config p/default --metrics=off` |
-| Repomix | Supported | Generate konteks repo: `repomix --compress` |
-| Vitest + Coverage | Supported | Unit test dan coverage: `npm run test:unit`, `npm run test:coverage` |
-| TypeScript | Supported | Strict typecheck lokal: `npm run typecheck` |
-| pre-commit | Supported | Hook lokal ringan: `pre-commit run --all-files` |
-| StrykerJS | Manual only | Mutation test manual: `npm run mutation`; jangan dijalankan otomatis |
-| ADR | Supported | Keputusan arsitektur di `docs/adr/` |
-| Playwright Test | Supported | E2E/browser testing lokal: `playwright test` atau `npx playwright test` |
-| OSV-Scanner | Supported | Dependency vulnerability scan lokal: `osv-scanner scan source -r . --format json --output-file osv-results.json` |
-| Gitleaks | Supported | Secret scan lokal: `gitleaks git --redact --report-format json --report-path gitleaks-report.json .` |
-| Knip | Supported | JS/TS unused file/dependency/export check: `knip` atau `npx knip` |
-| OMNI | Supported | Tetap aktif untuk distilasi output terminal |
+| Tool | Status | Local Command | Evidence |
+|------|--------|---------------|----------|
+| TypeScript Typecheck | Verified | `npm run typecheck` | [Evidence inventory](reports/evidence-inventory.md), [CI setup](reports/ci-setup-evidence.md) |
+| Vitest + Coverage | Verified | `npm run test:unit`, `npm run test:coverage` | [Evidence inventory](reports/evidence-inventory.md), [CI setup](reports/ci-setup-evidence.md) |
+| Source skill verifier | Verified | `npm run verify:skills` | [Evidence inventory](reports/evidence-inventory.md), [Skill manifest](SKILLS_MANIFEST.md) |
+| pre-commit | Verified | `pre-commit run --all-files` | [Evidence inventory](reports/evidence-inventory.md), `.pre-commit-config.yaml` |
+| Semgrep CE | Verified | `semgrep scan --config p/default --metrics=off --json --json-output=semgrep-results.json` | [Security CI setup](reports/security-ci-setup-evidence.md) |
+| OSV-Scanner | Verified | `osv-scanner scan source -r . --format json --output-file osv-results.json` | [Security CI setup](reports/security-ci-setup-evidence.md) |
+| Gitleaks | Verified | `gitleaks git --redact --report-format json --report-path gitleaks-report.json .` | [Security CI setup](reports/security-ci-setup-evidence.md), `.gitleaks.toml` |
+| Knip | Verified | `npx knip` | [CI setup](reports/ci-setup-evidence.md), `knip.json` |
+| ADR | Verified | Review `docs/adr/` | [ADR index](docs/adr/README.md) |
+| Skill substantive audit | Needs review | `bash scripts/audit-skills.sh` | [Skill audit summary](reports/skill-audit-summary.md) |
+| GitHub Actions CI | Supported | `.github/workflows/ci.yml` | [CI setup](reports/ci-setup-evidence.md); remote green run pending |
+| GitHub Actions Security | Supported | `.github/workflows/security.yml` | [Security CI setup](reports/security-ci-setup-evidence.md); remote green run pending |
+| Playwright Test | Supported | `npx playwright test --project=chromium` | Placeholder smoke test only; real app-flow E2E pending |
+| Repomix | Supported | `repomix --compress` | Config present; full output intentionally ignored |
+| OMNI | Supported | `omni stats --detail` | Local integration documented in [Evidence inventory](reports/evidence-inventory.md) |
+| Context7 Pi | Supported | Pi package integration | Local integration documented in [Evidence inventory](reports/evidence-inventory.md) |
+| Serena MCP | Supported | Serena MCP setup | Local integration documented in [Evidence inventory](reports/evidence-inventory.md) |
+| StrykerJS | Manual only | `npm run mutation` | `stryker.config.json`; do not run unless explicitly requested |
 
 Helper lokal:
 
@@ -89,7 +95,33 @@ mutation-report/
 
 ---
 
-## 📊 Statistik
+## Verification Status
+
+This repository distinguishes between:
+
+- **Verified**: a command/config has local evidence and/or committed evidence report.
+- **Supported**: scripts/configuration exist, but full CI or durable evidence is still pending.
+- **Manual only**: available only when explicitly requested, for example StrykerJS mutation testing.
+- **Needs review**: audit found issues or incomplete evidence that should be reviewed before stronger claims.
+- **Unverified**: no reliable command or report evidence yet.
+
+Current skill audit status:
+
+| Metric | Count |
+|--------|------:|
+| Total source skill folders | 83 |
+| Audit PASS | 25 |
+| Audit STUB | 12 |
+| Audit BROKEN | 46 |
+| Audit NEEDS_REVIEW | 0 |
+
+See [reports/skill-audit-summary.md](reports/skill-audit-summary.md) and [reports/skill-audit-results.csv](reports/skill-audit-results.csv).
+
+---
+
+## 📊 Source Folder Statistics
+
+These category counts describe the 83 source skill folders, not fully verified skill quality.
 
 | Kategori | Jumlah |
 |----------|--------|
@@ -292,8 +324,11 @@ chmod +x install.sh
 # Verifikasi instalasi
 ./verify.sh
 
-# Verifikasi source
-ls skills/ | wc -l  # Should output: 83
+# Verifikasi source folder/frontmatter
+npm run verify:skills
+
+# Audit substantif skill
+bash scripts/audit-skills.sh
 ```
 
 ---
@@ -328,6 +363,11 @@ skill-name/
 - [SKILLS_MANIFEST.md](SKILLS_MANIFEST.md) - Daftar lengkap semua skill
 - [MISSING_SKILLS_CHECKLIST.md](MISSING_SKILLS_CHECKLIST.md) - Checklist skill
 - [reports/skill-completion-report.md](reports/skill-completion-report.md) - Report completion
+- [reports/evidence-inventory.md](reports/evidence-inventory.md) - Inventory klaim dan evidence
+- [reports/ci-setup-evidence.md](reports/ci-setup-evidence.md) - Evidence setup CI baseline
+- [reports/security-ci-setup-evidence.md](reports/security-ci-setup-evidence.md) - Evidence setup security CI
+- [reports/skill-audit-summary.md](reports/skill-audit-summary.md) - Ringkasan audit substansi skill
+- [reports/skill-audit-results.csv](reports/skill-audit-results.csv) - CSV hasil audit substansi skill
 - [reports/source-skill-index.md](reports/source-skill-index.md) - Index sumber skill
 - [reports/global-installation-report.md](reports/global-installation-report.md) - Report instalasi global
 
@@ -357,5 +397,6 @@ Each skill may have its own license. Check individual `references/sources.md` fi
 ---
 
 **Version**: 3.0.0
-**Last Updated**: 2026-06-21
-**Total Skills**: 83
+**Last Updated**: 2026-06-22
+**Total Source Skill Folders**: 83
+**Substantive Audit PASS**: 25

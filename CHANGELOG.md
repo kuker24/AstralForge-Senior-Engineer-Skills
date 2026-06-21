@@ -14,12 +14,13 @@ All notable changes to this project will be documented in this file.
 - Added security CI setup evidence document.
 - Fixed GitHub Actions release checksum verification to use official downloaded archive names.
 - Added substantive skill audit script and generated skill audit reports.
+- Updated README verification status to distinguish Verified, Supported, Manual only, Needs review, and Unverified claims.
 
 ### Notes
 - No README support claims were upgraded in phase 1.
 - CI will be considered verified only after the workflow runs on GitHub Actions.
 - Security CI will be considered verified only after the workflow runs on GitHub Actions.
-- Skill audit found non-PASS items; README total skill count was not changed in this phase.
+- Skill audit found non-PASS items; README now distinguishes total source skill folders from audited PASS skills.
 
 ---
 
