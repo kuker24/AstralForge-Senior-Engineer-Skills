@@ -347,6 +347,34 @@ skill-name/
 
 ---
 
+## Akses Satu Api Provider
+
+Akses Satu Api adalah custom OpenAI-compatible provider untuk Pi Code / Pi Agent.
+
+```env
+AKSES_SATU_API_KEY=sk-sa-REPLACE_ME
+AKSES_SATU_BASE_URL=https://api.satuakses.top/v1
+AKSES_SATU_DEFAULT_MODEL=gpt-5.5
+```
+
+Available models:
+
+- `gpt-5.5`
+- `claude-opus-4.8`
+- `minimax-m3`
+- `mimo-v2.5-pro`
+- `deepseek-v4-pro`
+
+Supported endpoints:
+
+- `GET /v1/models`
+- `POST /v1/chat/completions`
+- `POST /v1/responses`
+
+Do not commit real API keys. See [docs/providers/akses-satu-api.md](docs/providers/akses-satu-api.md) for details and manual smoke-test usage.
+
+---
+
 ## 🔗 Sumber Skill
 
 | Sumber | Repository | Jumlah |
@@ -363,6 +391,7 @@ skill-name/
 - [CONTRIBUTING.md](CONTRIBUTING.md) - Panduan kontribusi, checklist review, dan aturan evidence
 - [SECURITY.md](SECURITY.md) - Kebijakan security reporting dan local security checks
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) - Ekspektasi kolaborasi komunitas
+- [docs/providers/akses-satu-api.md](docs/providers/akses-satu-api.md) - Konfigurasi custom OpenAI-compatible provider Akses Satu Api
 - [docs/releases/README.md](docs/releases/README.md) - Proses release dan readiness states
 - [docs/releases/push-ci-verification.md](docs/releases/push-ci-verification.md) - Runbook push dan verifikasi GitHub Actions
 - [docs/releases/v3.1.0-draft.md](docs/releases/v3.1.0-draft.md) - Draft release notes v3.1.0
@@ -381,6 +410,7 @@ skill-name/
 - [reports/contribution-readiness.md](reports/contribution-readiness.md) - Evidence contribution/readiness docs
 - [reports/release-readiness-v3.1.0.md](reports/release-readiness-v3.1.0.md) - Readiness checklist draft v3.1.0
 - [reports/push-ci-verification-readiness.md](reports/push-ci-verification-readiness.md) - Evidence kesiapan verifikasi GitHub Actions pasca-push
+- [reports/akses-satu-api-provider.md](reports/akses-satu-api-provider.md) - Evidence integrasi provider Akses Satu Api
 - [reports/source-skill-index.md](reports/source-skill-index.md) - Index sumber skill
 - [reports/global-installation-report.md](reports/global-installation-report.md) - Report instalasi global
 

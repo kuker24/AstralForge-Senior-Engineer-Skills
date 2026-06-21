@@ -8,6 +8,8 @@ AstralForge Senior Engineer Skills is a local-first AI engineering skills packag
 - Do not push to GitHub unless the user explicitly asks for it.
 - Do not force push.
 - Do not commit secrets, tokens, API keys, `.env`, build artifacts, or private data.
+- Custom provider credentials must use environment variables; never hardcode provider keys.
+- Never print Authorization headers or API key values in logs, tests, snapshots, docs, or reports.
 - Prefer reading existing patterns before adding new architecture.
 - Keep changes minimal and aligned with the current project structure.
 

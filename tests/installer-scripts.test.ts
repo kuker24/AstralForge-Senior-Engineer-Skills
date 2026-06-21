@@ -10,6 +10,7 @@ describe('installer scripts', () => {
     'install-global.sh',
     'verify.sh',
     'scripts/verify-source-skills.sh',
+    'scripts/test-akses-satu-api.sh',
     'installer/install-pi-linux.sh',
     'installer/install-pi-windows.ps1',
   ];

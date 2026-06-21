@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file.
 - Added v3.1.0 draft release notes, release-process docs, and release-readiness report.
 - Added read-only GitHub Actions verification script, npm alias, and push/CI verification runbook.
 - Fixed GitHub Actions verification watcher so pending workflows can poll instead of exiting immediately.
+- Added Akses Satu Api custom OpenAI-compatible provider config, helper client, docs, tests, and safe manual smoke-test script.
 
 ### Notes
 - No README support claims were upgraded in phase 1.

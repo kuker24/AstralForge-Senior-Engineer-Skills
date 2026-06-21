@@ -48,9 +48,12 @@ generated-skills/
 pi/
 
 # Secrets / auth material
+.env
+.env.*
 **/auth.json
 **/.env
 **/.env.*
+!.env.example
 *.key
 *.pem
 *.p12

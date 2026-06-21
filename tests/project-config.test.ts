@@ -29,7 +29,9 @@ describe('project quality configuration', () => {
   it('has required repository guidance files', () => {
     expect(existsSync(join(repoRoot, 'AGENTS.md'))).toBe(true);
     expect(existsSync(join(repoRoot, 'README.md'))).toBe(true);
+    expect(existsSync(join(repoRoot, '.env.example'))).toBe(true);
     expect(existsSync(join(repoRoot, 'docs/adr/README.md'))).toBe(true);
+    expect(existsSync(join(repoRoot, 'docs/providers/akses-satu-api.md'))).toBe(true);
     expect(existsSync(join(repoRoot, 'docs/releases/README.md'))).toBe(true);
   });
 
