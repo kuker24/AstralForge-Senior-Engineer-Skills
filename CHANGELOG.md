@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file.
 - Added installer sandbox options, installer audit report, and installer verification workflow matrix.
 - Added dogfooding evidence index and compact local tool evidence reports.
 - Added contribution, security, conduct, issue/PR templates, and contribution readiness evidence.
+- Added v3.1.0 draft release notes, release-process docs, and release-readiness report.
 
 ### Notes
 - No README support claims were upgraded in phase 1.
