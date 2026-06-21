@@ -18,25 +18,24 @@ echo "API Key: [REDACTED]"
 
 echo ""
 echo "== GET /models =="
-curl -sS "$BASE_URL/models" \
-  -H "Authorization: Bearer ${AKSES_SATU_API_KEY}" \
-  | head -c 2000
+response="$(curl -sS "$BASE_URL/models" \
+  -H "Authorization: Bearer ${AKSES_SATU_API_KEY}")"
+
+printf '%.2000s\n' "$response"
 echo ""
 
 echo ""
 echo "== POST /chat/completions =="
-curl -sS "$BASE_URL/chat/completions" \
-  -H "Authorization: Bearer ${AKSES_SATU_API_KEY}" \
-  -H "Content-Type: application/json" \
-  -d "{\"model\":\"${MODEL}\",\"messages\":[{\"role\":\"user\",\"content\":\"Halo! Jawab singkat.\"}]}" \
-  | head -c 2000
+response="$(curl -sS "$BASE_URL/models" \
+  -H "Authorization: Bearer ${AKSES_SATU_API_KEY}")"
+
+printf '%.2000s\n' "$response"
 echo ""
 
 echo ""
 echo "== POST /responses =="
-curl -sS "$BASE_URL/responses" \
-  -H "Authorization: Bearer ${AKSES_SATU_API_KEY}" \
-  -H "Content-Type: application/json" \
-  -d "{\"model\":\"${MODEL}\",\"input\":\"Jelaskan API gateway secara singkat.\"}" \
-  | head -c 2000
+response="$(curl -sS "$BASE_URL/models" \
+  -H "Authorization: Bearer ${AKSES_SATU_API_KEY}")"
+
+printf '%.2000s\n' "$response"
 echo ""
