@@ -1,6 +1,7 @@
 # AstralForge Senior Engineer Skills
 
 [![CI](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/ci.yml/badge.svg)](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/ci.yml)
+[![Security](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/security.yml/badge.svg)](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/security.yml)
 
 **Senior-grade AI engineering skills with local QA, security, and review gates.**
 

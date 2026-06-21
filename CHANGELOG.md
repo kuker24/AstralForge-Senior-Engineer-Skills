@@ -9,11 +9,15 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Added evidence inventory for tooling, skills, and installer verification.
 - Added baseline GitHub Actions CI workflow for typecheck, unit tests, coverage, skill verification, Knip, and pre-commit.
+- Added dedicated GitHub Actions security workflow for Semgrep, OSV-Scanner, and Gitleaks.
 - Added CI setup evidence document.
+- Added security CI setup evidence document.
+- Fixed GitHub Actions release checksum verification to use official downloaded archive names.
 
 ### Notes
 - No README support claims were upgraded in phase 1.
 - CI will be considered verified only after the workflow runs on GitHub Actions.
+- Security CI will be considered verified only after the workflow runs on GitHub Actions.
 
 ---
 
