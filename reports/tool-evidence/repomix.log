@@ -1,0 +1,79 @@
+
+📦 Repomix v1.15.0
+
+[K[?25l⠋ Initializing...
+[K[1A[K[?25l⠙ Searching for files...
+[K[1A[K[?25l⠹ Searching for files...
+[K[1A[K[?25l⠸ Searching for files...
+[K[1A[K[?25l⠼ Searching for files...
+[K[1A[K[?25l⠴ Collect file... (60/1685) installer/skills/canvas-design/canvas-fonts/GeistMono-Bold.ttf
+[K[1A[K[?25l⠦ Collect file... (798/1685) installer/skills/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd
+[K[1A[K[?25l⠧ Collect file... (1524/1685) skills/supabase-postgres-best-practices/references/schema-foreign-key-indexes.md
+[K[1A[K[?25l⠇ Processing files...
+[K[1A[K[?25l⠏ Processing files...
+[K[1A[K[?25l⠋ Processing files...
+[K[1A[K[?25l⠙ Processing files...
+[K[1A[K[?25l⠹ Processing files...
+[K[1A[K[?25l⠸ Processing files...
+[K[1A[K[?25l⠼ Processing file... (9/1557) installer/config/presets.json
+[K[1A[K[?25l⠴ Processing file... (22/1557) installer/config/settings.json
+[K[1A[K[?25l⠦ Processing file... (22/1557) installer/config/settings.json
+[K[1A[K[?25l⠧ Running security check... (50/1557) installer/extensions/tools.ts
+[K[1A[K[?25l⠇ Running security check... (100/1557) installer/skills/claude-api/shared/managed-agents-events.md
+[K[1A[K[?25l⠏ Running security check... (100/1557) installer/skills/claude-api/shared/managed-agents-events.md
+[K[1A[K[?25l⠋ Running security check... (150/1557) installer/skills/database-design/database-selection.md
+[K[1A[K[?25l⠙ Processing file... (24/1557) e2e/smoke.spec.ts
+[K[1A[K[?25l⠹ Processing file... (33/1557) installer/extensions/model-status.ts
+[K[1A[K[?25l⠸ Processing file... (42/1557) installer/extensions/status-line.ts
+[K[1A[K[?25l⠼ Processing file... (64/1557) installer/skills/api-patterns/graphql.md
+[K[1A[K[?25l⠴ Processing file... (157/1557) installer/skills/claude-api/typescript/agent-sdk/patterns.md
+[K[1A[K[?25l⠦ Processing file... (184/1557) installer/skills/claude-skill-creator/scripts/package_skill.py
+[K[1A[K[?25l⠧ Processing file... (189/1557) installer/skills/claude-skill-creator/.openskills.json
+[K[1A[K[?25l⠇ Running security check... (550/1557) installer/skills/react-best-practices/rules/rerender-lazy-state-init.md
+[K[1A[K[?25l⠏ Processing file... (352/1557) installer/skills/internal-comms/.openskills.json
+[K[1A[K[?25l⠋ Processing file... (407/1557) installer/skills/pdf/scripts/check_bounding_boxes.py
+[K[1A[K[?25l⠙ Processing file... (475/1557) installer/skills/pptx/scripts/office/validators/__init__.py
+[K[1A[K[?25l⠹ Processing file... (528/1557) installer/skills/react-best-practices/rules/js-set-map-lookups.md
+[K[1A[K[?25l⠸ Processing file... (601/1557) installer/skills/skill-installer/assets/skill-installer-small.svg
+[K[1A[K[?25l⠼ Processing file... (734/1557) installer/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd
+[K[1A[K[?25l⠴ Processing file... (821/1557) skills/authentication/references/sources.md
+[K[1A[K[?25l⠦ Processing file... (934/1557) skills/claude-skill-creator/scripts/package_skill.py
+[K[1A[K[?25l⠧ Processing file... (1003/1557) skills/docx/scripts/office/validators/__init__.py
+[K[1A[K[?25l⠇ Processing file... (1106/1557) skills/internal-comms/SKILL.md
+[K[1A[K[?25l⠏ Processing file... (1178/1557) skills/pdf/scripts/fill_pdf_form_with_annotations.py
+[K[1A[K[?25l⠋ Processing file... (1229/1557) skills/pptx/.openskills.json
+[K[1A[K[?25l⠙ Processing file... (1336/1557) skills/skill-creator/scripts/improve_description.py
+[K[1A[K[?25l⠹ Processing file... (1357/1557) skills/slack-gif-creator/core/easing.py
+[K[1A[K[?25l⠸ Processing file... (1531/1557) skills/ui-ux-pro-max/scripts/design_system.py
+[K[1A[K[?25l⠼ Processing file... (1557/1557) skills/xlsx/scripts/office/validators/base.py
+[K[1A[K[?25l⠴ Writing output file...
+[K[1A[K[?25l⠦ Calculating metrics... (1557/1557) CHANGELOG.md
+[K[1A[K[?25l⠧ Calculating metrics... (1557/1557) CHANGELOG.md
+[K[1A[K[?25l⠇ Calculating metrics... (1557/1557) CHANGELOG.md
+[K[1A[K[?25l✔ Packing completed successfully!
+[?25h
+📈 Top 5 Files by Token Count:
+──────────────────────────────
+1.  installer/skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd (74,717 tokens, 242,276 chars, 2.2%)
+2.  installer/skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd (74,717 tokens, 242,276 chars, 2.2%)
+3.  installer/skills/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd (74,717 tokens, 242,276 chars, 2.2%)
+4.  skills/docx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd (74,717 tokens, 242,276 chars, 2.2%)
+5.  skills/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd (74,717 tokens, 242,276 chars, 2.2%)
+
+🔎 Security Check:
+──────────────────
+✔ No suspicious files detected.
+
+
+📊 Pack Summary:
+────────────────
+  Total Files: 1,557 files
+ Total Tokens: 3,367,470 tokens
+  Total Chars: 12,107,479 chars
+       Output: repomix-output.xml
+     Security: ✔ No suspicious files detected
+
+🎉 All Done!
+Your repository has been successfully packed.
+
+💡 Repomix is now available in your browser! Try it at https://repomix.com

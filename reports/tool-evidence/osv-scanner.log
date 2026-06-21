@@ -1,0 +1,10 @@
+Scanning dir .
+Starting filesystem walk for root: /
+Scanned /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert/skills/mcp-builder/scripts/requirements.txt file and found 5 packages
+Scanned /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert/skills/nanobanana-skill/requirements.txt file and found 7 packages
+Scanned /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert/skills/slack-gif-creator/requirements.txt file and found 4 packages
+Scanned /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert/installer/skills/mcp-builder/scripts/requirements.txt file and found 5 packages
+Scanned /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert/installer/skills/nanobanana-skill/requirements.txt file and found 7 packages
+Scanned /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert/installer/skills/slack-gif-creator/requirements.txt file and found 4 packages
+Scanned /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert/package-lock.json file and found 308 packages
+End status: 725 dirs visited, 2663 inodes visited, 7 Extract calls, 198.013384ms elapsed, 198.013507ms wall time

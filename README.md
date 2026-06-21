@@ -32,20 +32,20 @@ Repo ini juga menyertakan konfigurasi lokal untuk tool pendukung coding AI agent
 
 | Tool | Status | Local Command | Evidence |
 |------|--------|---------------|----------|
-| TypeScript Typecheck | Verified | `npm run typecheck` | [Evidence inventory](reports/evidence-inventory.md), [CI setup](reports/ci-setup-evidence.md) |
-| Vitest + Coverage | Verified | `npm run test:unit`, `npm run test:coverage` | [Evidence inventory](reports/evidence-inventory.md), [CI setup](reports/ci-setup-evidence.md) |
-| Source skill verifier | Verified | `npm run verify:skills` | [Evidence inventory](reports/evidence-inventory.md), [Skill manifest](SKILLS_MANIFEST.md) |
-| pre-commit | Verified | `pre-commit run --all-files` | [Evidence inventory](reports/evidence-inventory.md), `.pre-commit-config.yaml` |
-| Semgrep CE | Verified | `semgrep scan --config p/default --metrics=off --json --json-output=semgrep-results.json` | [Security CI setup](reports/security-ci-setup-evidence.md) |
-| OSV-Scanner | Verified | `osv-scanner scan source -r . --format json --output-file osv-results.json` | [Security CI setup](reports/security-ci-setup-evidence.md) |
-| Gitleaks | Verified | `gitleaks git --redact --report-format json --report-path gitleaks-report.json .` | [Security CI setup](reports/security-ci-setup-evidence.md), `.gitleaks.toml` |
-| Knip | Verified | `npx knip` | [CI setup](reports/ci-setup-evidence.md), `knip.json` |
+| TypeScript Typecheck | Verified | `npm run typecheck` | [Tool evidence](reports/tool-evidence/README.md), [CI setup](reports/ci-setup-evidence.md) |
+| Vitest + Coverage | Verified | `npm run test:unit`, `npm run test:coverage` | [Tool evidence](reports/tool-evidence/README.md), [CI setup](reports/ci-setup-evidence.md) |
+| Source skill verifier | Verified | `npm run verify:skills` | [Tool evidence](reports/tool-evidence/README.md), [Skill manifest](SKILLS_MANIFEST.md) |
+| pre-commit | Verified | `pre-commit run --all-files` | [Tool evidence](reports/tool-evidence/README.md), `.pre-commit-config.yaml` |
+| Semgrep CE | Verified | `semgrep scan --config p/default --metrics=off --json --json-output=semgrep-results.json` | [Tool evidence](reports/tool-evidence/README.md), [Security CI setup](reports/security-ci-setup-evidence.md) |
+| OSV-Scanner | Verified | `osv-scanner scan source -r . --format json --output-file osv-results.json` | [Tool evidence](reports/tool-evidence/README.md), [Security CI setup](reports/security-ci-setup-evidence.md) |
+| Gitleaks | Verified | `gitleaks git --redact --report-format json --report-path gitleaks-report.json .` | [Tool evidence](reports/tool-evidence/README.md), [Security CI setup](reports/security-ci-setup-evidence.md), `.gitleaks.toml` |
+| Knip | Verified | `npx knip` | [Tool evidence](reports/tool-evidence/README.md), [CI setup](reports/ci-setup-evidence.md), `knip.json` |
 | ADR | Verified | Review `docs/adr/` | [ADR index](docs/adr/README.md) |
 | Skill substantive audit | Needs review | `bash scripts/audit-skills.sh` | [Skill audit summary](reports/skill-audit-summary.md) |
 | GitHub Actions CI | Supported | `.github/workflows/ci.yml` | [CI setup](reports/ci-setup-evidence.md); remote green run pending |
 | GitHub Actions Security | Supported | `.github/workflows/security.yml` | [Security CI setup](reports/security-ci-setup-evidence.md); remote green run pending |
-| Playwright Test | Supported | `npx playwright test --project=chromium` | Placeholder smoke test only; real app-flow E2E pending |
-| Repomix | Supported | `repomix --compress` | Config present; full output intentionally ignored |
+| Playwright Test | Supported | `npx playwright test --project=chromium` | [Tool evidence](reports/tool-evidence/README.md); placeholder smoke test only |
+| Repomix | Supported | `repomix --compress` | [Tool evidence](reports/tool-evidence/README.md); full output intentionally ignored |
 | OMNI | Supported | `omni stats --detail` | Local integration documented in [Evidence inventory](reports/evidence-inventory.md) |
 | Context7 Pi | Supported | Pi package integration | Local integration documented in [Evidence inventory](reports/evidence-inventory.md) |
 | Serena MCP | Supported | Serena MCP setup | Local integration documented in [Evidence inventory](reports/evidence-inventory.md) |
@@ -368,6 +368,7 @@ skill-name/
 - [reports/evidence-inventory.md](reports/evidence-inventory.md) - Inventory klaim dan evidence
 - [reports/ci-setup-evidence.md](reports/ci-setup-evidence.md) - Evidence setup CI baseline
 - [reports/security-ci-setup-evidence.md](reports/security-ci-setup-evidence.md) - Evidence setup security CI
+- [reports/tool-evidence/README.md](reports/tool-evidence/README.md) - Index dogfooding evidence tool lokal
 - [reports/skill-audit-summary.md](reports/skill-audit-summary.md) - Ringkasan audit substansi skill
 - [reports/skill-audit-results.csv](reports/skill-audit-results.csv) - CSV hasil audit substansi skill
 - [reports/installer-audit.md](reports/installer-audit.md) - Audit installer dan rencana CI matrix

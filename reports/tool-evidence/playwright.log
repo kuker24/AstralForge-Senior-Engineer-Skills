@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  -  1 [chromium] › e2e/smoke.spec.ts:3:5 › homepage loads when a local app server is configured
+
+  1 skipped

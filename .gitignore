@@ -76,3 +76,9 @@ gitleaks-report.json
 gitleaks-dir-report.json
 repomix-output.*
 .knip-cache/
+
+# Committed compact tool evidence for dogfooding phases
+!reports/tool-evidence/
+!reports/tool-evidence/*.log
+!reports/tool-evidence/*.json
+!reports/tool-evidence/*.md

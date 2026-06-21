@@ -1,0 +1,14 @@
+
+> astralforge-senior-engineer-skills@3.0.0 test:unit
+> vitest run --reporter=dot
+
+
+ RUN  v4.1.9 /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert
+
+········
+
+ Test Files  4 passed (4)
+      Tests  8 passed (8)
+   Start at  05:11:55
+   Duration  330ms (transform 157ms, setup 0ms, import 257ms, tests 53ms, environment 1ms)
+

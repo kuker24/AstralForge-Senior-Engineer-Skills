@@ -1,0 +1,8 @@
+
+> astralforge-senior-engineer-skills@3.0.0 verify:skills
+> bash scripts/verify-source-skills.sh
+
+AstralForge source skill verification
+Total source skills: 83
+Unique skill names: 83
+Status: OK

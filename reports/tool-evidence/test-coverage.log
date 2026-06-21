@@ -1,0 +1,28 @@
+
+> astralforge-senior-engineer-skills@3.0.0 test:coverage
+> vitest run --coverage --reporter=dot
+
+
+ RUN  v4.1.9 /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert
+      Coverage enabled with v8
+
+········
+
+ Test Files  4 passed (4)
+      Tests  8 passed (8)
+   Start at  05:11:56
+   Duration  386ms (transform 129ms, setup 0ms, import 271ms, tests 61ms, environment 1ms)
+
+ % Coverage report from v8
+----------|---------|----------|---------|---------|-------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------|---------|----------|---------|---------|-------------------
+All files |       0 |        0 |       0 |       0 |                   
+----------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : Unknown% ( 0/0 )
+Branches     : Unknown% ( 0/0 )
+Functions    : Unknown% ( 0/0 )
+Lines        : Unknown% ( 0/0 )
+================================================================================
