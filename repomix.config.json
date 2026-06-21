@@ -1,0 +1,27 @@
+{
+  "$schema": "https://repomix.com/schemas/latest/schema.json",
+  "output": {
+    "filePath": "repomix-output.xml",
+    "style": "xml",
+    "compress": true,
+    "fileSummary": true,
+    "directoryStructure": true,
+    "removeComments": false
+  },
+  "ignore": {
+    "customPatterns": [
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      ".next/**",
+      ".nuxt/**",
+      ".git/**",
+      ".env",
+      ".env.*",
+      "*.log",
+      "coverage/**",
+      "semgrep-results.json",
+      "repomix-output.*"
+    ]
+  }
+}

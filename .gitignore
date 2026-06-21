@@ -59,3 +59,7 @@ pi/
 # Runtime state
 sessions/
 trigger.txt
+
+# Local tool outputs
+semgrep-results.json
+repomix-output.*

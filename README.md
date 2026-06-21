@@ -14,6 +14,33 @@ Kumpulan **83 Agent Skills** untuk Full Stack Developer.
 
 ---
 
+## 🧰 AI Agent Tooling
+
+Repo ini juga menyertakan konfigurasi lokal untuk tool pendukung coding AI agent:
+
+| Tool | Status | Catatan |
+|------|--------|---------|
+| Context7 Pi | Supported | Install via `pi install npm:@upstash/context7-pi` tanpa API key/login |
+| Serena MCP | Supported | CLI/MCP via `uv tool install -p 3.13 serena-agent` |
+| Semgrep CE | Supported | Scan lokal tanpa login: `semgrep scan --config p/default --metrics=off` |
+| Repomix | Supported | Generate konteks repo: `repomix --compress` |
+| OMNI | Supported | Tetap aktif untuk distilasi output terminal |
+
+Helper lokal:
+
+```bash
+bash scripts/ai-checks.sh
+```
+
+Output lokal yang diabaikan Git:
+
+```txt
+semgrep-results.json
+repomix-output.*
+```
+
+---
+
 ## 📊 Statistik
 
 | Kategori | Jumlah |
@@ -281,6 +308,6 @@ Each skill may have its own license. Check individual `references/sources.md` fi
 
 ---
 
-**Version**: 2.1.0
-**Last Updated**: 2026-05-29
+**Version**: 2.2.0
+**Last Updated**: 2026-06-21
 **Total Skills**: 83

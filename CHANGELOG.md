@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [2.2.0] - 2026-06-21
+
+### Added
+- Added `AGENTS.md` with AI agent project rules, setup guidance, Context7/Serena/Semgrep/Repomix usage notes, and review-output expectations.
+- Added `scripts/ai-checks.sh` helper for local OMNI stats, Semgrep CE scan, and Repomix context generation.
+- Added `repomix.config.json` with safe ignore patterns and compressed XML output configuration.
+
+### Updated
+- Updated `.gitignore` to ignore local AI-tool outputs:
+  - `semgrep-results.json`
+  - `repomix-output.*`
+- Documented AI agent tooling in `README.md`.
+
+### Notes
+- Context7 Pi is intended to run without API key/login using Pi package install.
+- Serena MCP setup is supported for Claude Code and Codex via Serena's official setup commands.
+- Semgrep CE is local/no-login only; use `p/default` with `--metrics=off` if `--config auto` rejects metrics-off mode.
+- OMNI remains active and unchanged.
+
+---
+
 ## [2.1.0] - 2026-05-29
 
 ### Updated
