@@ -1,458 +1,114 @@
 # Skills Manifest
 
-Complete list of all 55 skills in the Pro Fullstack Developer Skills collection.
+Complete list of all 83 skills in the AstralForge Senior Engineer Skills collection.
 
 ---
 
-## 📊 Summary
-
-| Category | Count |
-|----------|-------|
-| Creative & Design | 7 |
-| Frontend Development | 5 |
-| Backend Development | 4 |
-| Security | 2 |
-| Testing & QA | 5 |
-| Debugging | 1 |
-| Performance | 1 |
-| Refactoring | 1 |
-| Code Review | 1 |
-| DevOps & Deployment | 3 |
-| Document Processing | 4 |
-| Documentation | 2 |
-| Integration | 3 |
-| Planning & Orchestration | 8 |
-| Setup & Configuration | 2 |
-| Media | 1 |
-| Meta Skills | 5 |
-| **Total** | **55** |
-
----
-
-## 🔗 Skill Sources
-
-| Source | Repository | Skills |
-|--------|------------|--------|
-| **Anthropic** | [github.com/anthropics/skills](https://github.com/anthropics/skills) | algorithmic-art, brand-guidelines, canvas-design, claude-api, doc-coauthoring, docx, frontend-design, internal-comms, mcp-builder, pdf, pptx, skill-creator, slack-gif-creator, theme-factory, webapp-testing, web-artifacts-builder, xlsx |
-| **OpenAI** | [github.com/openai/skills](https://github.com/openai/skills) | skill-installer, plugin-creator, openai-docs, imagegen, gh-fix-ci, playwright |
-| **Community** | Various | api-patterns, database-design, deployment-procedures, lint-and-validate, python-patterns |
-| **Custom** | Local | full-* series, claude-frontend-design, claude-skill, claude-skill-creator, deep-research, kiro-skill, spec-kit-skill, nanobanana-skill, youtube-transcribe-skill, react-best-practices, supabase-postgres-best-practices, autonomous-skill |
-
----
-
-## 📋 Complete Skill List
-
-### 1. algorithmic-art
-- **Category**: Creative & Design
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration.
-- **Use When**: Users request creating art using code, generative art, algorithmic art, flow fields, or particle systems.
-- **Keywords**: art, generative, algorithmic, p5.js, creative
-
-### 2. api-patterns
-- **Category**: Backend Development
-- **Source**: Community
-- **Description**: API design principles and decision-making. REST vs GraphQL vs tRPC selection, response formats, versioning, pagination.
-- **Use When**: Designing APIs, choosing API style, planning API architecture.
-- **Keywords**: API, REST, GraphQL, tRPC, backend
-
-### 3. autonomous-skill
-- **Category**: Planning & Orchestration
-- **Source**: Custom
-- **Description**: Long-running task execution with task decomposition, progress tracking, and autonomous execution.
-- **Use When**: User wants to execute long-running tasks that require multiple sessions to complete.
-- **Keywords**: autonomous, long-running, multi-session
-
-### 4. brand-guidelines
-- **Category**: Creative & Design
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Applies Anthropic's official brand colors and typography to any sort of artifact.
-- **Use When**: Brand colors or style guidelines, visual formatting, or company design standards apply.
-- **Keywords**: branding, Anthropic, colors, typography
-
-### 5. canvas-design
-- **Category**: Creative & Design
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Create beautiful visual art in .png and .pdf documents using design philosophy.
-- **Use When**: User asks to create a poster, piece of art, design, or other static piece.
-- **Keywords**: design, poster, art, visual, canvas
-
-### 6. claude-api
-- **Category**: Integration
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Build apps with the Claude API or Anthropic SDK.
-- **Use When**: Code imports `anthropic`/`@anthropic-ai/sdk`/`claude_agent_sdk`, or user asks to use Claude API.
-- **Keywords**: Claude API, Anthropic SDK, integration
-
-### 7. claude-frontend-design
-- **Category**: Frontend Development
-- **Source**: Custom (Anthropic fork)
-- **Description**: Create distinctive, production-grade frontend interfaces with high design quality.
-- **Use When**: User asks to build web components, pages, artifacts, posters, or applications.
-- **Keywords**: frontend, UI, design, React, web
-
-### 8. claude-skill
-- **Category**: Planning & Orchestration
-- **Source**: Custom
-- **Description**: Non-interactive automation mode for hands-off task execution.
-- **Use When**: User wants to leverage Claude or Claude Code to do something.
-- **Keywords**: automation, non-interactive, hands-off
-
-### 9. claude-skill-creator
-- **Category**: Meta Skills
-- **Source**: Custom (Anthropic fork)
-- **Description**: Create new skills, modify and improve existing skills, and measure skill performance.
-- **Use When**: Users want to create a skill from scratch, edit, or optimize an existing skill.
-- **Keywords**: skill creation, optimization, evaluation
-
-### 10. database-design
-- **Category**: Backend Development
-- **Source**: Community
-- **Description**: Database design principles and decision-making. Schema design, indexing strategy, ORM selection.
-- **Use When**: Designing database schemas, choosing databases, planning data architecture.
-- **Keywords**: database, schema, SQL, NoSQL, ORM
-
-### 11. deep-research
-- **Category**: Planning & Orchestration
-- **Source**: Custom
-- **Description**: Multi-agent research workflow for systematic web/data research.
-- **Use When**: User mentions deep research, wide research, or multi-agent parallel research.
-- **Keywords**: research, multi-agent, analysis
-
-### 12. deployment-procedures
-- **Category**: DevOps & Deployment
-- **Source**: Community
-- **Description**: Production deployment principles and decision-making.
-- **Use When**: Planning deployments, release strategies, rollback procedures.
-- **Keywords**: deployment, release, DevOps
-
-### 13. doc-coauthoring
-- **Category**: Documentation
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Guide users through a structured workflow for co-authoring documentation.
-- **Use When**: User wants to write documentation, proposals, technical specs, decision docs.
-- **Keywords**: documentation, writing, specs
-
-### 14. docx
-- **Category**: Document Processing
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Create, read, edit, or manipulate Word documents (.docx files).
-- **Use When**: Any mention of 'Word doc', 'word document', '.docx', or professional documents.
-- **Keywords**: Word, docx, document
-
-### 15. frontend-design
-- **Category**: Frontend Development
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Create distinctive, production-grade frontend interfaces with high design quality.
-- **Use When**: User asks to build web components, pages, or applications.
-- **Keywords**: frontend, UI, design
-
-### 16. full-audit-keamanan
-- **Category**: Security
-- **Source**: Custom
-- **Description**: Broad defensive security audits across code, config, auth, secrets, supply chain.
-- **Use When**: Security audit needed across multiple domains.
-- **Keywords**: security, audit, defensive
-
-### 17. full-brainstorm
-- **Category**: Planning & Orchestration
-- **Source**: Custom
-- **Description**: Structured ideation when options must be evaluated against explicit constraints.
-- **Use When**: Need structured brainstorming with evaluation criteria.
-- **Keywords**: brainstorm, ideation, planning
-
-### 18. full-bug-hunter
-- **Category**: Testing & QA
-- **Source**: Custom
-- **Description**: Broad defect discovery across flows, edge cases, async state, integration.
-- **Use When**: Looking for bugs across multiple dimensions.
-- **Keywords**: bugs, defects, QA
-
-### 19. full-debug
-- **Category**: Debugging
-- **Source**: Custom
-- **Description**: Root-cause debugging for concrete failing behaviors.
-- **Use When**: One concrete failing behavior requiring root-cause debugging.
-- **Keywords**: debug, root cause, fixing
-
-### 20. full-init
-- **Category**: Setup & Configuration
-- **Source**: Custom
-- **Description**: First-pass repository onboarding: inventory, environment checks, dependencies.
-- **Use When**: Setting up a new repository or onboarding to existing one.
-- **Keywords**: init, setup, onboarding
-
-### 21. full-master-plan
-- **Category**: Planning & Orchestration
-- **Source**: Custom
-- **Description**: Phased execution plans where sequencing and delivery strategy matter.
-- **Use When**: Need a structured execution plan with phases.
-- **Keywords**: planning, phases, execution
-
-### 22. full-optimize-performa
-- **Category**: Performance
-- **Source**: Custom
-- **Description**: Measurable performance work: latency, throughput, memory, jank, bundle size.
-- **Use When**: Performance optimization needed.
-- **Keywords**: performance, optimization, latency
-
-### 23. full-orchestrator-max-otonom
-- **Category**: Planning & Orchestration
-- **Source**: Custom
-- **Description**: Broad multi-phase engineering work that spans several specialist areas.
-- **Use When**: Complex projects requiring orchestration across domains.
-- **Keywords**: orchestration, multi-phase, engineering
-
-### 24. full-refactoring-max
-- **Category**: Refactoring
-- **Source**: Custom
-- **Description**: Deep structural refactors that must preserve behavior and improve maintainability.
-- **Use When**: Major refactoring needed while preserving functionality.
-- **Keywords**: refactoring, restructuring, maintainability
-
-### 25. full-review
-- **Category**: Code Review
-- **Source**: Custom
-- **Description**: Thorough code, architecture, PR, or repository-health reviews.
-- **Use When**: Code review or architecture review needed.
-- **Keywords**: review, code review, architecture
-
-### 26. full-security
-- **Category**: Security
-- **Source**: Custom
-- **Description**: Design or implement security hardening controls, secure defaults, and operational guardrails.
-- **Use When**: Security hardening or secure implementation needed.
-- **Keywords**: security, hardening, guardrails
-
-### 27. full-setup-project
-- **Category**: Setup & Configuration
-- **Source**: Custom
-- **Description**: Scaffold or standardize a project foundation, tooling, environments, CI, tests.
-- **Use When**: Setting up new project with proper structure.
-- **Keywords**: setup, scaffold, project
-
-### 28. full-test
-- **Category**: Testing & QA
-- **Source**: Custom
-- **Description**: Design or strengthen unit, integration, contract, E2E, and regression test strategy.
-- **Use When**: Test strategy design or improvement needed.
-- **Keywords**: testing, unit tests, integration, E2E
-
-### 29. gh-fix-ci
-- **Category**: DevOps & Deployment
-- **Source**: OpenAI ([GitHub](https://github.com/openai/skills))
-- **Description**: Debug or fix failing GitHub PR checks that run in GitHub Actions.
-- **Use When**: GitHub Actions CI failing.
-- **Keywords**: GitHub Actions, CI, debugging
-
-### 30. github
-- **Category**: DevOps & Deployment
-- **Source**: Custom
-- **Description**: GitHub patterns using gh CLI for pull requests, stacked PRs, code review.
-- **Use When**: Working with GitHub PRs, merging strategies, repository management.
-- **Keywords**: GitHub, PR, branching
-
-### 31. imagegen
-- **Category**: Creative & Design
-- **Source**: OpenAI ([GitHub](https://github.com/openai/skills))
-- **Description**: Generate or edit raster images when the task benefits from AI-created bitmap visuals.
-- **Use When**: Creating brand-new images, transforming existing images, or deriving visual variants.
-- **Keywords**: image, generation, bitmap, AI art
-
-### 32. internal-comms
-- **Category**: Documentation
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Resources to help write all kinds of internal communications.
-- **Use When**: Writing status reports, leadership updates, company newsletters, FAQs.
-- **Keywords**: communications, reports, newsletters
-
-### 33. kiro-skill
-- **Category**: Planning & Orchestration
-- **Source**: Custom
-- **Description**: Interactive feature development workflow from idea to implementation.
-- **Use When**: Creating feature specs, requirements documents, design documents.
-- **Keywords**: features, requirements, specs
-
-### 34. lint-and-validate
-- **Category**: Testing & QA
-- **Source**: Community
-- **Description**: Run appropriate validation tools after EVERY code change.
-- **Use When**: After making code changes, always run validation.
-- **Keywords**: lint, validate, quality
-
-### 35. mcp-builder
-- **Category**: Integration
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Guide for creating high-quality MCP (Model Context Protocol) servers.
-- **Use When**: Building MCP servers to integrate external APIs or services.
-- **Keywords**: MCP, server, integration
-
-### 36. nanobanana-skill
-- **Category**: Creative & Design
-- **Source**: Custom
-- **Description**: Generate or edit images using Google Gemini API via nanobanana.
-- **Use When**: User asks to create, generate, edit images with nanobanana.
-- **Keywords**: image, Gemini, nanobanana
-
-### 37. openai-docs
-- **Category**: Integration
-- **Source**: OpenAI ([GitHub](https://github.com/openai/skills))
-- **Description**: Use when user asks how to build with OpenAI products or APIs.
-- **Use When**: Need up-to-date OpenAI documentation with citations.
-- **Keywords**: OpenAI, API, documentation
-
-### 38. pdf
-- **Category**: Document Processing
-- **Source**: OpenAI ([GitHub](https://github.com/openai/skills))
-- **Description**: Use this skill whenever the user wants to do anything with PDF files.
-- **Use When**: Reading, extracting, combining, splitting, or creating PDFs.
-- **Keywords**: PDF, document, extract
-
-### 39. playwright
-- **Category**: Testing & QA
-- **Source**: OpenAI ([GitHub](https://github.com/openai/skills))
-- **Description**: Automating a real browser from the terminal.
-- **Use When**: Task requires browser automation (navigation, form filling, screenshots).
-- **Keywords**: browser, automation, Playwright
-
-### 40. plugin-creator
-- **Category**: Meta Skills
-- **Source**: OpenAI ([GitHub](https://github.com/openai/skills))
-- **Description**: Create and scaffold plugin directories for Codex.
-- **Use When**: Creating a new local plugin or adding plugin structure.
-- **Keywords**: plugin, scaffold, Codex
-
-### 41. pptx
-- **Category**: Document Processing
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Create, read, edit, or manipulate PowerPoint presentations (.pptx files).
-- **Use When**: Any .pptx file is involved - creating, reading, editing presentations.
-- **Keywords**: PowerPoint, presentation, slides
-
-### 42. python-patterns
-- **Category**: Backend Development
-- **Source**: Community
-- **Description**: Python development principles and decision-making.
-- **Use When**: Python project structure, framework selection, async patterns.
-- **Keywords**: Python, patterns, backend
-
-### 43. react-best-practices
-- **Category**: Frontend Development
-- **Source**: Vercel
-- **Description**: React and Next.js performance optimization guidelines from Vercel Engineering.
-- **Use When**: Writing, reviewing, or refactoring React/Next.js code.
-- **Keywords**: React, Next.js, performance
-
-### 44. skill-creator
-- **Category**: Meta Skills
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Guide for creating effective skills.
-- **Use When**: Users want to create a new skill or update existing skill.
-- **Keywords**: skill creation, guide
-
-### 45. skill-installer
-- **Category**: Meta Skills
-- **Source**: OpenAI ([GitHub](https://github.com/openai/skills))
-- **Description**: Install Codex skills into $CODEX_HOME/skills.
-- **Use When**: User asks to list installable skills or install a skill.
-- **Keywords**: skill installation, Codex
-
-### 46. slack-gif-creator
-- **Category**: Creative & Design
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Knowledge and utilities for creating animated GIFs optimized for Slack.
-- **Use When**: Users request animated GIFs for Slack.
-- **Keywords**: GIF, Slack, animation
-
-### 47. spec-kit-skill
-- **Category**: Planning & Orchestration
-- **Source**: GitHub
-- **Description**: GitHub Spec-Kit integration for constitution-based spec-driven development.
-- **Use When**: Working with spec-kit CLI or creating specifications.
-- **Keywords**: spec, constitution, requirements
-
-### 48. supabase-postgres-best-practices
-- **Category**: Backend Development
-- **Source**: Supabase
-- **Description**: Postgres performance optimization and best practices from Supabase.
-- **Use When**: Writing, reviewing, or optimizing Postgres queries.
-- **Keywords**: Postgres, Supabase, database
-
-### 49. template-skill
-- **Category**: Meta Skills
-- **Source**: Custom
-- **Description**: Template skill for creating new skills.
-- **Use When**: Creating a new skill from template.
-- **Keywords**: template, skill
-
-### 50. theme-factory
-- **Category**: Creative & Design
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Toolkit for styling artifacts with a theme.
-- **Use When**: Applying themes to slides, docs, reports, HTML pages.
-- **Keywords**: theme, styling, design
-
-### 51. ui-ux-pro-max
-- **Category**: Frontend Development
-- **Source**: Custom
-- **Description**: UI/UX design intelligence. 50 styles, 21 palettes, 50 font pairings.
-- **Use When**: UI/UX design tasks, styling, accessibility, animation.
-- **Keywords**: UI, UX, design, accessibility
-
-### 52. web-artifacts-builder
-- **Category**: Frontend Development
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts.
-- **Use When**: Complex artifacts requiring state management, routing, or shadcn/ui components.
-- **Keywords**: artifacts, HTML, React, Tailwind
-
-### 53. webapp-testing
-- **Category**: Testing & QA
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Toolkit for interacting with and testing local web applications using Playwright.
-- **Use When**: Verifying frontend functionality, debugging UI behavior, capturing screenshots.
-- **Keywords**: testing, web app, Playwright
-
-### 54. xlsx
-- **Category**: Document Processing
-- **Source**: Anthropic ([GitHub](https://github.com/anthropics/skills))
-- **Description**: Use this skill any time a spreadsheet file is the primary input or output.
-- **Use When**: Working with .xlsx, .xlsm, .csv, or .tsv files.
-- **Keywords**: spreadsheet, Excel, CSV
-
-### 55. youtube-transcribe-skill
-- **Category**: Media
-- **Source**: Custom
-- **Description**: Extract subtitles/transcripts from a YouTube video URL.
-- **Use When**: Need to extract subtitles from a YouTube video.
-- **Keywords**: YouTube, transcript, subtitles
-
----
-
-## 📦 Installation
-
-See [README.md](README.md) for installation instructions.
-
----
-
-## 🔄 Version History
-
-| Date | Version | Changes |
-|------|---------|---------|
-| 2026-05-24 | 1.0.0 | Initial release with 55 skills |
-| 2026-05-24 | 1.0.1 | Updated 7 skills from official repositories |
-
----
-
-## 📝 License
-
-Each skill may have its own license. Check individual `SKILL.md` files for details.
-
----
-
-## 🔗 Related Links
-
-- [Anthropic Skills](https://github.com/anthropics/skills)
-- [OpenAI Skills](https://github.com/openai/skills)
-- [Pi Documentation](https://github.com/badlogic/pi-mono)
-- [Agent Skills Specification](https://agentskills.io/specification)
+## Summary
+
+| Metric | Value |
+|--------|-------|
+| Total source skills | 83 |
+| Skills with `SKILL.md` | 83 |
+| Unique frontmatter names | 83 |
+
+## Skills
+
+| # | Folder | Frontmatter name | Description |
+|---:|--------|------------------|-------------|
+| 1 | `ai-ml-integration` | `ai-ml-integration` | Integrate AI/ML capabilities into applications. Use when implementing OpenAI API, embeddings, RAG, tool calling, or building AI-powered features. |
+| 2 | `algorithmic-art` | `algorithmic-art` | Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations. |
+| 3 | `api-patterns` | `api-patterns` | API design principles and decision-making. REST vs GraphQL vs tRPC selection, response formats, versioning, pagination. |
+| 4 | `authentication` | `authentication` | Implement authentication and authorization. Use when setting up JWT, OAuth, session management, passkeys, or integrating with Auth.js/NextAuth. |
+| 5 | `autonomous-skill` | `autonomous-skill` | Use when user wants to execute long-running tasks that require multiple sessions to complete. This skill manages task decomposition, progress tracking, and autonomous execution using Codex non-interactive mode with auto-continuation. Trigger phrases include autonomous, long-running task, multi-session, 自主执行, 长时任务, autonomous skill. |
+| 6 | `aws-cloud` | `aws-cloud` | Deploy and manage applications on AWS. Use when setting up Lambda, API Gateway, S3, DynamoDB, or implementing serverless architectures. |
+| 7 | `brand-guidelines` | `brand-guidelines` | Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply. |
+| 8 | `canvas-design` | `canvas-design` | Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations. |
+| 9 | `cicd-pipeline` | `cicd-pipeline` | Set up CI/CD pipelines with GitHub Actions or GitLab CI. Use when automating testing, building, deploying, or implementing DevOps workflows. |
+| 10 | `claude-api` | `claude-api` | Build, debug, and optimize Claude API / Anthropic SDK apps. Apps built with this skill should include prompt caching. Also handles migrating existing Claude API code between Claude model versions (4.5 → 4.6, 4.6 → 4.7, retired-model replacements). TRIGGER when: code imports `anthropic`/`@anthropic-ai/sdk`; user asks for the Claude API, Anthropic SDK, or Managed Agents; user adds/modifies/tunes a Claude feature (caching, thinking, compaction, tool use, batch, files, citations, memory) or model (Opus/Sonnet/Haiku) in a file; questions about prompt caching / cache hit rate in an Anthropic SDK project. SKIP: file imports `openai`/other-provider SDK, filename like `*-openai.py`/`*-generic.py`, provider-neutral code, general programming/ML. |
+| 11 | `claude-frontend-design` | `claude-frontend-design` | Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics. |
+| 12 | `claude-skill` | `claude-skill` | Use when user asks to leverage claude or claude code to do something (e.g. implement a feature design or review codes, etc). Provides non-interactive automation mode for hands-off task execution without approval prompts. |
+| 13 | `claude-skill-creator` | `claude-skill-creator` | Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy. |
+| 14 | `database-design` | `database-design` | Database design principles and decision-making. Schema design, indexing strategy, ORM selection, serverless databases. |
+| 15 | `deep-research` | `deep-research` | 深度调研的多实例（多 Agent）编排工作流：把一个调研目标拆成可并行子目标，用 Codex CLI（`codex exec`）在默认 `workspace-write` 沙箱内运行子进程；联网与采集优先使用已安装的 skills，其次使用 MCP 工具；用脚本聚合子结果并分章精修，最终交付“成品报告文件路径 + 关键结论/建议摘要”。用于：系统性网页/资料调研、竞品/行业分析、批量链接/数据集分片检索、长文写作与证据整合，或用户提及“深度调研/Deep Research/Wide Research/多 Agent 并行调研/多进程调研”等场景。 |
+| 16 | `deployment-procedures` | `deployment-procedures` | Production deployment principles and decision-making. Safe deployment workflows, rollback strategies, and verification. Teaches thinking, not scripts. |
+| 17 | `doc-coauthoring` | `doc-coauthoring` | Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks. |
+| 18 | `docker-kubernetes` | `docker-kubernetes` | Containerize applications with Docker and deploy to Kubernetes. Use when creating Dockerfiles, docker-compose, K8s manifests, or CI/CD pipelines. |
+| 19 | `docx` | `docx` | Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation. |
+| 20 | `frontend-design` | `frontend-design` | Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics. |
+| 21 | `full-api-design` | `full-api-design` | Design RESTful APIs with proper structure, versioning, pagination, and error handling. Use when planning API architecture or reviewing API contracts. |
+| 22 | `full-api-testing` | `full-api-testing` | Test APIs with contract testing, load testing, and security testing. Use when designing API test strategies, implementing contract tests, or load testing. |
+| 23 | `full-architecture-review` | `full-architecture-review` | Review system architecture for scalability, reliability, and maintainability. Use when evaluating architecture, planning scaling, or assessing technical debt. |
+| 24 | `full-audit-keamanan` | `full-audit-keamanan` | Use for broad defensive security audits across code, config, auth, secrets, supply chain, AI/LLM integrations, and deployment. |
+| 25 | `full-brainstorm` | `full-brainstorm` | Use for structured ideation when options must be evaluated against explicit constraints. |
+| 26 | `full-bug-hunter` | `full-bug-hunter` | Use for broad defect discovery across flows, edge cases, async state, integration, and tests. |
+| 27 | `full-data-pipeline` | `full-data-pipeline` | Build data pipelines for ETL/ELT processes. Use when designing data flows, implementing transformations, or setting up data quality checks. |
+| 28 | `full-database-migration` | `full-database-migration` | Plan and execute database migrations with zero downtime. Use when designing migration strategies, implementing rollbacks, or managing schema changes. |
+| 29 | `full-debug` | `full-debug` | Use for one concrete failing behavior requiring root-cause debugging and a fix. |
+| 30 | `full-dependency-audit` | `full-dependency-audit` | Audit dependencies for security vulnerabilities, license compliance, and updates. Use when reviewing dependencies, fixing vulnerabilities, or planning updates. |
+| 31 | `full-infrastructure-as-code` | `full-infrastructure-as-code` | Manage infrastructure as code with Terraform, Pulumi, or CloudFormation. Use when provisioning cloud resources, managing environments, or implementing GitOps. |
+| 32 | `full-init` | `full-init` | Use for first-pass repository onboarding: inventory, environment checks, dependencies, build/test readiness. |
+| 33 | `full-master-plan` | `full-master-plan` | Use for phased execution plans where sequencing and delivery strategy matter. |
+| 34 | `full-optimize-performa` | `full-optimize-performa` | Use for measurable performance work: latency, throughput, memory, jank, bundle size, or resource usage. |
+| 35 | `full-orchestrator-max-otonom` | `full-orchestrator-max-otonom` | Use only for broad multi-phase engineering work that spans several specialist areas. |
+| 36 | `full-performance-audit` | `full-performance-audit` | Audit application performance including latency, throughput, memory, and bundle size. Use when profiling applications, identifying bottlenecks, or optimizing performance. |
+| 37 | `full-refactoring-max` | `full-refactoring-max` | Use for deep structural refactors that must preserve behavior and improve maintainability. |
+| 38 | `full-review` | `full-review` | Use for thorough code, architecture, PR, or repository-health reviews. |
+| 39 | `full-security` | `full-security` | Use to design or implement security hardening controls, secure defaults, and operational guardrails. |
+| 40 | `full-setup-project` | `full-setup-project` | Use to scaffold or standardize a project foundation, tooling, environments, CI, tests, and docs. |
+| 41 | `full-test` | `full-test` | Use to design or strengthen unit, integration, contract, E2E, and regression test strategy. |
+| 42 | `gh-fix-ci` | `gh-fix-ci` | Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after explicit approval. Treat external providers (for example Buildkite) as out of scope and report only the details URL. |
+| 43 | `github` | `github` | GitHub patterns using gh CLI for pull requests, stacked PRs, code review, branching strategies, and repository automation. Use when working with GitHub PRs, merging strategies, or repository management tasks. |
+| 44 | `graphql-impl` | `graphql-impl` | Implement GraphQL APIs with Apollo Server or similar. Use when building GraphQL schemas, resolvers, or integrating with frontend clients. |
+| 45 | `imagegen` | `imagegen` | Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas. |
+| 46 | `internal-comms` | `internal-comms` | A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.). |
+| 47 | `kiro-skill` | `kiro-skill` | Interactive feature development workflow from idea to implementation. Creates requirements (EARS format), design documents, and implementation task lists. Use when creating feature specs, requirements documents, design documents, or implementation plans. Triggered by "kiro" or references to .kiro/specs/ directory. |
+| 48 | `lint-and-validate` | `lint-and-validate` | MANDATORY: Run appropriate validation tools after EVERY code change. Do not finish a task until the code is error-free. |
+| 49 | `mcp-builder` | `mcp-builder` | Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK). |
+| 50 | `message-queue` | `message-queue` | Implement message queues with RabbitMQ or Kafka for async processing. Use when building event-driven systems, background jobs, or microservice communication. |
+| 51 | `microservices` | `microservices` | Design and implement microservices architecture. Use when decomposing monoliths, designing service boundaries, or implementing distributed systems. |
+| 52 | `mongodb` | `mongodb` | Work with MongoDB for NoSQL database operations. Use when designing schemas, implementing queries, aggregations, or setting up connection management. |
+| 53 | `monitoring-logging` | `monitoring-logging` | Implement monitoring, logging, and observability. Use when setting up structured logging, metrics, tracing, or alerting systems. |
+| 54 | `nanobanana-skill` | `nanobanana-skill` | Generate or edit images using Google Gemini API via nanobanana. Use when the user asks to create, generate, edit images with nanobanana, or mentions image generation/editing tasks. |
+| 55 | `nextjs` | `nextjs` | Build full-stack React applications with Next.js. Use when creating SSR/SSG apps, API routes, or implementing App Router patterns. |
+| 56 | `nodejs-express` | `nodejs-express` | Build REST APIs and web servers with Node.js and Express. Use when creating backend services, REST APIs, middleware, or server-side applications. |
+| 57 | `openai-docs` | `openai-docs` | Use when the user asks how to build with OpenAI products or APIs and needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; prioritize OpenAI docs MCP tools, use bundled references only as helper context, and restrict any fallback browsing to official OpenAI domains. |
+| 58 | `pdf` | `pdf` | Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction. |
+| 59 | `playwright` | `playwright` | Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script. |
+| 60 | `plugin-creator` | `plugin-creator` | Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use when Codex needs to create a new local plugin, add optional plugin structure, or generate or update repo-root `.agents/plugins/marketplace.json` entries for plugin ordering and availability metadata. |
+| 61 | `pptx` | `pptx` | Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx filename, regardless of what they plan to do with the content afterward. If a .pptx file needs to be opened, created, or touched, use this skill. |
+| 62 | `prisma-drizzle` | `prisma-drizzle` | Work with Prisma or Drizzle ORM for database operations. Use when designing schemas, running migrations, or implementing type-safe database queries. |
+| 63 | `python-patterns` | `python-patterns` | Python development principles and decision-making. Framework selection, async patterns, type hints, project structure. Teaches thinking, not copying. |
+| 64 | `react-best-practices` | `react-best-practices` | React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements. |
+| 65 | `react-native-flutter` | `react-native-flutter` | Build mobile applications with React Native or Flutter. Use when creating cross-platform mobile apps, choosing between frameworks, or implementing native features. |
+| 66 | `redis` | `redis` | Use Redis for caching, session management, and real-time features. Use when implementing caching strategies, rate limiting, pub/sub, or distributed locks. |
+| 67 | `skill-creator` | `skill-creator` | Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy. |
+| 68 | `skill-installer` | `skill-installer` | Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos). |
+| 69 | `slack-gif-creator` | `slack-gif-creator` | Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like "make me a GIF of X doing Y for Slack. |
+| 70 | `spec-kit-skill` | `spec-kit-skill` | GitHub Spec-Kit integration for constitution-based spec-driven development. 7-phase workflow (constitution, specify, clarify, plan, tasks, analyze, implement). Use when working with spec-kit CLI, .specify/ directories, or creating specifications with constitution-driven development. Triggered by "spec-kit", "speckit", "constitution", "specify", references to .specify/ directory, or spec-kit commands. |
+| 71 | `supabase-postgres-best-practices` | `supabase-postgres-best-practices` | Postgres performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing Postgres queries, schema designs, or database configurations. |
+| 72 | `tailwind-css` | `tailwind-css` | Build responsive UI with Tailwind CSS. Use when styling components, creating design systems, or implementing utility-first CSS patterns. |
+| 73 | `template-skill` | `template-skill` | Replace with description of the skill and when Claude should use it. |
+| 74 | `theme-factory` | `theme-factory` | Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly. |
+| 75 | `typescript` | `typescript` | Write type-safe TypeScript code. Use when setting up TypeScript projects, defining types, migrating from JS, or implementing advanced type patterns. |
+| 76 | `ui-ux-pro-max` | `ui-ux-pro-max` | UI/UX design intelligence. 50 styles, 21 palettes, 50 font pairings, 20 charts, 9 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, mobile app, .html, .tsx, .vue, .svelte. Elements: button, modal, navbar, sidebar, card, table, form, chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, flat design. Topics: color palette, accessibility, animation, layout, typography, font pairing, spacing, hover, shadow, gradient. Integrations: shadcn/ui MCP for component search and examples. |
+| 77 | `vuejs-svelte` | `vuejs-svelte` | Build frontend applications with Vue.js or Svelte. Use when creating reactive UIs, single-page applications, or choosing between Vue and Svelte. |
+| 78 | `web-artifacts-builder` | `web-artifacts-builder` | Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts. |
+| 79 | `web3-blockchain` | `web3-blockchain` | Integrate Web3 and blockchain capabilities. Use when implementing wallet connections, smart contract interactions, or building decentralized applications. |
+| 80 | `webapp-testing` | `webapp-testing` | Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs. |
+| 81 | `websocket` | `websocket` | Implement real-time communication with WebSocket or Socket.IO. Use when building chat, live updates, notifications, or collaborative features. |
+| 82 | `xlsx` | `xlsx` | Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved. |
+| 83 | `youtube-transcribe-skill` | `youtube-transcribe-skill` | Extract subtitles/transcripts from a YouTube video URL and save as a local file. Use when you need to extract subtitles from a YouTube video. |
+
+## Verification
+
+Run:
+
+```bash
+npm run verify:skills
+./verify.sh
+```
+
+**Last Updated**: 2026-06-21
+**Version**: 3.0.0
+**Status**: Complete

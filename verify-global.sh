@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================================
-# Pro Fullstack Developer Skills - Global Verifier
+# AstralForge Senior Engineer Skills - Global Verifier
 # =============================================================================
 # Verifies that all skills are properly installed on all platforms
 #
@@ -31,7 +31,7 @@ AGENTS_SKILLS="$HOME/.agents/skills"
 # Header
 echo ""
 echo -e "${BLUE}=================================================${NC}"
-echo -e "${BLUE}  Pro Fullstack Developer Skills - Global Verifier${NC}"
+echo -e "${BLUE}  AstralForge Senior Engineer Skills - Global Verifier${NC}"
 echo -e "${BLUE}=================================================${NC}"
 echo ""
 

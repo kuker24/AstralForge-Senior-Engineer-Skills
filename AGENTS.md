@@ -1,8 +1,12 @@
 # AGENTS.md
 
+AstralForge Senior Engineer Skills is a local-first AI engineering skills package with senior-grade QA, security, review, and architecture-decision gates.
+
 ## Project Rules
 - Work carefully and make small, reviewable changes.
 - Do not delete files unless explicitly requested.
+- Do not push to GitHub unless the user explicitly asks for it.
+- Do not force push.
 - Do not commit secrets, tokens, API keys, `.env`, build artifacts, or private data.
 - Prefer reading existing patterns before adding new architecture.
 - Keep changes minimal and aligned with the current project structure.
@@ -36,6 +40,8 @@
 ## Useful Local Commands
 - Run AI helper checks: `bash scripts/ai-checks.sh`
 - Run full local QA/security checks: `bash scripts/ai-quality-checks.sh`
+- Run senior quality gate: `bash scripts/ai-senior-checks.sh`
+- Verify source skills: `npm run verify:skills`
 - Generate compressed repo context: `repomix --compress`
 - Run local security scan: `semgrep scan --config p/default --metrics=off`
 
@@ -70,6 +76,51 @@ When finishing coding tasks:
 6. Use OSV-Scanner for dependency vulnerability checks.
 7. Use Gitleaks before commits or sharing code.
 8. Use Knip before cleanup/refactor.
+
+## Senior Engineering Quality Gates
+
+Use local no-login quality gates before major commits or reviews.
+
+### Fast checks
+- Typecheck: `npm run typecheck`
+- Unit test: `npm run test:unit`
+- Coverage: `npm run test:coverage`
+- Skill manifest verification: `npm run verify:skills`
+- Pre-commit: `pre-commit run --all-files`
+
+### Security and dependency checks
+- Semgrep: `semgrep scan --config p/default --metrics=off`
+- OSV-Scanner: `osv-scanner scan source -r . --format json --output-file osv-results.json`
+- Gitleaks: `gitleaks dir --redact --report-format json --report-path gitleaks-dir-report.json .`
+
+### Review and cleanup
+- Knip: `npx knip`
+- Repomix: `repomix --compress`
+
+### Browser/E2E
+- Playwright: `npx playwright test --project=chromium`
+
+### Architecture decisions
+Use `docs/adr/` for major architecture/security/database/API/deployment decisions.
+Create an ADR before or during large refactors and important design changes.
+
+### Mutation testing
+StrykerJS is installed for advanced test-quality validation, but it is manual-only.
+Do not run:
+- `npm run mutation`
+- `npx stryker run`
+
+Run mutation testing only when the user explicitly asks for it.
+
+### Token discipline
+- Do not paste full logs into chat.
+- Use OMNI for long terminal output.
+- Store reports locally.
+- Summarize only:
+  - count of issues
+  - top severity
+  - affected files
+  - next recommended patches
 
 ## Review Output
 When finishing a task, report:

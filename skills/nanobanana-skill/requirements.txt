@@ -1,4 +1,7 @@
-python-dotenv
-httpx[socks]
-google-genai
-Pillow
+python-dotenv>=1.2.1
+httpx[socks]>=0.28.1
+google-genai>=1.53.0
+Pillow>=12.2.0
+idna>=3.18
+h11>=0.16.0
+h2>=4.3.0

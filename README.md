@@ -1,6 +1,12 @@
-# Pro Fullstack Developer Skills
+# AstralForge Senior Engineer Skills
 
-Kumpulan **83 Agent Skills** untuk Full Stack Developer.
+**Senior-grade AI engineering skills with local QA, security, and review gates.**
+
+AstralForge adalah paket **83 AI agent skills** untuk fullstack + UI/UX + senior engineering workflow, dilengkapi stack local no-login untuk QA, security, dependency review, secret scanning, type safety, unit testing, coverage, ADR, dan review packaging.
+
+- Package name: `astralforge-senior-engineer-skills`
+- Current target repository: `https://github.com/kuker24/AstralForge-Senior-Engineer-Skills`
+- Suggested repo name later: `AstralForge_SeniorEngineerSkills`
 
 ---
 
@@ -24,6 +30,11 @@ Repo ini juga menyertakan konfigurasi lokal untuk tool pendukung coding AI agent
 | Serena MCP | Supported | CLI/MCP via `uv tool install -p 3.13 serena-agent` |
 | Semgrep CE | Supported | Scan lokal tanpa login: `semgrep scan --config p/default --metrics=off` |
 | Repomix | Supported | Generate konteks repo: `repomix --compress` |
+| Vitest + Coverage | Supported | Unit test dan coverage: `npm run test:unit`, `npm run test:coverage` |
+| TypeScript | Supported | Strict typecheck lokal: `npm run typecheck` |
+| pre-commit | Supported | Hook lokal ringan: `pre-commit run --all-files` |
+| StrykerJS | Manual only | Mutation test manual: `npm run mutation`; jangan dijalankan otomatis |
+| ADR | Supported | Keputusan arsitektur di `docs/adr/` |
 | Playwright Test | Supported | E2E/browser testing lokal: `playwright test` atau `npx playwright test` |
 | OSV-Scanner | Supported | Dependency vulnerability scan lokal: `osv-scanner scan source -r . --format json --output-file osv-results.json` |
 | Gitleaks | Supported | Secret scan lokal: `gitleaks git --redact --report-format json --report-path gitleaks-report.json .` |
@@ -35,7 +46,27 @@ Helper lokal:
 ```bash
 bash scripts/ai-checks.sh
 bash scripts/ai-quality-checks.sh
+bash scripts/ai-senior-checks.sh
 ```
+
+Daily senior quality commands:
+
+```bash
+npm run typecheck
+npm run test:unit
+npm run test:coverage
+npm run verify:skills
+pre-commit run --all-files
+bash scripts/ai-senior-checks.sh
+```
+
+Manual-only mutation testing:
+
+```bash
+npm run mutation
+```
+
+> Do not run StrykerJS mutation testing unless explicitly requested.
 
 Output lokal yang diabaikan Git:
 
@@ -45,8 +76,11 @@ osv-results.json
 gitleaks-report.json
 gitleaks-dir-report.json
 repomix-output.*
+coverage/
 playwright-report/
 test-results/
+.stryker-tmp/
+mutation-report/
 .knip-cache/
 ```
 
@@ -319,6 +353,6 @@ Each skill may have its own license. Check individual `references/sources.md` fi
 
 ---
 
-**Version**: 2.3.0
+**Version**: 3.0.0
 **Last Updated**: 2026-06-21
 **Total Skills**: 83

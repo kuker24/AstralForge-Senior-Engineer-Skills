@@ -4,6 +4,47 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 3.0.0 - AstralForge Senior Engineer Skills
+
+### Added
+- Rebranded package to AstralForge Senior Engineer Skills.
+- Added source-only skill verification via `scripts/verify-source-skills.sh` and `npm run verify:skills`.
+- Added meaningful Vitest coverage for skill manifests, project config, and installer scripts.
+
+### Updated
+- Updated package metadata to `astralforge-senior-engineer-skills` version `3.0.0`.
+- Synchronized skill count documentation to the actual 83 source skills.
+- Strengthened senior local quality-gate documentation and scripts for Pi Code / Pi Agent usage.
+
+### Notes
+- StrykerJS remains manual-only and must not run unless explicitly requested.
+- Reports remain local and gitignored; no login, cloud upload, API key, push, or OMNI configuration change was performed.
+
+---
+
+## [2.4.0] - 2026-06-21
+
+### Added
+- Added senior local quality gates for AI-assisted development:
+  - Vitest unit test runner and V8 coverage.
+  - Strict TypeScript checking via `tsconfig.json` and `npm run typecheck`.
+  - Lightweight local pre-commit hooks for Gitleaks, typecheck, and unit tests.
+  - ADR documentation folder with template and local quality-gates ADR.
+  - StrykerJS mutation testing setup as manual-only.
+  - `scripts/ai-senior-checks.sh` for local on-demand senior quality checks.
+
+### Updated
+- Updated `AGENTS.md` with when to use fast checks, security checks, browser/E2E, ADRs, and manual-only mutation testing.
+- Updated `.gitignore` for coverage and mutation outputs.
+- Updated package scripts for unit tests, coverage, typecheck, senior quality checks, and manual mutation testing.
+
+### Notes
+- StrykerJS is installed but not run automatically and was not executed during setup.
+- No login, account creation, API key, cloud upload, or OMNI configuration changes were used.
+- Existing Context7 Pi, Serena, Semgrep, Repomix, Playwright, OSV-Scanner, Gitleaks, and Knip setup remains intact.
+
+---
+
 ## [2.3.0] - 2026-06-21
 
 ### Added

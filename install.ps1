@@ -1,5 +1,5 @@
 # =============================================================================
-# Pro Fullstack Developer Skills - Installer (Windows)
+# AstralForge Senior Engineer Skills - Installer (Windows)
 # =============================================================================
 # Installs all skills to ~/.pi/agent/skills/ for use with Pi/OpenClaude
 #
@@ -38,7 +38,7 @@ function Write-Status {
 # Header
 Write-Host ""
 Write-Host "=================================================" -ForegroundColor Cyan
-Write-Host "  Pro Fullstack Developer Skills - Installer" -ForegroundColor Cyan
+Write-Host "  AstralForge Senior Engineer Skills - Installer" -ForegroundColor Cyan
 Write-Host "=================================================" -ForegroundColor Cyan
 Write-Host ""
 

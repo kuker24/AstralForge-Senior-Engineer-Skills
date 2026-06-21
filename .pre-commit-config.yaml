@@ -1,0 +1,26 @@
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks-dir
+        name: Gitleaks secret scan
+        entry: gitleaks dir --redact .
+        language: system
+        pass_filenames: false
+
+      - id: typecheck
+        name: TypeScript typecheck
+        entry: npm run typecheck
+        language: system
+        pass_filenames: false
+
+      - id: unit-tests
+        name: Vitest unit tests
+        entry: npm run test:unit
+        language: system
+        pass_filenames: false
+
+      - id: verify-source-skills
+        name: Verify source skills
+        entry: npm run verify:skills
+        language: system
+        pass_filenames: false

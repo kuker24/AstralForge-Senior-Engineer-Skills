@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================================
-# Pro Fullstack Developer Skills - Global Installer
+# AstralForge Senior Engineer Skills - Global Installer
 # =============================================================================
 # Installs all skills to all platforms: Pi, OpenCode, Claude, Codex, Agents
 #
@@ -87,7 +87,7 @@ print_status() {
 # Header
 echo ""
 echo -e "${BLUE}=================================================${NC}"
-echo -e "${BLUE}  Pro Fullstack Developer Skills - Global Installer${NC}"
+echo -e "${BLUE}  AstralForge Senior Engineer Skills - Global Installer${NC}"
 echo -e "${BLUE}=================================================${NC}"
 echo ""
 

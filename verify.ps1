@@ -1,5 +1,5 @@
 # =============================================================================
-# Pro Fullstack Developer Skills - Verifier (Windows)
+# AstralForge Senior Engineer Skills - Verifier (Windows)
 # =============================================================================
 # Verifies that all skills are properly installed
 #
@@ -15,7 +15,7 @@ $SourceDir = Join-Path $ScriptDir "skills"
 # Header
 Write-Host ""
 Write-Host "=================================================" -ForegroundColor Cyan
-Write-Host "  Pro Fullstack Developer Skills - Verifier" -ForegroundColor Cyan
+Write-Host "  AstralForge Senior Engineer Skills - Verifier" -ForegroundColor Cyan
 Write-Host "=================================================" -ForegroundColor Cyan
 Write-Host ""
 

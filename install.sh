@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================================
-# Pro Fullstack Developer Skills - Installer
+# AstralForge Senior Engineer Skills - Installer
 # =============================================================================
 # Installs all skills to ~/.pi/agent/skills/ for use with Pi/OpenClaude
 #
@@ -81,7 +81,7 @@ print_status() {
 # Header
 echo ""
 echo -e "${BLUE}=================================================${NC}"
-echo -e "${BLUE}  Pro Fullstack Developer Skills - Installer${NC}"
+echo -e "${BLUE}  AstralForge Senior Engineer Skills - Installer${NC}"
 echo -e "${BLUE}=================================================${NC}"
 echo ""
 

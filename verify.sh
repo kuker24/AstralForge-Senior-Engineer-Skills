@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================================
-# Pro Fullstack Developer Skills - Verifier
+# AstralForge Senior Engineer Skills - Verifier
 # =============================================================================
 # Verifies that all skills are properly installed
 #
@@ -25,7 +25,7 @@ SOURCE_DIR="$SCRIPT_DIR/skills"
 # Header
 echo ""
 echo -e "${BLUE}=================================================${NC}"
-echo -e "${BLUE}  Pro Fullstack Developer Skills - Verifier${NC}"
+echo -e "${BLUE}  AstralForge Senior Engineer Skills - Verifier${NC}"
 echo -e "${BLUE}=================================================${NC}"
 echo ""
 
