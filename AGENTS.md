@@ -13,6 +13,15 @@ AstralForge Senior Engineer Skills is a local-first AI engineering skills packag
 - Prefer reading existing patterns before adding new architecture.
 - Keep changes minimal and aligned with the current project structure.
 
+## Akses Satu Api Custom Provider
+- Provider id: `akses-satu-api`. Base URL: `https://api.satuakses.top/v1`. Auth: `Authorization: Bearer $AKSES_SATU_API_KEY`.
+- Default model: `glm-4.6` (the only model verified through `POST /v1/chat/completions` in this environment).
+- Verified live models: `glm-4.6`, `claude-sonnet-4.6`, `cipher`, `idsa-v1.0`, `google-gemma-2-9b-it`, `mimo-v2.5`, `claude-opus-4.8`.
+- Configured (requested, not yet verified) models: `gpt-5.5`, `minimax-m3`, `mimo-v2.5-pro`, `deepseek-v4-pro`. Do not remove them from the union just because `/v1/models` does not list them yet.
+- Use `bash scripts/test-akses-satu-api.sh` for manual smoke test; the script must never print the API key and must classify `/responses` results honestly (no PASS for a model-list misroute).
+- Three Pi integration paths: native `pi --provider akses-satu-api` (after installer), `pi -e ./extensions/akses-satu-api-provider`, and `bash scripts/run-pi-akses-satu.sh` (launcher fallback).
+- Pi v0.79.9 does NOT honor `OPENAI_BASE_URL` for the built-in `openai` provider; the launcher therefore uses the native `akses-satu-api` provider id.
+
 ## Setup Commands
 - Detect the package manager from lockfiles before installing dependencies.
 - If `package-lock.json` exists, use `npm`.

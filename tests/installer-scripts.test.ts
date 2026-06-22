@@ -11,8 +11,13 @@ describe('installer scripts', () => {
     'verify.sh',
     'scripts/verify-source-skills.sh',
     'scripts/test-akses-satu-api.sh',
+    'scripts/run-pi-akses-satu.sh',
     'installer/install-pi-linux.sh',
     'installer/install-pi-windows.ps1',
+    'extensions/akses-satu-api-provider/index.ts',
+    'extensions/akses-satu-api-provider/package.json',
+    'installer/extensions/akses-satu-api-provider/index.ts',
+    'installer/extensions/akses-satu-api-provider/package.json',
   ];
 
   it('has important installer and verifier scripts', () => {

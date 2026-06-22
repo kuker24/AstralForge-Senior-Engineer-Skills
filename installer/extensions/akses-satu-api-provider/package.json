@@ -1,0 +1,11 @@
+{
+  "name": "akses-satu-api-provider",
+  "version": "1.0.0",
+  "description": "Pi custom OpenAI-compatible provider extension for Akses Satu Api (installer copy).",
+  "type": "module",
+  "main": "index.ts",
+  "private": true,
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.79.0"
+  }
+}

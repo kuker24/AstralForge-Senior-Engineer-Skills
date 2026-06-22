@@ -349,18 +349,30 @@ skill-name/
 
 ## Akses Satu Api Provider
 
-Akses Satu Api adalah custom OpenAI-compatible provider untuk Pi Code / Pi Agent.
+Akses Satu Api (`https://api.satuakses.top/v1`) adalah custom OpenAI-compatible
+provider untuk Pi Code / Pi Agent dan helper client lokal di repo ini.
 
 ```env
 AKSES_SATU_API_KEY=sk-sa-REPLACE_ME
 AKSES_SATU_BASE_URL=https://api.satuakses.top/v1
-AKSES_SATU_DEFAULT_MODEL=gpt-5.5
+AKSES_SATU_DEFAULT_MODEL=glm-4.6
 ```
 
-Available models:
+Default model: `glm-4.6` (verified live via `POST /v1/chat/completions`).
+
+Verified live models (enabled in `installer/config/settings.json`):
+
+- `glm-4.6`
+- `claude-sonnet-4.6`
+- `cipher`
+- `idsa-v1.0`
+- `google-gemma-2-9b-it`
+- `mimo-v2.5`
+- `claude-opus-4.8`
+
+Configured / requested models (kept in union, not yet verified):
 
 - `gpt-5.5`
-- `claude-opus-4.8`
 - `minimax-m3`
 - `mimo-v2.5-pro`
 - `deepseek-v4-pro`
@@ -371,7 +383,37 @@ Supported endpoints:
 - `POST /v1/chat/completions`
 - `POST /v1/responses`
 
-Do not commit real API keys. See [docs/providers/akses-satu-api.md](docs/providers/akses-satu-api.md) for details and manual smoke-test usage.
+Run Pi dengan provider ini (3 cara, diurutkan berdasarkan prioritas):
+
+```bash
+# 1. Native provider (setelah installer men-deploy models.json)
+pi --provider akses-satu-api --model glm-4.6
+
+# 2. Extension (tanpa installer)
+pi -e ./extensions/akses-satu-api-provider --provider akses-satu-api --model glm-4.6
+
+# 3. Launcher fallback
+bash scripts/run-pi-akses-satu.sh
+```
+
+Test API:
+
+```bash
+bash scripts/test-akses-satu-api.sh
+```
+
+> **Security:** API key hanya dibaca dari env var `AKSES_SATU_API_KEY`. Jangan
+> hardcode, commit, atau log key. `.env` dan `.env.*` di-gitignore; hanya
+> `.env.example` (placeholder) yang boleh di-commit.
+>
+> **Catatan launcher:** Pi v0.79.9 tidak membaca `OPENAI_BASE_URL` untuk
+> provider `openai` bawaan, sehingga launcher fallback memakai provider id
+> `akses-satu-api` (yang sudah ter-registrasi di `~/.pi/agent/models.json`
+> setelah installer berjalan) sebagai gantinya.
+
+See [docs/providers/akses-satu-api.md](docs/providers/akses-satu-api.md) for the
+full integration guide and [reports/pi-akses-satu-detection.md](reports/pi-akses-satu-detection.md)
+for the local Pi detection report.
 
 ---
 

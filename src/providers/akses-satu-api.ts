@@ -4,14 +4,49 @@ export const AKSES_SATU_API_KEY_ENV = 'AKSES_SATU_API_KEY';
 export const AKSES_SATU_BASE_URL_ENV = 'AKSES_SATU_BASE_URL';
 export const AKSES_SATU_DEFAULT_MODEL_ENV = 'AKSES_SATU_DEFAULT_MODEL';
 export const AKSES_SATU_DEFAULT_BASE_URL = 'https://api.satuakses.top/v1';
-export const AKSES_SATU_DEFAULT_MODEL = 'gpt-5.5';
 
-export const AKSES_SATU_MODELS = [
-  'gpt-5.5',
+/**
+ * Default model is `glm-4.6` because it is the only model verified end-to-end
+ * through `POST /v1/chat/completions` in this environment. Other "configured"
+ * models are kept in the union but not selected by default.
+ */
+export const AKSES_SATU_DEFAULT_MODEL = 'glm-4.6';
+
+/**
+ * Models verified live through `GET /v1/models` and (for `glm-4.6`) through
+ * `POST /v1/chat/completions`. These can be advertised as `enabled` in
+ * `~/.pi/agent/settings.json` and the installer config.
+ */
+export const AKSES_SATU_VERIFIED_LIVE_MODELS = [
+  'glm-4.6',
+  'claude-sonnet-4.6',
+  'cipher',
+  'idsa-v1.0',
+  'google-gemma-2-9b-it',
+  'mimo-v2.5',
   'claude-opus-4.8',
+] as const;
+
+/**
+ * Models requested by the user that have NOT yet been observed in the live
+ * `GET /v1/models` response. They are still part of the provider model union
+ * and may be tried, but they should not be listed as `enabledModels` until
+ * they have been verified.
+ */
+export const AKSES_SATU_CONFIGURED_MODELS = [
+  'gpt-5.5',
   'minimax-m3',
   'mimo-v2.5-pro',
   'deepseek-v4-pro',
+] as const;
+
+/**
+ * Full union of models for the provider. Order is preserved
+ * (verified-live first, then configured-only) and there are no duplicates.
+ */
+export const AKSES_SATU_MODELS = [
+  ...AKSES_SATU_VERIFIED_LIVE_MODELS,
+  ...AKSES_SATU_CONFIGURED_MODELS,
 ] as const;
 
 export const AKSES_SATU_ENDPOINTS = {
@@ -30,6 +65,8 @@ export interface AksesSatuApiProvider {
   apiKeyEnv: typeof AKSES_SATU_API_KEY_ENV;
   defaultModel: string;
   models: readonly string[];
+  verifiedLiveModels: readonly string[];
+  configuredModels: readonly string[];
   endpoints: typeof AKSES_SATU_ENDPOINTS;
 }
 
@@ -85,6 +122,8 @@ export function getAksesSatuApiProvider(env: NodeJS.ProcessEnv = process.env): A
     apiKeyEnv: AKSES_SATU_API_KEY_ENV,
     defaultModel: env[AKSES_SATU_DEFAULT_MODEL_ENV] ?? AKSES_SATU_DEFAULT_MODEL,
     models: AKSES_SATU_MODELS,
+    verifiedLiveModels: AKSES_SATU_VERIFIED_LIVE_MODELS,
+    configuredModels: AKSES_SATU_CONFIGURED_MODELS,
     endpoints: AKSES_SATU_ENDPOINTS,
   };
 }

@@ -7,22 +7,26 @@ All notable changes to this project will be documented in this file.
 ## Unreleased
 
 ### Added
-- Added evidence inventory for tooling, skills, and installer verification.
-- Added baseline GitHub Actions CI workflow for typecheck, unit tests, coverage, skill verification, Knip, and pre-commit.
-- Added dedicated GitHub Actions security workflow for Semgrep, OSV-Scanner, and Gitleaks.
-- Added CI setup evidence document.
-- Added security CI setup evidence document.
-- Fixed GitHub Actions release checksum verification to use official downloaded archive names.
-- Added substantive skill audit script and generated skill audit reports.
-- Updated README verification status to distinguish Verified, Supported, Manual only, Needs review, and Unverified claims.
-- Added architecture documentation for AstralForge layers, stack boundaries, CI role, and Python file audit.
-- Added installer sandbox options, installer audit report, and installer verification workflow matrix.
-- Added dogfooding evidence index and compact local tool evidence reports.
-- Added contribution, security, conduct, issue/PR templates, and contribution readiness evidence.
-- Added v3.1.0 draft release notes, release-process docs, and release-readiness report.
-- Added read-only GitHub Actions verification script, npm alias, and push/CI verification runbook.
-- Fixed GitHub Actions verification watcher so pending workflows can poll instead of exiting immediately.
-- Added Akses Satu Api custom OpenAI-compatible provider config, helper client, docs, tests, and safe manual smoke-test script.
+- Added Akses Satu Api OpenAI-compatible provider configuration.
+- Added verified live model list (7 models) and requested configured model list (4 models) to the Akses Satu Api provider, with deduplicated full union of 11 models.
+- Added Pi launcher fallback (`scripts/run-pi-akses-satu.sh`) for Akses Satu Api.
+- Added Akses Satu Api Pi extension at `extensions/akses-satu-api-provider/` and a mirrored installer copy at `installer/extensions/akses-satu-api-provider/`, both using the native `pi.registerProvider()` API.
+- Added Akses Satu Api manual API test script and documentation.
+- Added local Pi detection report (`reports/pi-akses-satu-detection.md`) covering Pi version, native provider API availability, env var status, and config locations.
+
+### Changed
+- Set Akses Satu Api default model to `glm-4.6` because it is verified through `/v1/chat/completions`.
+- Rewrote `scripts/test-akses-satu-api.sh` so the chat-completions and responses sections actually call their respective endpoints and classify results honestly (no PASS for a model-list misroute on `/responses`).
+- Updated `installer/config/models.json` to list the full 11-model union with `reasoning`/`contextWindow`/`maxTokens` metadata and `authHeader: true`.
+- Updated `installer/config/settings.json` to include all 7 verified-live `akses-satu-api/*` model ids in `enabledModels`, plus the 4 configured-only models.
+- Updated `docs/providers/akses-satu-api.md`, `README.md`, and `AGENTS.md` to document the verified live list, configured list, default model, and the three Pi integration paths.
+- Extended `tests/akses-satu-api-provider.test.ts` and `tests/installer-scripts.test.ts` to cover the new model union, verified/configured lists, `.env.example` placeholder, executable launcher, fixed test script, and Pi extension.
+
+### Security
+- Akses Satu Api credentials are loaded only from `AKSES_SATU_API_KEY`; no API keys are hardcoded.
+- `.env.example` contains only the `sk-sa-REPLACE_ME` placeholder. `.env` and `.env.*` remain gitignored.
+- The helper client, the test script, the launcher, and the extension never print `Authorization` headers or the value of the API key.
+- Pi v0.79.9 does not honor `OPENAI_BASE_URL` for the built-in `openai` provider; the launcher falls back to the native `akses-satu-api` provider id and documents this limitation explicitly.
 
 ### Notes
 - No README support claims were upgraded in phase 1.
