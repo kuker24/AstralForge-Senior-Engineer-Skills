@@ -1,0 +1,17 @@
+name: youtube-transcribe-skill
+description: Extract YouTube subtitles and transcripts into local files for downstream analysis.
+version: 1.0.0
+triggers:
+  - "transcribe youtube video"
+  - "extract youtube subtitles"
+  - "download video transcript"
+  - "save captions locally"
+  - "youtube transcript file"
+  - "fetch subtitles from url"
+keywords:
+  - youtube
+  - transcript
+  - subtitles
+  - captions
+  - yt-dlp
+  - webvtt

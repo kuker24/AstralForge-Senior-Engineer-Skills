@@ -1,0 +1,17 @@
+name: full-init
+description: Onboard a repository by inventorying structure, dependencies, environment, and build/test readiness.
+version: 1.0.0
+triggers:
+  - "initialize repo audit"
+  - "first pass repo onboarding"
+  - "project inventory"
+  - "detect setup commands"
+  - "repository health baseline"
+  - "environment readiness check"
+keywords:
+  - onboarding
+  - inventory
+  - setup
+  - dependencies
+  - build
+  - tests

@@ -2,7 +2,7 @@
 
 ## Official Documentation
 
-- **Pact**: https://docs.pact.io/
+- **Pact JS**: https://docs.pact.io/implementation_guides/javascript
 - **k6**: https://k6.io/docs/
 - **Artillery**: https://www.artillery.io/docs
 - **OWASP Testing Guide**: https://owasp.org/www-project-web-security-testing-guide/

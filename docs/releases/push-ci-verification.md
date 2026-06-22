@@ -112,4 +112,4 @@ As of this runbook creation:
 - Pushed: no.
 - GitHub-hosted CI status: pending.
 - Tag/release: not created.
-- Known skill audit gaps remain visible: 25 PASS / 12 STUB / 46 BROKEN / 0 NEEDS_REVIEW.
+- Current skill audit is 83 PASS / 0 STUB / 0 BROKEN / 0 NEEDS_REVIEW.

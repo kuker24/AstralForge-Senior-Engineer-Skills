@@ -3,7 +3,7 @@
 ## Official Documentation
 
 - **OpenAI API**: https://platform.openai.com/docs/
-- **Anthropic API**: https://docs.anthropic.com/
+- **Anthropic API**: https://docs.anthropic.com/en/api/messages
 - **LangChain**: https://docs.langchain.com/
 - **Pinecone**: https://docs.pinecone.io/
 

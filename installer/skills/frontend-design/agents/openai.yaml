@@ -1,0 +1,18 @@
+name: frontend-design
+description: Create distinctive production-grade frontend pages, components, and UI systems.
+version: 1.0.0
+triggers:
+  - "frontend design pass"
+  - "build landing page"
+  - "polish react component"
+  - "improve dashboard ui"
+  - "responsive web layout"
+  - "design web interface"
+keywords:
+  - frontend
+  - ui
+  - react
+  - tailwind
+  - responsive
+  - layout
+  - accessibility

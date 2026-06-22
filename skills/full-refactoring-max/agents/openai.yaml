@@ -1,0 +1,17 @@
+name: full-refactoring-max
+description: Plan and execute behavior-preserving refactors with tests, rollout safety, and maintainability gains.
+version: 1.0.0
+triggers:
+  - "deep refactor plan"
+  - "behavior preserving refactor"
+  - "large code cleanup"
+  - "architecture refactoring"
+  - "reduce technical debt"
+  - "modularize code safely"
+keywords:
+  - refactoring
+  - technical-debt
+  - maintainability
+  - tests
+  - architecture
+  - migration

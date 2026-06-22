@@ -1,0 +1,17 @@
+name: doc-coauthoring
+description: Co-author structured documentation with context gathering, drafting, refinement, and reader testing.
+version: 1.0.0
+triggers:
+  - "write technical proposal"
+  - "draft documentation collaboratively"
+  - "create design doc"
+  - "coauthor project spec"
+  - "refine documentation structure"
+  - "reader test a doc"
+keywords:
+  - documentation
+  - coauthoring
+  - design-doc
+  - proposal
+  - spec
+  - reader-testing

@@ -1,0 +1,19 @@
+name: algorithmic-art
+description: Create original generative art with p5.js, seeded randomness, and interactive parameters.
+version: 1.0.0
+triggers:
+  - "generative art with p5.js"
+  - "algorithmic art sketch"
+  - "flow field artwork"
+  - "seeded randomness art"
+  - "particle system visual"
+  - "interactive p5 canvas"
+  - "creative coding artwork"
+keywords:
+  - p5js
+  - generative-art
+  - creative-coding
+  - canvas
+  - particles
+  - flow-field
+  - seeded-randomness

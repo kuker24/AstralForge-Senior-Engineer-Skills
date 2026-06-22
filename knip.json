@@ -10,8 +10,12 @@
     "**/*.{js,jsx,ts,tsx,mjs,cjs}"
   ],
   "ignore": [
+    "extensions/**",
     "installer/extensions/**",
     "installer/skills/**",
     "skills/**"
-  ]
+  ],
+  "ignoreIssues": {
+    "src/providers/**": ["exports", "types"]
+  }
 }

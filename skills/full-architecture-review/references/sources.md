@@ -2,19 +2,22 @@
 
 ## Official Documentation
 
-- **Martin Fowler**: https://martinfowler.com/architecture/
-- **C4 Model**: https://c4model.com/
-- **ADR**: https://adr.github.io/
+- adr.github.io: https://adr.github.io/
+- github.com: https://github.com/npryce/adr-tools
 
 ## Repositories Referenced
 
-- Architecture patterns: https://github.com/architecture-decision-records/adr-tools
+- No repository source is required for this skill; implementation guidance is based on official documentation and maintained public references.
+
+## Standards or Specifications
+
+- https://c4model.com/
 
 ## Access Date
 
-2026-05-24
+2026-06-22
 
 ## License Notes
 
-- Patterns based on industry best practices
-- C4 Model is Creative Commons
+- URLs are cited for implementation guidance and verification.
+- Follow each upstream project or documentation site license when reusing examples or assets.

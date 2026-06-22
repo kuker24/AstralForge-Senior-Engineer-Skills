@@ -1,0 +1,17 @@
+name: pptx
+description: Read, create, edit, and validate PowerPoint presentations and slide decks.
+version: 1.0.0
+triggers:
+  - "edit powerpoint deck"
+  - "create pptx slides"
+  - "extract presentation text"
+  - "update slide template"
+  - "combine pptx files"
+  - "add speaker notes"
+keywords:
+  - pptx
+  - powerpoint
+  - slides
+  - deck
+  - openxml
+  - presentation

@@ -1,0 +1,17 @@
+name: spec-kit-skill
+description: Run GitHub Spec Kit workflows for constitution-driven specifications and implementation tasks.
+version: 1.0.0
+triggers:
+  - "spec kit workflow"
+  - "create constitution spec"
+  - "run specify plan tasks"
+  - "spec driven implementation"
+  - "analyze spec kit project"
+  - "update .specify directory"
+keywords:
+  - spec-kit
+  - constitution
+  - specify
+  - planning
+  - tasks
+  - spec-driven

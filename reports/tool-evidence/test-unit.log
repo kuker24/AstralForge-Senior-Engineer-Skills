@@ -5,10 +5,10 @@
 
  RUN  v4.1.9 /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert
 
-········
+·······························
 
- Test Files  4 passed (4)
-      Tests  8 passed (8)
-   Start at  05:11:55
-   Duration  330ms (transform 157ms, setup 0ms, import 257ms, tests 53ms, environment 1ms)
+ Test Files  5 passed (5)
+      Tests  31 passed (31)
+   Start at  21:32:05
+   Duration  463ms (transform 291ms, setup 0ms, import 472ms, tests 185ms, environment 1ms)
 

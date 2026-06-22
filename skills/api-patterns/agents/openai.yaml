@@ -1,0 +1,20 @@
+name: api-patterns
+description: Choose API styles and design request/response patterns with clear trade-offs.
+version: 1.0.0
+triggers:
+  - "choose REST or GraphQL"
+  - "api response format decision"
+  - "pagination design"
+  - "api versioning strategy"
+  - "error response shape"
+  - "REST vs tRPC"
+  - "public api contract review"
+keywords:
+  - api-design
+  - rest
+  - graphql
+  - trpc
+  - pagination
+  - versioning
+  - errors
+  - contracts

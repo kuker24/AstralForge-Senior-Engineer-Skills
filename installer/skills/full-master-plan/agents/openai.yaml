@@ -1,0 +1,17 @@
+name: full-master-plan
+description: Create phased execution plans with sequencing, milestones, risks, and validation gates.
+version: 1.0.0
+triggers:
+  - "create master plan"
+  - "phased implementation plan"
+  - "delivery roadmap"
+  - "sequence engineering work"
+  - "milestone plan"
+  - "plan large refactor"
+keywords:
+  - planning
+  - roadmap
+  - milestones
+  - sequencing
+  - delivery
+  - risk

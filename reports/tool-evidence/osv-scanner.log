@@ -7,4 +7,6 @@ Scanned /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developer
 Scanned /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert/installer/skills/nanobanana-skill/requirements.txt file and found 7 packages
 Scanned /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert/installer/skills/slack-gif-creator/requirements.txt file and found 4 packages
 Scanned /home/fahmi/Downloads/LAB GITHUB/LAB SKILL/pro-skill-fullstack-developert/package-lock.json file and found 308 packages
-End status: 725 dirs visited, 2663 inodes visited, 7 Extract calls, 198.013384ms elapsed, 198.013507ms wall time
+End status: 987 dirs visited, 3540 inodes visited, 7 Extract calls, 128.222024ms elapsed, 128.222136ms wall time
+error when retrieving vulns: Post "https://api.osv.dev/v1/querybatch": dial tcp 74.125.68.121:443: i/o timeout
+Post "https://api.osv.dev/v1/querybatch": dial tcp 74.125.68.121:443: i/o timeout

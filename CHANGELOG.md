@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 - Added Akses Satu Api Pi extension at `extensions/akses-satu-api-provider/` and a mirrored installer copy at `installer/extensions/akses-satu-api-provider/`, both using the native `pi.registerProvider()` API.
 - Added Akses Satu Api manual API test script and documentation.
 - Added local Pi detection report (`reports/pi-akses-satu-detection.md`) covering Pi version, native provider API availability, env var status, and config locations.
+- Added missing `agents/openai.yaml` and `references/sources.md` support files across retained source skills so the substantive audit can validate every skill.
 
 ### Changed
 - Set Akses Satu Api default model to `glm-4.6` because it is verified through `/v1/chat/completions`.
@@ -22,6 +23,9 @@ All notable changes to this project will be documented in this file.
 - Updated `installer/config/settings.json` to include all 7 verified-live `akses-satu-api/*` model ids in `enabledModels`, plus the 4 configured-only models.
 - Updated `docs/providers/akses-satu-api.md`, `README.md`, and `AGENTS.md` to document the verified live list, configured list, default model, and the three Pi integration paths.
 - Extended `tests/akses-satu-api-provider.test.ts` and `tests/installer-scripts.test.ts` to cover the new model union, verified/configured lists, `.env.example` placeholder, executable launcher, fixed test script, and Pi extension.
+- Rewrote all previously stub-classified skills with substantive workflows, output expectations, validation gates, and safety notes.
+- Fixed broken reference URLs for ADR, microservices, Drizzle PostgreSQL, OpenXML, Kiro, and AI/ML documentation.
+- Added `npm run audit:skills`, CI audit enforcement, and Vitest regression tests for support files, manifest counts, README audit counts, and unfinished marker phrases.
 
 ### Security
 - Akses Satu Api credentials are loaded only from `AKSES_SATU_API_KEY`; no API keys are hardcoded.
@@ -33,7 +37,7 @@ All notable changes to this project will be documented in this file.
 - No README support claims were upgraded in phase 1.
 - CI will be considered verified only after the workflow runs on GitHub Actions.
 - Security CI will be considered verified only after the workflow runs on GitHub Actions.
-- Skill audit found non-PASS items; README now distinguishes total source skill folders from audited PASS skills.
+- Current substantive skill audit reports 83 PASS / 0 NEEDS_REVIEW / 0 STUB / 0 BROKEN for the retained source skill set.
 
 ---
 

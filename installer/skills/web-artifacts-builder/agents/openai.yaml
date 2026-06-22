@@ -1,0 +1,17 @@
+name: web-artifacts-builder
+description: Build complex multi-component HTML/React artifacts with state, routing, and UI components.
+version: 1.0.0
+triggers:
+  - "build web artifact"
+  - "complex html artifact"
+  - "react artifact state"
+  - "artifact with shadcn"
+  - "multi component artifact"
+  - "interactive artifact app"
+keywords:
+  - artifacts
+  - react
+  - html
+  - tailwind
+  - shadcn
+  - state-management

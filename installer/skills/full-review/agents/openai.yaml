@@ -1,0 +1,17 @@
+name: full-review
+description: Review code, architecture, PRs, and repository health with prioritized actionable findings.
+version: 1.0.0
+triggers:
+  - "review this codebase"
+  - "senior code review"
+  - "architecture review comments"
+  - "pull request review"
+  - "repository health review"
+  - "quality gate review"
+keywords:
+  - review
+  - code-quality
+  - architecture
+  - pr-review
+  - findings
+  - risk

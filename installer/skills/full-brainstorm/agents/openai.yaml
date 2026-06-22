@@ -1,0 +1,17 @@
+name: full-brainstorm
+description: Run structured brainstorming with constraints, option scoring, risks, and recommendation synthesis.
+version: 1.0.0
+triggers:
+  - "structured brainstorm"
+  - "evaluate solution options"
+  - "ideation with constraints"
+  - "brainstorm architecture choices"
+  - "compare product ideas"
+  - "generate tradeoff matrix"
+keywords:
+  - brainstorm
+  - ideation
+  - tradeoffs
+  - constraints
+  - decision-making
+  - options

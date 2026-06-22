@@ -8,7 +8,7 @@
 
 AstralForge adalah paket **83 source skill folders** untuk fullstack + UI/UX + senior engineering workflow, dilengkapi stack local no-login untuk QA, security, dependency review, secret scanning, type safety, unit testing, coverage, ADR, dan review packaging.
 
-Status verifikasi dibedakan secara eksplisit: **Verified**, **Supported**, **Manual only**, **Needs review**, dan **Unverified**. Audit substantif saat ini menemukan **25 PASS**, **12 STUB**, dan **46 BROKEN** dari 83 folder skill; lihat [reports/skill-audit-summary.md](reports/skill-audit-summary.md). Karena itu README tidak mengklaim semua 83 skill sudah fully verified.
+Status verifikasi dibedakan secara eksplisit: **Verified**, **Supported**, **Manual only**, **Needs review**, dan **Unverified**. Audit substantif saat ini menemukan **83 PASS**, **0 NEEDS_REVIEW**, **0 STUB**, dan **0 BROKEN** dari 83 folder skill; lihat [reports/skill-audit-summary.md](reports/skill-audit-summary.md). Klaim ini hanya mencakup kriteria audit lokal di `scripts/audit-skills.sh`, bukan sertifikasi eksternal.
 
 - Package name: `astralforge-senior-engineer-skills`
 - Current target repository: `https://github.com/kuker24/AstralForge-Senior-Engineer-Skills`
@@ -20,7 +20,7 @@ Status verifikasi dibedakan secara eksplisit: **Verified**, **Supported**, **Man
 
 | Component | Description |
 |-----------|-------------|
-| **Skills** | 83 source skill folders; 25 currently pass the substantive audit |
+| **Skills** | 83 source skill folders; all 83 currently pass the substantive local audit |
 | **Installer** | Pi installer package files are present; sandbox/CI installer verification is pending |
 | **Global Install** | Global install scripts are present; sandbox/CI installer verification is pending |
 
@@ -37,11 +37,11 @@ Repo ini juga menyertakan konfigurasi lokal untuk tool pendukung coding AI agent
 | Source skill verifier | Verified | `npm run verify:skills` | [Tool evidence](reports/tool-evidence/README.md), [Skill manifest](SKILLS_MANIFEST.md) |
 | pre-commit | Verified | `pre-commit run --all-files` | [Tool evidence](reports/tool-evidence/README.md), `.pre-commit-config.yaml` |
 | Semgrep CE | Verified | `semgrep scan --config p/default --metrics=off --json --json-output=semgrep-results.json` | [Tool evidence](reports/tool-evidence/README.md), [Security CI setup](reports/security-ci-setup-evidence.md) |
-| OSV-Scanner | Verified | `osv-scanner scan source -r . --format json --output-file osv-results.json` | [Tool evidence](reports/tool-evidence/README.md), [Security CI setup](reports/security-ci-setup-evidence.md) |
+| OSV-Scanner | Supported | `osv-scanner scan source -r . --format json --output-file osv-results.json` | Latest local rerun timed out against OSV API; see [Tool evidence](reports/tool-evidence/README.md) and [Security CI setup](reports/security-ci-setup-evidence.md) |
 | Gitleaks | Verified | `gitleaks git --redact --report-format json --report-path gitleaks-report.json .` | [Tool evidence](reports/tool-evidence/README.md), [Security CI setup](reports/security-ci-setup-evidence.md), `.gitleaks.toml` |
 | Knip | Verified | `npx knip` | [Tool evidence](reports/tool-evidence/README.md), [CI setup](reports/ci-setup-evidence.md), `knip.json` |
 | ADR | Verified | Review `docs/adr/` | [ADR index](docs/adr/README.md) |
-| Skill substantive audit | Needs review | `bash scripts/audit-skills.sh` | [Skill audit summary](reports/skill-audit-summary.md) |
+| Skill substantive audit | Verified | `npm run audit:skills` | [Skill audit summary](reports/skill-audit-summary.md) |
 | GitHub Actions CI | Supported | `.github/workflows/ci.yml` | [CI setup](reports/ci-setup-evidence.md); remote green run pending |
 | GitHub Actions Security | Supported | `.github/workflows/security.yml` | [Security CI setup](reports/security-ci-setup-evidence.md); remote green run pending |
 | Playwright Test | Supported | `npx playwright test --project=chromium` | [Tool evidence](reports/tool-evidence/README.md); placeholder smoke test only |
@@ -489,4 +489,4 @@ Lihat [CONTRIBUTING.md](CONTRIBUTING.md) sebelum membuka PR. Ringkasnya:
 **Version**: 3.0.0
 **Last Updated**: 2026-06-22
 **Total Source Skill Folders**: 83
-**Substantive Audit PASS**: 25
+**Substantive Audit PASS**: 83

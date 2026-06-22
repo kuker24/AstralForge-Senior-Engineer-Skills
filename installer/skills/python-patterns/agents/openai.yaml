@@ -1,0 +1,17 @@
+name: python-patterns
+description: Choose Python architecture, async, typing, packaging, and framework patterns pragmatically.
+version: 1.0.0
+triggers:
+  - "python project structure"
+  - "choose python framework"
+  - "async python pattern"
+  - "typing strategy python"
+  - "python packaging decision"
+  - "refactor python code"
+keywords:
+  - python
+  - architecture
+  - async
+  - typing
+  - packaging
+  - frameworks

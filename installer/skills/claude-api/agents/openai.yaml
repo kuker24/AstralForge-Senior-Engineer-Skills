@@ -1,0 +1,19 @@
+name: claude-api
+description: Build and optimize Claude API integrations including tools, caching, files, citations, and model migration.
+version: 1.0.0
+triggers:
+  - "claude api integration"
+  - "anthropic sdk feature"
+  - "prompt caching claude"
+  - "claude tool use"
+  - "migrate claude model"
+  - "managed agents api"
+  - "claude files citations"
+keywords:
+  - claude
+  - anthropic
+  - sdk
+  - prompt-caching
+  - tool-use
+  - managed-agents
+  - model-migration

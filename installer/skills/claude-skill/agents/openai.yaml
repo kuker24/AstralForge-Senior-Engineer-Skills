@@ -1,0 +1,17 @@
+name: claude-skill
+description: Use Claude Code or Claude automation safely for non-interactive implementation and review tasks.
+version: 1.0.0
+triggers:
+  - "use claude code to implement"
+  - "run claude non interactive"
+  - "claude automation task"
+  - "claude code review pass"
+  - "delegate to claude skill"
+  - "hands off claude execution"
+keywords:
+  - claude-code
+  - automation
+  - non-interactive
+  - review
+  - implementation
+  - delegation

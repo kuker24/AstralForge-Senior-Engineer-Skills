@@ -1,0 +1,17 @@
+name: template-skill
+description: Author reusable skill templates and quality checklists for new AI engineering skills.
+version: 1.0.0
+triggers:
+  - "author skill template"
+  - "design skill checklist"
+  - "standardize skill instructions"
+  - "create reusable skill structure"
+  - "review skill template quality"
+  - "skill authoring guide"
+keywords:
+  - skill-authoring
+  - templates
+  - checklist
+  - instructions
+  - quality
+  - documentation

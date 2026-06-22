@@ -1,0 +1,15 @@
+name: nanobanana-skill
+description: Generate and edit images through Gemini/Nano Banana workflows with safe API handling.
+version: 1.0.0
+triggers:
+  - "nanobanana image generation"
+  - "gemini image edit"
+  - "create image with nano banana"
+  - "google image generation api"
+  - "edit image via gemini"
+keywords:
+  - nanobanana
+  - gemini
+  - image-generation
+  - google-ai
+  - image-editing

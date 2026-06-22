@@ -1,0 +1,17 @@
+name: xlsx
+description: Read, clean, create, and validate spreadsheet files including XLSX, XLSM, CSV, and TSV.
+version: 1.0.0
+triggers:
+  - "edit xlsx spreadsheet"
+  - "clean csv data"
+  - "create excel workbook"
+  - "add spreadsheet formulas"
+  - "format xlsx table"
+  - "convert tabular data"
+keywords:
+  - xlsx
+  - excel
+  - spreadsheet
+  - csv
+  - openxml
+  - data-cleaning

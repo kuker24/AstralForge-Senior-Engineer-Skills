@@ -1,0 +1,17 @@
+name: full-orchestrator-max-otonom
+description: Coordinate broad multi-phase engineering work across specialist skills with evidence discipline.
+version: 1.0.0
+triggers:
+  - "orchestrate multi phase task"
+  - "broad engineering workflow"
+  - "coordinate specialist skills"
+  - "multi area implementation"
+  - "autonomous project execution"
+  - "integrated execution plan"
+keywords:
+  - orchestration
+  - multi-phase
+  - coordination
+  - specialists
+  - execution
+  - evidence

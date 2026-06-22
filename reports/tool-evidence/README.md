@@ -7,16 +7,16 @@ This folder stores compact dogfooding evidence for local tools. It intentionally
 | Tool | Command | Status | Evidence File |
 |------|---------|--------|---------------|
 | TypeScript typecheck | `npm run typecheck` | PASS | [`typecheck.log`](typecheck.log) |
-| Vitest unit tests | `npm run test:unit` | PASS | [`test-unit.log`](test-unit.log) |
+| Vitest unit tests | `npm run test:unit` | PASS, 31 tests | [`test-unit.log`](test-unit.log) |
 | Vitest coverage | `npm run test:coverage` | PASS | [`coverage-summary.md`](coverage-summary.md) |
-| Source skill verification | `npm run verify:skills` | PASS | [`verify-skills.log`](verify-skills.log) |
-| Semgrep | `semgrep scan --config p/default --metrics=off --json --json-output=reports/tool-evidence/semgrep.json` | PASS, 0 findings | [`semgrep.json`](semgrep.json) |
-| OSV-Scanner | `osv-scanner scan source -r . --format json --output-file reports/tool-evidence/osv.json` | PASS, 0 vulnerability matches | [`osv.json`](osv.json) |
-| Gitleaks git | `gitleaks git --redact --report-format json --report-path reports/tool-evidence/gitleaks-git.json .` | PASS, 0 findings | [`gitleaks-git.json`](gitleaks-git.json) |
-| Gitleaks dir | `gitleaks dir --redact --report-format json --report-path reports/tool-evidence/gitleaks-dir.json .` | PASS, 0 findings | [`gitleaks-dir.json`](gitleaks-dir.json) |
+| Source skill verification | `npm run verify:skills` | PASS, 83 source skills | [`verify-skills.log`](verify-skills.log) |
+| Substantive skill audit | `npm run audit:skills` | PASS, 83 PASS / 0 non-PASS | [`../skill-audit-summary.md`](../skill-audit-summary.md) |
+| Semgrep | `semgrep scan --config p/default --metrics=off --json --json-output=semgrep-results.json` | PASS, 0 findings; 3 partial parsing errors in existing workflow/script snippets | [`semgrep.json`](semgrep.json) |
+| OSV-Scanner | `osv-scanner scan source -r . --format json --output-file osv-results.json` | UNVERIFIED, network timeout on retry | [`osv-scanner.log`](osv-scanner.log) |
+| Gitleaks git | `gitleaks git --redact --report-format json --report-path gitleaks-report.json .` | PASS, 0 findings | [`gitleaks-git.json`](gitleaks-git.json) |
 | Knip | `npx knip` | PASS, no output/findings | [`knip.log`](knip.log) |
-| Playwright | `npx playwright test --project=chromium` | PASS | [`playwright-summary.md`](playwright-summary.md) |
-| Repomix | `repomix --compress` | PASS | [`repomix-summary.md`](repomix-summary.md) |
+| Playwright | `npx playwright test --project=chromium` | Not rerun in this phase; placeholder smoke test remains | [`playwright-summary.md`](playwright-summary.md) |
+| Repomix | `repomix --compress` | Not rerun in this phase | [`repomix-summary.md`](repomix-summary.md) |
 
 ## Large Outputs Not Committed
 
@@ -29,3 +29,4 @@ This folder stores compact dogfooding evidence for local tools. It intentionally
 - Gitleaks reports are redacted and contain zero findings for this run.
 - No Stryker mutation testing was run.
 - No cloud login or API key was used.
+- OSV-Scanner could not complete because the OSV API request timed out twice; this is recorded as a limitation, not a pass.

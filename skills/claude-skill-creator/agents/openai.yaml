@@ -1,0 +1,17 @@
+name: claude-skill-creator
+description: Design, improve, package, and evaluate Claude skills with clear trigger behavior.
+version: 1.0.0
+triggers:
+  - "create claude skill"
+  - "improve skill description"
+  - "package a skill"
+  - "evaluate skill trigger"
+  - "write skill instructions"
+  - "benchmark skill behavior"
+keywords:
+  - skills
+  - claude
+  - skill-authoring
+  - evaluation
+  - triggering
+  - packaging

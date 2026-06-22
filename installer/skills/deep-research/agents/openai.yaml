@@ -1,0 +1,17 @@
+name: deep-research
+description: Coordinate multi-agent deep research workflows with evidence collection and report synthesis.
+version: 1.0.0
+triggers:
+  - "deep research task"
+  - "wide research workflow"
+  - "multi agent research"
+  - "parallel evidence gathering"
+  - "research synthesis report"
+  - "competitive analysis research"
+keywords:
+  - research
+  - multi-agent
+  - evidence
+  - synthesis
+  - reporting
+  - web-research

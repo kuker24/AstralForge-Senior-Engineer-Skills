@@ -16,6 +16,7 @@
     "quality:senior": "bash scripts/ai-senior-checks.sh",
     "mutation": "stryker run",
     "verify:skills": "bash scripts/verify-source-skills.sh",
+    "audit:skills": "bash scripts/audit-skills.sh",
     "release:check-actions": "bash scripts/check-github-actions.sh"
   },
   "devDependencies": {

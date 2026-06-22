@@ -2,19 +2,22 @@
 
 ## Official Documentation
 
-- **Microservices.io**: https://microservices.io/patterns/
-- **Martin Fowler**: https://martinfowler.com/microservices/
-- **Domain-Driven Design**: https://dddcommunity.org/
+- microservices.io: https://microservices.io/patterns/
+- learn.microsoft.com: https://learn.microsoft.com/en-us/azure/architecture/microservices/
 
 ## Repositories Referenced
 
-- Microservices patterns: https://github.com/Netflix/microservices-examples
+- No repository source is required for this skill; implementation guidance is based on official documentation and maintained public references.
+
+## Standards or Specifications
+
+- https://martinfowler.com/articles/microservices.html
 
 ## Access Date
 
-2026-05-24
+2026-06-22
 
 ## License Notes
 
-- Patterns based on industry best practices
-- References from Martin Fowler and DDD community
+- URLs are cited for implementation guidance and verification.
+- Follow each upstream project or documentation site license when reusing examples or assets.

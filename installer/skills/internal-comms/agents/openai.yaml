@@ -1,0 +1,17 @@
+name: internal-comms
+description: Draft clear internal status updates, incident notes, FAQs, and leadership communications.
+version: 1.0.0
+triggers:
+  - "write status update"
+  - "draft leadership update"
+  - "internal comms memo"
+  - "incident communication"
+  - "project update email"
+  - "create internal faq"
+keywords:
+  - communications
+  - status-update
+  - memo
+  - incident
+  - leadership
+  - faq

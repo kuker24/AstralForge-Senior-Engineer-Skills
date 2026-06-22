@@ -1,0 +1,17 @@
+name: full-debug
+description: Diagnose one concrete failing behavior and drive it to a verified root-cause fix.
+version: 1.0.0
+triggers:
+  - "debug failing behavior"
+  - "root cause analysis"
+  - "fix test failure"
+  - "trace runtime error"
+  - "investigate production bug"
+  - "debug integration issue"
+keywords:
+  - debugging
+  - root-cause
+  - failure
+  - fix
+  - trace
+  - regression

@@ -1,0 +1,17 @@
+name: mcp-builder
+description: Build high-quality MCP servers with well-designed tools, resources, prompts, and tests.
+version: 1.0.0
+triggers:
+  - "build mcp server"
+  - "create model context protocol tool"
+  - "fastmcp integration"
+  - "mcp sdk server"
+  - "design mcp tools"
+  - "test mcp server"
+keywords:
+  - mcp
+  - model-context-protocol
+  - fastmcp
+  - tools
+  - server
+  - sdk

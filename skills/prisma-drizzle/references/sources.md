@@ -2,21 +2,22 @@
 
 ## Official Documentation
 
-- **Prisma**: https://www.prisma.io/docs
-- **Drizzle ORM**: https://orm.drizzle.team/docs
-- **Drizzle with PostgreSQL**: https://orm.drizzle.team/docs/get-started/postgresql
+- www.prisma.io: https://www.prisma.io/docs
+- orm.drizzle.team: https://orm.drizzle.team/docs/get-started-postgresql
 
 ## Repositories Referenced
 
-- Prisma: https://github.com/prisma/prisma
-- Drizzle: https://github.com/drizzle-team/drizzle-orm
+- No repository source is required for this skill; implementation guidance is based on official documentation and maintained public references.
+
+## Standards or Specifications
+
+- https://orm.drizzle.team/docs/migrations
 
 ## Access Date
 
-2026-05-24
+2026-06-22
 
 ## License Notes
 
-- Prisma: Apache 2.0 License
-- Drizzle: MIT License
-- Patterns based on official documentation
+- URLs are cited for implementation guidance and verification.
+- Follow each upstream project or documentation site license when reusing examples or assets.

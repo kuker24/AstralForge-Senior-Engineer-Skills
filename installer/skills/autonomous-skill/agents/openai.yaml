@@ -1,0 +1,19 @@
+name: autonomous-skill
+description: Plan and execute long-running autonomous coding tasks with resumable progress tracking.
+version: 1.0.0
+triggers:
+  - "autonomous long running task"
+  - "multi session execution"
+  - "continue task autonomously"
+  - "decompose long engineering work"
+  - "resume autonomous progress"
+  - "codex non interactive automation"
+  - "hands off implementation plan"
+keywords:
+  - autonomous
+  - long-running
+  - multi-session
+  - task-planning
+  - progress-tracking
+  - codex
+  - automation

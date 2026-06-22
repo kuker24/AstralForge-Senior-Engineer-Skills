@@ -1,0 +1,17 @@
+name: full-optimize-performa
+description: Optimize measurable performance including latency, throughput, memory, bundle size, and UI jank.
+version: 1.0.0
+triggers:
+  - "optimize performance"
+  - "reduce latency"
+  - "profile memory usage"
+  - "fix ui jank"
+  - "bundle size optimization"
+  - "throughput bottleneck analysis"
+keywords:
+  - performance
+  - latency
+  - memory
+  - profiling
+  - bundle-size
+  - throughput

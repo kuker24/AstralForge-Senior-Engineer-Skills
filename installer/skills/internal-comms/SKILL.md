@@ -1,32 +1,27 @@
 ---
 name: internal-comms
-description: A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).
-license: Complete terms in LICENSE.txt
+description: Draft concise internal communications such as status updates, leadership notes, incident messages, FAQs, and project summaries.
 ---
 
-## When to use this skill
-To write internal communications, use this skill for:
-- 3P updates (Progress, Plans, Problems)
-- Company newsletters
-- FAQ responses
-- Status reports
-- Leadership updates
-- Project updates
-- Incident reports
+# Internal Communications
 
-## How to use this skill
+Use this skill when a user needs internal written communication: weekly status updates, leadership briefings, stakeholder memos, incident updates, project announcements, decision summaries, FAQs, or change-management notes. The goal is to make the message clear, credible, audience-aware, and action-oriented.
 
-To write any internal communication:
+Do not use this skill for external press releases, legal statements, HR-sensitive communications, or customer-facing announcements without explicit review requirements. For technical design details, pair this skill with documentation co-authoring or architecture review.
 
-1. **Identify the communication type** from the request
-2. **Load the appropriate guideline file** from the `examples/` directory:
-    - `examples/3p-updates.md` - For Progress/Plans/Problems team updates
-    - `examples/company-newsletter.md` - For company-wide newsletters
-    - `examples/faq-answers.md` - For answering frequently asked questions
-    - `examples/general-comms.md` - For anything else that doesn't explicitly match one of the above
-3. **Follow the specific instructions** in that file for formatting, tone, and content gathering
+## Workflow
 
-If the communication type doesn't match any existing guideline, ask for clarification or more context about the desired format.
+1. Identify the audience, purpose, sender, required tone, timing, and channel.
+2. Gather facts: current status, decision needed, risks, impact, owners, dates, and next milestones.
+3. Choose a structure such as TL;DR, context, update, risks, asks, and next steps.
+4. Draft short paragraphs with clear ownership and no unsupported claims.
+5. Add a reader check: what should the audience know, feel, and do after reading?
+6. Provide variants when needed for executives, managers, and implementation teams.
 
-## Keywords
-3P updates, company newsletter, company comms, weekly update, faqs, common questions, updates, internal comms
+## Output Expectations
+
+Return the final message, optional subject line, audience notes, and open questions. For incident communications, include time zone, current impact, mitigation, next update time, and confidence level.
+
+## Quality Notes
+
+Do not invent dates, metrics, or commitments. Mark unknowns. Avoid blame language. Prefer direct language over jargon.

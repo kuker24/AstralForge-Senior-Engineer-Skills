@@ -1,67 +1,27 @@
 ---
-name: "pdf"
-description: "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction."
+name: pdf
+description: Read, create, extract, inspect, and validate PDF files when rendering, layout, forms, or page fidelity matter.
 ---
 
+# PDF Workflows
 
-# PDF Skill
+Use this skill when PDF files are an input or output and layout fidelity matters: extracting text with coordinates, reviewing rendered pages, filling forms, generating reports, validating page counts, inspecting tables, or checking visual defects. Prefer rendering pages for layout-sensitive tasks instead of relying only on raw text extraction.
 
-## When to use
-- Read or review PDF content where layout and visuals matter.
-- Create PDFs programmatically with reliable formatting.
-- Validate final rendering before delivery.
+Do not use this skill when the primary deliverable is a Word document, slide deck, spreadsheet, or simple Markdown summary. Route those tasks to the file-specific skill.
 
 ## Workflow
-1. Prefer visual review: render PDF pages to PNGs and inspect them.
-   - Use `pdftoppm` if available.
-   - If unavailable, install Poppler or ask the user to review the output locally.
-2. Use `reportlab` to generate PDFs when creating new documents.
-3. Use `pdfplumber` (or `pypdf`) for text extraction and quick checks; do not rely on it for layout fidelity.
-4. After each meaningful update, re-render pages and verify alignment, spacing, and legibility.
 
-## Temp and output conventions
-- Use `tmp/pdfs/` for intermediate files; delete when done.
-- Write final artifacts under `output/pdf/` when working in this repo.
-- Keep filenames stable and descriptive.
+1. Identify whether the task needs text extraction, visual inspection, generation, form handling, splitting, merging, or annotation.
+2. Preserve the original file and work on a copy when modifying PDFs.
+3. Use extraction tools such as `pdfplumber` or `pypdf` for text and metadata.
+4. Use rendering tools such as Poppler for visual QA when layout matters.
+5. Generate new PDFs with a deterministic layout library and verify page dimensions, fonts, and overflow.
+6. Summarize limitations such as scanned pages, OCR needs, missing fonts, or encrypted files.
 
-## Dependencies (install if missing)
-Prefer `uv` for dependency management.
+## Output Expectations
 
-Python packages:
-```
-uv pip install reportlab pdfplumber pypdf
-```
-If `uv` is unavailable:
-```
-python3 -m pip install reportlab pdfplumber pypdf
-```
-System tools (for rendering):
-```
-# macOS (Homebrew)
-brew install poppler
+Return paths to generated files, page counts, extraction method, and validation notes. If OCR is needed, state that clearly rather than pretending text extraction succeeded.
 
-# Ubuntu/Debian
-sudo apt-get install -y poppler-utils
-```
+## Safety Notes
 
-If installation isn't possible in this environment, tell the user which dependency is missing and how to install it locally.
-
-## Environment
-No required environment variables.
-
-## Rendering command
-```
-pdftoppm -png $INPUT_PDF $OUTPUT_PREFIX
-```
-
-## Quality expectations
-- Maintain polished visual design: consistent typography, spacing, margins, and section hierarchy.
-- Avoid rendering issues: clipped text, overlapping elements, broken tables, black squares, or unreadable glyphs.
-- Charts, tables, and images must be sharp, aligned, and clearly labeled.
-- Use ASCII hyphens only. Avoid U+2011 (non-breaking hyphen) and other Unicode dashes.
-- Citations and references must be human-readable; never leave tool tokens or placeholder strings.
-
-## Final checks
-- Do not deliver until the latest PNG inspection shows zero visual or formatting defects.
-- Confirm headers/footers, page numbering, and section transitions look polished.
-- Keep intermediate files organized or remove them after final approval.
+Do not upload PDFs to cloud services unless explicitly requested. Avoid exposing private document content in logs. Keep temporary outputs ignored unless the user requests final artifacts.

@@ -1,0 +1,17 @@
+name: lint-and-validate
+description: Run appropriate validation tools after code changes and drive failures to zero.
+version: 1.0.0
+triggers:
+  - "run validation checks"
+  - "lint and validate code"
+  - "fix typecheck errors"
+  - "post change validation"
+  - "quality gate failed"
+  - "verify code changes"
+keywords:
+  - lint
+  - validation
+  - typecheck
+  - tests
+  - quality-gate
+  - ci

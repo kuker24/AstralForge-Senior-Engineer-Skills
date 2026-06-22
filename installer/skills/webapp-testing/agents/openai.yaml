@@ -1,0 +1,17 @@
+name: webapp-testing
+description: Test local web applications with Playwright, screenshots, browser logs, and flow debugging.
+version: 1.0.0
+triggers:
+  - "test local webapp"
+  - "playwright ui verification"
+  - "capture browser screenshot"
+  - "debug frontend flow"
+  - "inspect web console"
+  - "validate user journey"
+keywords:
+  - webapp-testing
+  - playwright
+  - browser
+  - screenshots
+  - console
+  - e2e

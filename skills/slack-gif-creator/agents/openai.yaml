@@ -1,0 +1,17 @@
+name: slack-gif-creator
+description: Create Slack-optimized animated GIFs with size, timing, and validation constraints.
+version: 1.0.0
+triggers:
+  - "make slack gif"
+  - "create animated gif for slack"
+  - "optimize gif size"
+  - "validate gif animation"
+  - "slack emoji animation"
+  - "looping gif asset"
+keywords:
+  - slack
+  - gif
+  - animation
+  - optimization
+  - emoji
+  - image-processing

@@ -80,10 +80,10 @@ bash scripts/audit-skills.sh
 
 | Verdict | Count |
 |---------|------:|
-| PASS | 25 |
+| PASS | 83 |
 | NEEDS_REVIEW | 0 |
-| STUB | 12 |
-| BROKEN | 46 |
+| STUB | 0 |
+| BROKEN | 0 |
 | **Total** | **83** |
 
 Evidence files:
@@ -93,67 +93,11 @@ Evidence files:
 
 ### STUB
 
-- `claude-skill-creator` — placeholder/template content detected; missing agents/openai.yaml; missing references/sources.md
-- `doc-coauthoring` — placeholder/template content detected; missing agents/openai.yaml; missing references/sources.md
-- `github` — word count below 150 (115); missing references/sources.md
-- `imagegen` — placeholder/template content detected; missing references/sources.md
-- `internal-comms` — word count below 150 (143); missing agents/openai.yaml; missing references/sources.md
-- `pdf` — placeholder/template content detected; missing references/sources.md
-- `playwright` — placeholder/template content detected; missing references/sources.md
-- `plugin-creator` — placeholder/template content detected; missing references/sources.md
-- `pptx` — placeholder/template content detected; missing agents/openai.yaml; missing references/sources.md
-- `skill-creator` — placeholder/template content detected; missing references/sources.md
-- `slack-gif-creator` — placeholder/template content detected; missing agents/openai.yaml; missing references/sources.md
-- `template-skill` — word count below 150 (3); placeholder/template content detected; missing agents/openai.yaml; missing references/sources.md
+- None
 
 ### BROKEN
 
-- `algorithmic-art` — missing agents/openai.yaml; missing references/sources.md
-- `api-patterns` — missing agents/openai.yaml; missing references/sources.md
-- `autonomous-skill` — missing agents/openai.yaml; missing references/sources.md
-- `brand-guidelines` — missing agents/openai.yaml; missing references/sources.md
-- `canvas-design` — missing agents/openai.yaml; missing references/sources.md
-- `claude-api` — missing agents/openai.yaml; missing references/sources.md
-- `claude-frontend-design` — missing agents/openai.yaml; missing references/sources.md
-- `claude-skill` — missing agents/openai.yaml; missing references/sources.md
-- `database-design` — missing agents/openai.yaml; missing references/sources.md
-- `deep-research` — missing agents/openai.yaml; missing references/sources.md
-- `deployment-procedures` — missing agents/openai.yaml; missing references/sources.md
-- `docx` — missing agents/openai.yaml; missing references/sources.md
-- `frontend-design` — missing agents/openai.yaml; missing references/sources.md
-- `full-architecture-review` — broken links: https://github.com/architecture-decision-records/adr-tools (404)
-- `full-audit-keamanan` — missing agents/openai.yaml
-- `full-brainstorm` — missing agents/openai.yaml
-- `full-bug-hunter` — missing agents/openai.yaml
-- `full-debug` — missing agents/openai.yaml
-- `full-init` — missing agents/openai.yaml
-- `full-master-plan` — missing agents/openai.yaml
-- `full-optimize-performa` — missing agents/openai.yaml
-- `full-orchestrator-max-otonom` — missing agents/openai.yaml
-- `full-refactoring-max` — missing agents/openai.yaml
-- `full-review` — missing agents/openai.yaml
-- `full-security` — missing agents/openai.yaml
-- `full-setup-project` — missing agents/openai.yaml
-- `full-test` — missing agents/openai.yaml
-- `gh-fix-ci` — missing references/sources.md
-- `kiro-skill` — missing agents/openai.yaml; missing references/sources.md
-- `lint-and-validate` — missing agents/openai.yaml; missing references/sources.md
-- `mcp-builder` — missing agents/openai.yaml; missing references/sources.md
-- `microservices` — broken links: https://github.com/Netflix/microservices-examples (404)
-- `nanobanana-skill` — missing agents/openai.yaml; missing references/sources.md
-- `openai-docs` — missing references/sources.md
-- `prisma-drizzle` — broken links: https://orm.drizzle.team/docs/get-started/postgresql (404)
-- `python-patterns` — missing agents/openai.yaml; missing references/sources.md
-- `react-best-practices` — missing agents/openai.yaml; missing references/sources.md
-- `skill-installer` — missing references/sources.md
-- `spec-kit-skill` — missing agents/openai.yaml; missing references/sources.md
-- `supabase-postgres-best-practices` — missing agents/openai.yaml; missing references/sources.md
-- `theme-factory` — missing agents/openai.yaml; missing references/sources.md
-- `ui-ux-pro-max` — missing agents/openai.yaml; missing references/sources.md
-- `web-artifacts-builder` — missing agents/openai.yaml; missing references/sources.md
-- `webapp-testing` — missing agents/openai.yaml; missing references/sources.md
-- `xlsx` — missing agents/openai.yaml; missing references/sources.md
-- `youtube-transcribe-skill` — missing agents/openai.yaml; missing references/sources.md
+- None
 
 ### NEEDS_REVIEW
 
@@ -161,6 +105,6 @@ Evidence files:
 
 ### Recommendation
 
-Do not change the README total skill folder count yet. Later documentation should distinguish total source folders from audited PASS skills if non-PASS items remain.
+Keep the README aligned with `reports/skill-audit-summary.md`. The package can truthfully state that all 83 retained source skill folders pass the current local substantive audit, while still clarifying that this is not external certification.
 
 **Audit Last Updated**: 2026-06-22

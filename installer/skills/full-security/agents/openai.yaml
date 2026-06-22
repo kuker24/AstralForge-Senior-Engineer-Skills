@@ -1,0 +1,17 @@
+name: full-security
+description: Design and implement security hardening controls, secure defaults, and operational guardrails.
+version: 1.0.0
+triggers:
+  - "security hardening"
+  - "secure defaults"
+  - "add security controls"
+  - "threat mitigation plan"
+  - "protect sensitive data"
+  - "implement guardrails"
+keywords:
+  - security
+  - hardening
+  - controls
+  - guardrails
+  - threat-model
+  - privacy

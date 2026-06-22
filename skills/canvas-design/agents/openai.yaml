@@ -1,0 +1,18 @@
+name: canvas-design
+description: Create polished static visual designs and documents using canvas-based layout generation.
+version: 1.0.0
+triggers:
+  - "create poster design"
+  - "generate static visual art"
+  - "canvas layout design"
+  - "design a one page graphic"
+  - "produce visual PDF artwork"
+  - "build branded graphic asset"
+keywords:
+  - canvas
+  - poster
+  - visual-design
+  - pdf
+  - layout
+  - typography
+  - graphics

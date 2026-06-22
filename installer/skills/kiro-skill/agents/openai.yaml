@@ -1,0 +1,17 @@
+name: kiro-skill
+description: Use Kiro-style spec-driven feature development with requirements, design, and implementation tasks.
+version: 1.0.0
+triggers:
+  - "kiro feature spec"
+  - "create ears requirements"
+  - "write design document"
+  - "kiro implementation tasks"
+  - "spec driven development"
+  - "update .kiro specs"
+keywords:
+  - kiro
+  - requirements
+  - ears
+  - design-doc
+  - tasks
+  - spec-driven

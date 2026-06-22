@@ -1,0 +1,17 @@
+name: full-test
+description: Design and strengthen unit, integration, contract, E2E, and regression test strategy.
+version: 1.0.0
+triggers:
+  - "test strategy"
+  - "add regression tests"
+  - "improve unit tests"
+  - "integration test plan"
+  - "contract testing approach"
+  - "e2e test coverage"
+keywords:
+  - testing
+  - unit-tests
+  - integration
+  - contract
+  - e2e
+  - regression

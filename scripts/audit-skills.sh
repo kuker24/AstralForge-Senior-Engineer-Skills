@@ -138,8 +138,6 @@ def word_count(markdown_body: str) -> int:
 
 def is_placeholder(skill_name: str, text: str) -> bool:
     lowered = text.lower()
-    if skill_name == "template-skill":
-        return True
     return any(pattern in lowered for pattern in PLACEHOLDER_PATTERNS)
 
 

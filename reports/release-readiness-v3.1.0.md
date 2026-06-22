@@ -69,7 +69,7 @@ Final Phase 10 validation commands:
 - Local commits are still unpushed relative to `origin/main`.
 - GitHub-hosted CI/security/installer workflows have not run for the latest local commits.
 - `package.json` still says `3.0.0`; a final version-bump decision is required before an actual `v3.1.0` tag.
-- Known skill audit gaps remain visible: 25 PASS / 12 STUB / 46 BROKEN / 0 NEEDS_REVIEW.
+- Current skill audit is 83 PASS / 0 STUB / 0 BROKEN / 0 NEEDS_REVIEW.
 
 ## Non-Goals for This Phase
 

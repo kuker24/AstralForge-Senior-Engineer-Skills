@@ -1,0 +1,17 @@
+name: full-bug-hunter
+description: Discover defects across edge cases, async flows, integration seams, and regression risks.
+version: 1.0.0
+triggers:
+  - "hunt for bugs"
+  - "broad defect discovery"
+  - "edge case review"
+  - "async state bug scan"
+  - "integration bug hunt"
+  - "regression risk analysis"
+keywords:
+  - bug-hunt
+  - defects
+  - edge-cases
+  - async
+  - integration
+  - regression

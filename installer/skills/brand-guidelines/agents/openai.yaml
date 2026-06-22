@@ -1,0 +1,18 @@
+name: brand-guidelines
+description: Apply brand colors, typography, accessibility, and consistency rules to visual artifacts.
+version: 1.0.0
+triggers:
+  - "apply brand guidelines"
+  - "brand colors and typography"
+  - "style guide compliance"
+  - "visual identity pass"
+  - "brand consistency review"
+  - "design system brand update"
+keywords:
+  - brand
+  - visual-identity
+  - typography
+  - color
+  - accessibility
+  - style-guide
+  - design-system

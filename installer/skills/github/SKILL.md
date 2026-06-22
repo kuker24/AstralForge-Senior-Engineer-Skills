@@ -1,60 +1,27 @@
 ---
 name: github
-description: GitHub patterns using gh CLI for pull requests, stacked PRs, code review, branching strategies, and repository automation. Use when working with GitHub PRs, merging strategies, or repository management tasks.
-license: MIT
-metadata:
-  author: Callstack
-  tags: github, gh-cli, pull-request, stacked-pr, squash, rebase
+description: Use GitHub and gh CLI for pull requests, checks, reviews, branches, releases, and repository workflow automation.
 ---
 
-# GitHub Patterns
+# GitHub Workflow Skill
 
-## Tools
+Use this skill when work involves GitHub repository operations: opening or updating pull requests, inspecting GitHub Actions, reviewing checks, preparing release notes, handling stacked PRs, comparing branches, or automating repository maintenance with the `gh` CLI. Prefer `gh` commands over browser-only instructions when the local environment is authenticated and the action is read-only or explicitly approved.
 
-Use `gh` CLI for all GitHub operations. Prefer CLI over GitHub MCP servers for lower context usage.
+Do not push, merge, close issues, edit repository settings, publish releases, or force-push unless the user explicitly requests that action. Treat external CI systems as separate providers; report their detail URLs instead of guessing their logs.
 
-## Quick Commands
+## Workflow
 
-```bash
-# Create a PR from the current branch
-gh pr create --title "feat: add feature" --body "Description"
+1. Confirm repository, branch, remote, and working tree status.
+2. Use read-only commands first: `gh pr status`, `gh pr view`, `gh run list`, `gh run view`, and `git log`.
+3. Summarize checks by workflow, conclusion, run URL, and failing job names.
+4. For PR work, draft a clear title, body, test evidence, risks, and follow-up items.
+5. For stacked branches, preserve order and use safe rebasing only when the user approves.
+6. After any write operation, verify the remote state and local branch status.
 
-# Squash-merge a PR
-gh pr merge <PR_NUMBER> --squash --title "feat: add feature (#<PR_NUMBER>)"
+## Output Expectations
 
-# View PR status and checks
-gh pr status
-gh pr checks <PR_NUMBER>
-```
+Provide exact commands run, links to PRs or workflow runs, changed files, and whether any remote mutation occurred. If a command requires authentication or elevated permission, stop and ask instead of attempting a risky workaround.
 
-## Stacked PR Workflow Summary
+## Safety Notes
 
-When merging a chain of stacked PRs (each targeting the previous branch):
-
-1. **Merge the first PR** into main via squash merge
-2. **For each subsequent PR**: rebase onto main, update base to main, then squash merge
-3. **On conflicts**: stop and ask the user to resolve manually
-
-```bash
-# Rebase next PR's branch onto main, excluding already-merged commits
-git rebase --onto origin/main <old-base-branch> <next-branch>
-git push --force-with-lease origin <next-branch>
-gh pr edit <N> --base main
-gh pr merge <N> --squash --title "<PR title> (#N)"
-```
-
-See [stacked-pr-workflow.md][stacked-pr-workflow] for full step-by-step details.
-
-## Quick Reference
-
-| File | Description |
-| --- | --- |
-| [stacked-pr-workflow.md][stacked-pr-workflow] | Merge stacked PRs into main as individual squash commits |
-
-## Problem -> Skill Mapping
-
-| Problem | Start With |
-| --- | --- |
-| Merge stacked PRs cleanly | [stacked-pr-workflow.md][stacked-pr-workflow] |
-
-[stacked-pr-workflow]: references/stacked-pr-workflow.md
+Never print tokens. Never use `--force` unless the user explicitly requests and the risk is explained. Keep release and merge claims tied to actual GitHub status.

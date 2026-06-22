@@ -13,14 +13,13 @@ Status: PASS
 Summary excerpt:
 
 ```txt
-Test Files  4 passed (4)
-      Tests  8 passed (8)
+Test Files  5 passed (5)
+      Tests  31 passed (31)
  % Coverage report from v8
-All files |       0 |        0 |       0 |       0 |
-Statements   : Unknown% ( 0/0 )
-Branches     : Unknown% ( 0/0 )
-Functions    : Unknown% ( 0/0 )
-Lines        : Unknown% ( 0/0 )
+All files          |   81.31 |     67.9 |   89.47 |   85.88 |
+ akses-satu-api.ts |   81.11 |     67.9 |   89.47 |   85.71 | 155,177,186,189,194,218-221,241,251,262,273
+Statements   : 81.31% ( 74/91 )
+Branches     : 67.9% ( 55/81 )
+Functions    : 89.47% ( 17/19 )
+Lines        : 85.88% ( 73/85 )
 ```
-
-Note: this repository currently has repository-structure tests and no instrumented runtime `src/` modules, so V8 reports `0/0` coverage.

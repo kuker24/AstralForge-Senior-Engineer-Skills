@@ -1,0 +1,17 @@
+name: theme-factory
+description: Apply or create visual themes with palettes, typography, spacing, and artifact consistency.
+version: 1.0.0
+triggers:
+  - "apply visual theme"
+  - "create design theme"
+  - "theme artifact styling"
+  - "choose palette typography"
+  - "style report or slides"
+  - "generate theme system"
+keywords:
+  - theme
+  - palette
+  - typography
+  - visual-design
+  - style-system
+  - branding

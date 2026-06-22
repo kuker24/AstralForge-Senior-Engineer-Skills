@@ -1,0 +1,17 @@
+name: supabase-postgres-best-practices
+description: Optimize Postgres schemas, queries, indexes, and RLS patterns for Supabase projects.
+version: 1.0.0
+triggers:
+  - "supabase postgres performance"
+  - "postgres index review"
+  - "optimize supabase query"
+  - "rls policy performance"
+  - "database advisor fix"
+  - "foreign key index check"
+keywords:
+  - supabase
+  - postgres
+  - performance
+  - indexes
+  - rls
+  - database

@@ -1,0 +1,18 @@
+name: full-setup-project
+description: Standardize project foundations, tooling, environments, CI, tests, and documentation.
+version: 1.0.0
+triggers:
+  - "setup new project"
+  - "standardize tooling"
+  - "add ci tests docs"
+  - "project foundation setup"
+  - "configure quality gates"
+  - "bootstrap repository"
+keywords:
+  - setup
+  - tooling
+  - ci
+  - tests
+  - docs
+  - bootstrap
+  - quality-gates

@@ -1,0 +1,17 @@
+name: react-best-practices
+description: Apply React and Next.js performance, rendering, state, and data-fetching best practices.
+version: 1.0.0
+triggers:
+  - "react performance review"
+  - "nextjs component optimization"
+  - "fix rerender issue"
+  - "react data fetching pattern"
+  - "reduce client bundle"
+  - "optimize react state"
+keywords:
+  - react
+  - nextjs
+  - performance
+  - rerender
+  - state
+  - data-fetching
