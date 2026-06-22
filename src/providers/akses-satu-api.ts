@@ -13,9 +13,11 @@ export const AKSES_SATU_DEFAULT_BASE_URL = 'https://api.satuakses.top/v1';
 export const AKSES_SATU_DEFAULT_MODEL = 'glm-4.6';
 
 /**
- * Models verified live through `GET /v1/models` and (for `glm-4.6`) through
- * `POST /v1/chat/completions`. These can be advertised as `enabled` in
- * `~/.pi/agent/settings.json` and the installer config.
+ * Models verified live through `GET /v1/models` and `POST /v1/chat/completions`
+ * in this environment (live test on 2026-06-22). All 11 union models returned
+ * HTTP 200 with `object: chat.completion` and a valid `choices[0].message.content`.
+ * These can be advertised as `enabled` in `~/.pi/agent/settings.json` and the
+ * installer config.
  */
 export const AKSES_SATU_VERIFIED_LIVE_MODELS = [
   'glm-4.6',
@@ -25,20 +27,21 @@ export const AKSES_SATU_VERIFIED_LIVE_MODELS = [
   'google-gemma-2-9b-it',
   'mimo-v2.5',
   'claude-opus-4.8',
-] as const;
-
-/**
- * Models requested by the user that have NOT yet been observed in the live
- * `GET /v1/models` response. They are still part of the provider model union
- * and may be tried, but they should not be listed as `enabledModels` until
- * they have been verified.
- */
-export const AKSES_SATU_CONFIGURED_MODELS = [
   'gpt-5.5',
   'minimax-m3',
   'mimo-v2.5-pro',
   'deepseek-v4-pro',
 ] as const;
+
+/**
+ * Models requested by the user that have NOT yet been observed in the live
+ * `GET /v1/models` or `POST /v1/chat/completions` response. The list is
+ * intentionally empty right now (all 11 union models were verified live on
+ * 2026-06-22), but the export is kept for forward compatibility so future
+ * requested models that are not yet live can be listed here without breaking
+ * downstream consumers.
+ */
+export const AKSES_SATU_CONFIGURED_MODELS = [] as const;
 
 /**
  * Full union of models for the provider. Order is preserved

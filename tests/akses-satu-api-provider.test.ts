@@ -81,15 +81,17 @@ describe('Akses Satu Api custom provider', () => {
   });
 
   it('exposes the verified-live and configured-only model lists separately', () => {
+    // All 11 union models were verified live on 2026-06-22.
     expect(AKSES_SATU_VERIFIED_LIVE_MODELS).toContain('glm-4.6');
     expect(AKSES_SATU_VERIFIED_LIVE_MODELS).toContain('claude-opus-4.8');
-    expect(AKSES_SATU_VERIFIED_LIVE_MODELS.length).toBe(7);
+    expect(AKSES_SATU_VERIFIED_LIVE_MODELS).toContain('gpt-5.5');
+    expect(AKSES_SATU_VERIFIED_LIVE_MODELS).toContain('minimax-m3');
+    expect(AKSES_SATU_VERIFIED_LIVE_MODELS).toContain('mimo-v2.5-pro');
+    expect(AKSES_SATU_VERIFIED_LIVE_MODELS).toContain('deepseek-v4-pro');
+    expect(AKSES_SATU_VERIFIED_LIVE_MODELS.length).toBe(11);
 
-    expect(AKSES_SATU_CONFIGURED_MODELS).toContain('gpt-5.5');
-    expect(AKSES_SATU_CONFIGURED_MODELS).toContain('minimax-m3');
-    expect(AKSES_SATU_CONFIGURED_MODELS).toContain('mimo-v2.5-pro');
-    expect(AKSES_SATU_CONFIGURED_MODELS).toContain('deepseek-v4-pro');
-    expect(AKSES_SATU_CONFIGURED_MODELS.length).toBe(4);
+    // No configured-only models remain (all 11 are verified live).
+    expect(AKSES_SATU_CONFIGURED_MODELS.length).toBe(0);
   });
 
   it('keeps the model union deduplicated (verified-live + configured-only)', () => {
@@ -98,6 +100,13 @@ describe('Akses Satu Api custom provider', () => {
     expect(AKSES_SATU_MODELS.length).toBe(11);
     // verified-live + configured-only = 11, no duplicates.
     expect(AKSES_SATU_VERIFIED_LIVE_MODELS.length + AKSES_SATU_CONFIGURED_MODELS.length).toBe(11);
+  });
+
+  it('treats all 11 union models as verified live (2026-06-22 test pass)', () => {
+    // This guards against accidental demotion of newly-verified models.
+    for (const m of AKSES_SATU_MODELS) {
+      expect(AKSES_SATU_VERIFIED_LIVE_MODELS).toContain(m);
+    }
   });
 
   it('lists models from GET /models with the correct URL and bearer auth', async () => {

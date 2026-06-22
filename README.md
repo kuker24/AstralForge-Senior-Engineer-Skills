@@ -360,22 +360,24 @@ AKSES_SATU_DEFAULT_MODEL=glm-4.6
 
 Default model: `glm-4.6` (verified live via `POST /v1/chat/completions`).
 
-Verified live models (enabled in `installer/config/settings.json`):
+Verified live models (all 11 union models, tested 2026-06-22 with
+`GET /v1/models` + `POST /v1/chat/completions`):
 
-- `glm-4.6`
+- `glm-4.6` (default)
 - `claude-sonnet-4.6`
 - `cipher`
 - `idsa-v1.0`
 - `google-gemma-2-9b-it`
 - `mimo-v2.5`
 - `claude-opus-4.8`
-
-Configured / requested models (kept in union, not yet verified):
-
 - `gpt-5.5`
 - `minimax-m3`
 - `mimo-v2.5-pro`
 - `deepseek-v4-pro`
+
+Configured / requested models (not yet verified): none. The
+`AKSES_SATU_CONFIGURED_MODELS` export is reserved for future user-requested
+models that are not yet live.
 
 Supported endpoints:
 

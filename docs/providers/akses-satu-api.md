@@ -105,6 +105,9 @@ bash scripts/run-pi-akses-satu.sh -p "Jawab hanya satu kata: BERHASIL"
 
 ### Verified live models (advertised as enabled)
 
+All 11 models in the union were verified live on 2026-06-22 against
+`https://api.satuakses.top/v1` using `GET /v1/models` and `POST /v1/chat/completions`:
+
 - `glm-4.6` (default)
 - `claude-sonnet-4.6`
 - `cipher`
@@ -112,17 +115,24 @@ bash scripts/run-pi-akses-satu.sh -p "Jawab hanya satu kata: BERHASIL"
 - `google-gemma-2-9b-it`
 - `mimo-v2.5`
 - `claude-opus-4.8`
-
-### Configured / requested models (kept in union, not yet verified)
-
 - `gpt-5.5`
 - `minimax-m3`
 - `mimo-v2.5-pro`
 - `deepseek-v4-pro`
 
-These are NOT removed from the union just because they did not appear in
-`GET /v1/models`; they may be tried and will be promoted to verified once the
-provider returns them.
+### Configured / requested models (kept in union, not yet verified)
+
+None. The `AKSES_SATU_CONFIGURED_MODELS` export exists for forward
+compatibility (future user-requested models that are not yet live can be
+listed there) but is currently empty.
+
+For reference, the `GET /v1/models` response on 2026-06-22 returned 20 model
+ids (the 11 above plus 9 more like `mimo-v2-pro`, `gpt-5.3-codex`,
+`claude-sonnet-4.5`, `gpt-5.4`, `mistralai-mistral-7b-instruct`,
+`claude-haiku-4.5`, `qwen-qwen-2-7b-instruct`, `claude-opus-4.7`,
+`claude-opus-4.6`, `nemotron-3-nano-omni-30b-a3b-reasoning`). The provider
+union is intentionally limited to the 11 user-curated ids; additional
+provider models can be requested by extending the union.
 
 ## Endpoints
 

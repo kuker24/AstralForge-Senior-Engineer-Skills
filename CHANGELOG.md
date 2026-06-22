@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Set Akses Satu Api default model to `glm-4.6` because it is verified through `/v1/chat/completions`.
+- Promoted all 4 previously-configured models (`gpt-5.5`, `minimax-m3`, `mimo-v2.5-pro`, `deepseek-v4-pro`) to `AKSES_SATU_VERIFIED_LIVE_MODELS` after live re-test on 2026-06-22 confirmed all 11 union models return HTTP 200 + `object=chat.completion` + valid `content` from `POST /v1/chat/completions`. `AKSES_SATU_CONFIGURED_MODELS` is now empty (kept as an export for forward compatibility).
 - Rewrote `scripts/test-akses-satu-api.sh` so the chat-completions and responses sections actually call their respective endpoints and classify results honestly (no PASS for a model-list misroute on `/responses`).
 - Updated `installer/config/models.json` to list the full 11-model union with `reasoning`/`contextWindow`/`maxTokens` metadata and `authHeader: true`.
 - Updated `installer/config/settings.json` to include all 7 verified-live `akses-satu-api/*` model ids in `enabledModels`, plus the 4 configured-only models.

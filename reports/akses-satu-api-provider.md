@@ -29,8 +29,12 @@ Added Akses Satu Api as a custom OpenAI-compatible provider for this AstralForge
 | Bearer API key via `AKSES_SATU_API_KEY` | Added | provider module + Pi config + extension |
 | Default model `glm-4.6` | Added (was `gpt-5.5` in v1; switched because `glm-4.6` is verified live) | provider module + `.env.example` |
 | Model union (11 models, no duplicates) | Added | `AKSES_SATU_MODELS` = `AKSES_SATU_VERIFIED_LIVE_MODELS` (7) + `AKSES_SATU_CONFIGURED_MODELS` (4) |
-| Verified live models | Added | `glm-4.6`, `claude-sonnet-4.6`, `cipher`, `idsa-v1.0`, `google-gemma-2-9b-it`, `mimo-v2.5`, `claude-opus-4.8` |
-| Configured / requested models | Added | `gpt-5.5`, `minimax-m3`, `mimo-v2.5-pro`, `deepseek-v4-pro` (kept in union even if not in `/v1/models` yet) |
+| Verified live models (initial 7) | Added | `glm-4.6`, `claude-sonnet-4.6`, `cipher`, `idsa-v1.0`, `google-gemma-2-9b-it`, `mimo-v2.5`, `claude-opus-4.8` |
+| Configured / requested models (initial 4) | Added | `gpt-5.5`, `minimax-m3`, `mimo-v2.5-pro`, `deepseek-v4-pro` (kept in union even if not in `/v1/models` yet) |
+| Live re-test 2026-06-22 (after `AKSES_SATU_API_KEY` was set) | PASS | All 11 union models returned HTTP 200 + `object=chat.completion` + `content="BERHASIL"` via `POST /v1/chat/completions`. `AKSES_SATU_CONFIGURED_MODELS` is now empty. | `reports/pi-akses-satu-detection.md` ("Live Test Results" section). |
+| Pi native provider (`pi --provider akses-satu-api --model glm-4.6`) | PASS | Output: BERHASIL. `pi --list-models akses` lists all 11 models with context/max-output metadata. |
+| Pi extension path (`pi -e ./extensions/akses-satu-api-provider ...`) | PASS | Output: BERHASIL. |
+| Pi launcher fallback (`bash scripts/run-pi-akses-satu.sh`) | PASS | Output: BERHASIL. Script printed `API Key: [REDACTED]`. |
 | Static model fallback list | Added | `AKSES_SATU_MODELS` |
 | `GET /models` | Added | `listAksesSatuModels()` |
 | `POST /chat/completions` | Added | `createAksesSatuChatCompletion()` |
@@ -66,11 +70,11 @@ Added Akses Satu Api as a custom OpenAI-compatible provider for this AstralForge
 
 ## Known Limitations
 
-- Unit tests use mocked `fetch`; no live Akses Satu Api call was made from this repo (no `AKSES_SATU_API_KEY` is set in this environment).
-- `scripts/test-akses-satu-api.sh` was not executed in this session because `AKSES_SATU_API_KEY` is not set locally. The script is key-safe and ready to run after the key is exported.
-- Pi `models.json` uses `api: "openai-completions"` for chat usage. The local helper also supports the Responses API for systems/apps that call it directly.
+- Unit tests use mocked `fetch`. Live tests on 2026-06-22 (after `AKSES_SATU_API_KEY` was set) were run against the real provider and confirmed all 11 union models + the 3 endpoints work; see `reports/pi-akses-satu-detection.md` ("Live Test Results" section).
+- `scripts/test-akses-satu-api.sh` is key-safe and was executed live on 2026-06-22. It never prints the key value (it prints `API Key: [REDACTED]` instead) and never logs the Authorization header.
+- Pi `models.json` uses `api: "openai-completions"` for chat usage. The local helper also supports the Responses API for systems/apps that call it directly. Both endpoints were verified live on 2026-06-22.
 - Pi v0.79.9 does NOT honor `OPENAI_BASE_URL` for the built-in `openai` provider. The launcher therefore uses the native `akses-satu-api` provider id (already registered via `~/.pi/agent/models.json` after installer runs). The launcher keeps `OPENAI_*` exports as a defensive convenience.
-- Local Pi binary was detected but no live provider call was run from this session.
+- Earlier draft (before live re-test) said 4 models (gpt-5.5, minimax-m3, mimo-v2.5-pro, deepseek-v4-pro) were configured-only. The 2026-06-22 live re-test confirmed all 4 also return HTTP 200 + `object=chat.completion` + valid `content` from `POST /v1/chat/completions`. They are now part of `AKSES_SATU_VERIFIED_LIVE_MODELS`; `AKSES_SATU_CONFIGURED_MODELS` is empty. All 11 union models are listed in `installer/config/settings.json` `enabledModels`.
 - Semgrep reported partial parsing errors in existing YAML/complex Bash snippets, but reported zero findings.
 
 ## Files Changed (this session)
