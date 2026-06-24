@@ -55,7 +55,7 @@ jobs:
         uses: semgrep/semgrep-action@v1
         with: { config: 'p/default' }
       - name: OSV Scanner
-        uses: google/osv-scanner-action@v2.3.8
+        uses: google/osv-scanner-action/osv-scanner-action@v2.3.8
         with: { scan-args: '--format json --output osv-results.json .' }
       - name: Gitleaks
         uses: gitleaks/gitleaks-action@v2
