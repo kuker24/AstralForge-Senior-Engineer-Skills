@@ -1,6 +1,7 @@
+![CI](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/ci.yml/badge.svg) ![Coverage](https://img.shields.io/badge/coverage-check%20CI-blue)
+
 # AstralForge Senior Engineer Skills
 
-[![CI](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/ci.yml/badge.svg)](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/ci.yml)
 [![Security](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/security.yml/badge.svg)](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/security.yml)
 [![Installers](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/installers.yml/badge.svg)](https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/workflows/installers.yml)
 
