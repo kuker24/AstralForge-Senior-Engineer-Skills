@@ -20,7 +20,8 @@ The repository documents evidence in:
 
 ## Known Limitations
 
-- Not every source skill is substantively verified. See [`reports/skill-audit-summary.md`](reports/skill-audit-summary.md).
+- The current substantive skill audit reports 83 PASS / 0 NEEDS_REVIEW / 0 STUB / 0 BROKEN. See [`reports/skill-audit-summary.md`](reports/skill-audit-summary.md).
+- The v3.1.0 Skill Security Auditor is an additional deterministic semantic scan for risky instructions, not an external certification.
 - GitHub-hosted CI status is only verified after workflows run on GitHub Actions.
 - Some tools depend on the contributor's local environment.
 - Mutation testing is manual-only and is not part of default security validation.
@@ -48,6 +49,7 @@ semgrep scan --config p/default --metrics=off
 osv-scanner scan source -r . --format json --output-file osv-results.json
 gitleaks git --redact --report-format json --report-path gitleaks-report.json .
 gitleaks dir --redact --report-format json --report-path gitleaks-dir-report.json .
+npm run audit:skill-security
 npm audit --audit-level=moderate
 ```
 

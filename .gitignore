@@ -40,6 +40,8 @@ env/
 *.bak
 *.backup
 backup-*/
+.astralforge-backups/
+**/.astralforge-backups/
 
 # Generated / local-only folders
 sources/
@@ -62,6 +64,7 @@ pi/
 # Runtime state
 sessions/
 trigger.txt
+.astralforge-install.json
 
 # Test / coverage / mutation reports
 coverage/

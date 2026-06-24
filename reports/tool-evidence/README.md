@@ -15,14 +15,15 @@ This folder stores compact dogfooding evidence for local tools. It intentionally
 | OSV-Scanner | `osv-scanner scan source -r . --format json --output-file osv-results.json` | UNVERIFIED, network timeout on retry | [`osv-scanner.log`](osv-scanner.log) |
 | Gitleaks git | `gitleaks git --redact --report-format json --report-path gitleaks-report.json .` | PASS, 0 findings | [`gitleaks-git.json`](gitleaks-git.json) |
 | Knip | `npx knip --reporter json > reports/tool-evidence/knip.log` | PASS, JSON report with no issues | [`knip.log`](knip.log) |
-| Playwright | `npx playwright test --project=chromium` | Not rerun in this phase; placeholder smoke test remains | [`playwright-summary.md`](playwright-summary.md) |
-| Repomix | `repomix --compress` | Not rerun in this phase | [`repomix-summary.md`](repomix-summary.md) |
+| Playwright | `npx playwright test --project=chromium` | Not rerun in this evidence file; package-level E2E remains separate from unit smoke checks | [`playwright-summary.md`](playwright-summary.md) |
+| Repomix compressed context | `repomix --compress` | Prior dogfooding evidence | [`repomix-summary.md`](repomix-summary.md) |
+| Repomix token report | `npm run token:report` | PASS, compact token tree summary | [`repomix-token-summary.md`](repomix-token-summary.md) |
 
 ## Large Outputs Not Committed
 
 - `coverage/` is ignored; see `coverage-summary.md`.
 - `playwright-report/` is ignored; see `playwright-summary.md`.
-- `repomix-output.xml` is ignored; see `repomix-summary.md`.
+- `repomix-output.xml` is ignored; see `repomix-summary.md` and `repomix-token-summary.md`.
 
 ## Safety Notes
 

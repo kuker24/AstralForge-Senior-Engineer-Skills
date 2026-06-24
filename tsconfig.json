@@ -13,6 +13,6 @@
     "isolatedModules": true,
     "types": ["node", "vitest/globals"]
   },
-  "include": ["src", "tests", "e2e", "*.ts", "*.tsx"],
+  "include": ["src", "tests", "e2e", "scripts", "*.ts", "*.tsx"],
   "exclude": ["node_modules", "dist", "build", ".next", "coverage", "playwright-report", "test-results", ".stryker-tmp", "mutation-report"]
 }
