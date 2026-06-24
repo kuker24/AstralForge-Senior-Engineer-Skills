@@ -6,57 +6,56 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
-### Added
-- Added Akses Satu Api OpenAI-compatible provider configuration.
-- Added verified live model list (7 models) and requested configured model list (4 models) to the Akses Satu Api provider, with deduplicated full union of 11 models.
-- Added Pi launcher fallback (`scripts/run-pi-akses-satu.sh`) for Akses Satu Api.
-- Added Akses Satu Api Pi extension at `extensions/akses-satu-api-provider/` and a mirrored installer copy at `installer/extensions/akses-satu-api-provider/`, both using the native `pi.registerProvider()` API.
-- Added Akses Satu Api manual API test script and documentation.
-- Added local Pi detection report (`reports/pi-akses-satu-detection.md`) covering Pi version, native provider API availability, env var status, and config locations.
-- Added missing `agents/openai.yaml` and `references/sources.md` support files across retained source skills so the substantive audit can validate every skill.
-- Refined `CONTRIBUTING.md` with explicit skill structure, 150-word minimum, audit commands, QA commands, and PR checklist.
-
-### Changed
-- Set Akses Satu Api default model to `glm-4.6` because it is verified through `/v1/chat/completions`.
-- Promoted all 4 previously-configured models (`gpt-5.5`, `minimax-m3`, `mimo-v2.5-pro`, `deepseek-v4-pro`) to `AKSES_SATU_VERIFIED_LIVE_MODELS` after live re-test on 2026-06-22 confirmed all 11 union models return HTTP 200 + `object=chat.completion` + valid `content` from `POST /v1/chat/completions`. `AKSES_SATU_CONFIGURED_MODELS` is now empty (kept as an export for forward compatibility).
-- Rewrote `scripts/test-akses-satu-api.sh` so the chat-completions and responses sections actually call their respective endpoints and classify results honestly (no PASS for a model-list misroute on `/responses`).
-- Updated `installer/config/models.json` to list the full 11-model union with `reasoning`/`contextWindow`/`maxTokens` metadata and `authHeader: true`.
-- Updated `installer/config/settings.json` to include all 7 verified-live `akses-satu-api/*` model ids in `enabledModels`, plus the 4 configured-only models.
-- Updated `docs/providers/akses-satu-api.md`, `README.md`, and `AGENTS.md` to document the verified live list, configured list, default model, and the three Pi integration paths.
-- Extended `tests/akses-satu-api-provider.test.ts` and `tests/installer-scripts.test.ts` to cover the new model union, verified/configured lists, `.env.example` placeholder, executable launcher, fixed test script, and Pi extension.
-- Rewrote all previously stub-classified skills with substantive workflows, output expectations, validation gates, and safety notes.
-- Fixed broken reference URLs for ADR, microservices, Drizzle PostgreSQL, OpenXML, Kiro, and AI/ML documentation.
-- Added `npm run audit:skills`, CI audit enforcement, and Vitest regression tests for support files, manifest counts, README audit counts, and unfinished marker phrases.
-
-### Security
-- Akses Satu Api credentials are loaded only from `AKSES_SATU_API_KEY`; no API keys are hardcoded.
-- `.env.example` contains only the `sk-sa-REPLACE_ME` placeholder. `.env` and `.env.*` remain gitignored.
-- The helper client, the test script, the launcher, and the extension never print `Authorization` headers or the value of the API key.
-- Pi v0.79.9 does not honor `OPENAI_BASE_URL` for the built-in `openai` provider; the launcher falls back to the native `akses-satu-api` provider id and documents this limitation explicitly.
-
-### Notes
-- No README support claims were upgraded in phase 1.
-- CI will be considered verified only after the workflow runs on GitHub Actions.
-- Security CI will be considered verified only after the workflow runs on GitHub Actions.
-- Current substantive skill audit reports 83 PASS / 0 NEEDS_REVIEW / 0 STUB / 0 BROKEN for the retained source skill set.
+- No unreleased changes.
 
 ---
 
-## 3.0.0 - AstralForge Senior Engineer Skills
+## [3.0.0] - 2026-06-24
 
 ### Added
-- Rebranded package to AstralForge Senior Engineer Skills.
+- Rebranded package to **AstralForge Senior Engineer Skills**.
+- Added 83 retained source skill folders with `SKILL.md`, `agents/openai.yaml`, and `references/sources.md` support files.
 - Added source-only skill verification via `scripts/verify-source-skills.sh` and `npm run verify:skills`.
-- Added meaningful Vitest coverage for skill manifests, project config, and installer scripts.
+- Added substantive skill audit via `scripts/audit-skills.sh` and `npm run audit:skills`.
+- Added GitHub Actions CI pipeline with jobs for typecheck, coverage, Playwright E2E, security scans, dead-code report, skill audit, and pre-commit.
+- Added local QA/security tooling: TypeScript, Vitest, Playwright, Knip, Semgrep CE, OSV-Scanner, Gitleaks, pre-commit, and Repomix evidence.
+- Added installer and global verification scripts for Pi/OpenCode/Claude/Codex/Agents skill locations.
+- Added Akses Satu Api OpenAI-compatible provider configuration, Pi extension, launcher fallback, documentation, and safe manual smoke-test script.
+- Added contribution, security, conduct, issue/PR templates, reports index, release runbooks, and architecture/release readiness docs.
 
-### Updated
+### Changed
 - Updated package metadata to `astralforge-senior-engineer-skills` version `3.0.0`.
-- Synchronized skill count documentation to the actual 83 source skills.
-- Strengthened senior local quality-gate documentation and scripts for Pi Code / Pi Agent usage.
+- Updated README claims to distinguish evidence-backed local verification from external certification.
+- Updated `installer/config/models.json` and `installer/config/settings.json` for Akses Satu Api model availability.
+- Updated all previously stub-classified skills with substantive workflows, output expectations, validation gates, and safety notes.
+- Updated `template-skill` into a real skill-template authoring skill while keeping the retained source count at 83.
+- Synchronized `skills/` into `installer/skills/` so installer payload matches the source skill set.
 
-### Notes
-- StrykerJS remains manual-only and must not run unless explicitly requested.
-- Reports remain local and gitignored; no login, cloud upload, API key, push, or OMNI configuration change was performed.
+### Fixed
+- Fixed missing `agents/openai.yaml` files across retained source skills.
+- Fixed missing `references/sources.md` files across retained source skills.
+- Fixed broken reference URLs for ADR tooling, microservices references, Drizzle PostgreSQL, OpenXML docs, Kiro docs, MCP docs, database migration docs, and AI/ML docs.
+- Fixed CI workflow issues around OSV Scanner action resolution and Gitleaks history depth.
+- Fixed the GitHub Actions verification watcher so pending workflows poll instead of exiting immediately.
+
+### Security
+- Custom provider credentials are read from environment variables only; no provider API keys are hardcoded.
+- `.env` and `.env.*` remain ignored; `.env.example` contains placeholders only.
+- Gitleaks reports show zero findings for committed evidence.
+- Latest CI security job passed on GitHub Actions.
+
+### Verification
+- Retained source skills: 83.
+- Verified by substantive audit: 83 PASS / 0 NEEDS_REVIEW / 0 STUB / 0 BROKEN.
+- In progress skill count: 0.
+- Latest green CI run for this release preparation: https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/runs/28117522977
+- Evidence files: `reports/skill-audit-summary.md`, `reports/INDEX.md`, and `reports/ci-first-run.md`.
+
+### Known Limitations
+- Local OSV-Scanner evidence previously timed out against the OSV API; the GitHub Actions security job passed.
+- Playwright E2E remains a skipped package smoke test because this repository is not a runnable web application.
+- StrykerJS mutation testing is manual-only and was not run for this release.
+- The release verifies the local audit criteria; it is not an external certification of every referenced third-party source.
 
 ---
 
