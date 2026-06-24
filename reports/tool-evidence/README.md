@@ -1,6 +1,6 @@
 # Tool Evidence Index
 
-Date: 2026-06-22
+Date: 2026-06-24
 
 This folder stores compact dogfooding evidence for local tools. It intentionally avoids committing large generated artifacts such as full coverage HTML, Playwright HTML reports, or `repomix-output.xml`.
 
@@ -14,7 +14,7 @@ This folder stores compact dogfooding evidence for local tools. It intentionally
 | Semgrep | `semgrep scan --config p/default --metrics=off --json --json-output=semgrep-results.json` | PASS, 0 findings; 3 partial parsing errors in existing workflow/script snippets | [`semgrep.json`](semgrep.json) |
 | OSV-Scanner | `osv-scanner scan source -r . --format json --output-file osv-results.json` | UNVERIFIED, network timeout on retry | [`osv-scanner.log`](osv-scanner.log) |
 | Gitleaks git | `gitleaks git --redact --report-format json --report-path gitleaks-report.json .` | PASS, 0 findings | [`gitleaks-git.json`](gitleaks-git.json) |
-| Knip | `npx knip` | PASS, no output/findings | [`knip.log`](knip.log) |
+| Knip | `npx knip --reporter json > reports/tool-evidence/knip.log` | PASS, JSON report with no issues | [`knip.log`](knip.log) |
 | Playwright | `npx playwright test --project=chromium` | Not rerun in this phase; placeholder smoke test remains | [`playwright-summary.md`](playwright-summary.md) |
 | Repomix | `repomix --compress` | Not rerun in this phase | [`repomix-summary.md`](repomix-summary.md) |
 
