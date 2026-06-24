@@ -11,7 +11,7 @@
 
 ## Standards or Specifications
 
-- https://ecma-international.org/publications-and-standards/standards/ecma-376/
+- https://learn.microsoft.com/en-us/office/open-xml/open-xml-sdk
 
 ## Access Date
 
