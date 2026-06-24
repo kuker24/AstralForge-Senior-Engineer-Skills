@@ -1,141 +1,144 @@
-# Contributing to AstralForge Senior Engineer Skills
+# Contributing to AstralForge
 
-Thank you for helping improve AstralForge Senior Engineer Skills. This repository is a local-first AI engineering skills package, not a hosted service. Contributions should improve evidence, portability, safety, documentation, or skill quality without hiding known gaps.
+AstralForge adalah paket skill lokal untuk AI engineering workflow. Kontribusi harus menjaga evidence, keamanan, dan kualitas skill. Jangan menambahkan klaim `Verified`, `Supported`, atau `Done` tanpa bukti dari audit lokal, test, atau CI.
 
-## Ground Rules
+## Cara menambah skill baru
 
-- Do not commit secrets, API keys, tokens, `.env` files, local credentials, generated reports with private data, or build artifacts.
-- Do not force-push shared branches.
-- Do not claim a skill is `Verified`, `Supported`, or `Done` without evidence in `reports/` or CI output.
-- Do not hide stub, broken, duplicate, or incomplete skills. Report them and fix them transparently.
-- Do not delete or move skills unless the PR explains the reason and migration impact.
-- Do not run Stryker mutation testing unless explicitly requested by a maintainer.
-- Keep changes small and reviewable.
+Tambahkan skill baru hanya jika ada kebutuhan nyata dan batas trigger-nya jelas. Skill baru harus membantu agent melakukan pekerjaan operasional, bukan sekadar menambah jumlah folder.
 
-## Repository Reality Check
+### Struktur wajib
 
-Before proposing a change, read:
-
-- [`README.md`](README.md) — current status and verification definitions.
-- [`SKILLS_MANIFEST.md`](SKILLS_MANIFEST.md) — source skill list.
-- [`reports/skill-audit-summary.md`](reports/skill-audit-summary.md) — substantive skill audit summary.
-- [`reports/tool-evidence/README.md`](reports/tool-evidence/README.md) — latest local tool evidence.
-- [`ARCHITECTURE.md`](ARCHITECTURE.md) — package architecture and stack boundaries.
-
-Current source count is 83 skill folders. The substantive audit is intentionally stricter than folder existence and currently distinguishes PASS/STUB/BROKEN items.
-
-## Local Setup
-
-This repository uses npm because `package-lock.json` is present.
-
-```bash
-npm ci
+```txt
+skills/
+└── nama-skill/
+    ├── SKILL.md          # Isi minimal 150 kata, bukan placeholder
+    ├── agents/
+    │   └── openai.yaml   # Config agent, bukan template kosong
+    └── references/
+        └── sources.md    # Link sumber yang hidup (HTTP 200)
 ```
 
-If you are only editing Markdown, shell scripts, or skill files, you may not need to install all tooling, but PRs should still explain which checks were run.
+### Standar minimum SKILL.md
 
-## Required Checks Before a PR
+- Frontmatter valid dan konsisten dengan folder:
+  - `name` harus sama persis dengan nama folder.
+  - `description` harus pendek, spesifik, dan action-oriented.
+  - `license` atau metadata lisensi harus dicantumkan jika skill menyertakan kode/aset/sumber dengan lisensi eksplisit.
+- Isi body minimal 150 kata substantif.
+- Body harus menjelaskan:
+  - kapan skill dipakai;
+  - kapan skill tidak dipakai;
+  - workflow langkah demi langkah;
+  - output yang diharapkan;
+  - validation gates;
+  - catatan safety atau quality.
+- Bukan copy-paste dari skill lain tanpa modifikasi domain yang nyata.
+- Tidak boleh berisi marker unfinished seperti `TODO`, `TBD`, `replace with description`, atau filler generik.
+- Jika skill berhubungan dengan tool, API, SDK, framework, atau standar tertentu, tambahkan sumber relevan di `references/sources.md`.
 
-Run the smallest relevant checks first, then expand as needed.
+### Standar minimum agents/openai.yaml
 
-Fast baseline:
+`agents/openai.yaml` harus non-empty dan berisi:
+
+```yaml
+name: nama-skill
+description: Short action-oriented description
+version: 1.0.0
+triggers:
+  - "specific trigger phrase"
+keywords:
+  - keyword
+```
+
+Gunakan 5–10 trigger phrase yang cukup spesifik agar skill tidak over-trigger. Gunakan 5–12 keyword yang relevan dengan domain skill.
+
+### Standar minimum references/sources.md
+
+`references/sources.md` harus berisi:
+
+- `# Sources & References`
+- `## Official Documentation`
+- `## Repositories Referenced` jika relevan
+- `## Standards or Specifications` jika relevan
+- `## Access Date`
+- `## License Notes`
+
+Tambahkan minimal dua URL HTTP yang real, relevan, dan bisa dijangkau. Preferensi sumber:
+
+1. dokumentasi resmi;
+2. standar/spesifikasi primer;
+3. repository open-source resmi;
+4. referensi teknis bereputasi.
+
+Jangan menambahkan fake references atau URL yang tidak relevan hanya untuk lolos audit.
+
+## Cara run audit lokal sebelum PR
+
+```bash
+./scripts/audit-skills.sh
+```
+
+atau:
+
+```bash
+npm run audit:skills
+```
+
+Skill dengan status `STUB`, `BROKEN`, atau `NEEDS_REVIEW` tidak akan diterima. Audit ini lebih ketat daripada struktur folder dasar karena juga mengecek support files, word count, marker unfinished, dan link HTTP.
+
+## Cara jalankan semua QA lokal
+
+Minimal sebelum PR:
 
 ```bash
 npm run typecheck
-npm run test:unit
+npm run test:coverage
 npm run verify:skills
+npm run audit:skills
 pre-commit run --all-files
 ```
 
-Coverage evidence:
-
-```bash
-npm run test:coverage
-```
-
-Security/dependency checks for security-sensitive or release changes:
+Checks tambahan yang disarankan untuk perubahan security/dependency/release:
 
 ```bash
 semgrep scan --config p/default --metrics=off
 osv-scanner scan source -r . --format json --output-file osv-results.json
 gitleaks dir --redact --report-format json --report-path gitleaks-dir-report.json .
+npx knip
 ```
 
-Installer changes should also run sandbox checks, never real-home CI installs:
+Jangan commit output lokal besar seperti `coverage/`, `playwright-report/`, `test-results/`, `repomix-output.*`, `semgrep-results.json`, `osv-results.json`, atau `gitleaks-*.json` kecuali file tersebut memang compact evidence yang sengaja ditempatkan di `reports/` dan tidak mengandung secret.
 
-```bash
-bash install.sh --dry-run --target-dir "$(mktemp -d)/pi-skills"
-bash install-global.sh --dry-run --home "$(mktemp -d)/home"
-bash installer/install-pi-linux.sh --dry-run --pi-home "$(mktemp -d)/pi-home" --skip-pi-check
-```
+## PR checklist
 
-## Skill Contribution Checklist
+- [ ] Audit skill lolos dengan verdict `PASS`.
+- [ ] `npm run typecheck` lolos.
+- [ ] `npm run test:coverage` lolos.
+- [ ] `npm run verify:skills` lolos.
+- [ ] `pre-commit run --all-files` lolos.
+- [ ] Tidak ada secret/token/API key/private config di dalam file.
+- [ ] Semua link di `sources.md` hidup dan relevan.
+- [ ] `agents/openai.yaml` berisi trigger dan keyword yang spesifik.
+- [ ] Entry `CHANGELOG.md` ditambahkan jika perubahan memengaruhi perilaku, audit status, dokumentasi publik, atau release readiness.
+- [ ] README tidak mengklaim status lebih tinggi daripada evidence.
 
-When adding or improving a skill:
+## Melaporkan bug
 
-1. Create or update `skills/<skill-name>/SKILL.md`.
-2. Include a clear YAML frontmatter `name` and `description`.
-3. Add enough substantive instructions that the skill is not a stub.
-4. Keep provider-specific guidance honest and cite local references when present.
-5. Avoid hard-coded secrets, account IDs, personal paths, or private URLs.
-6. Run `npm run verify:skills`.
-7. If changing skill quality claims, update the relevant reports or explain why they remain unchanged.
+Gunakan GitHub Issues dengan template yang tersedia. Sertakan:
 
-## Documentation Contribution Checklist
+- langkah reproduksi;
+- file atau skill yang terdampak;
+- command yang dijalankan;
+- hasil yang diharapkan;
+- hasil aktual;
+- log ringkas yang sudah diredaksi.
 
-When changing docs:
+Jangan memasukkan token, API key, `.env`, private config, atau data sensitif ke issue publik.
 
-- Link to evidence files instead of making broad claims.
-- Keep verification language precise: `Verified`, `Supported`, `Manual only`, `Needs review`, or `Unverified`.
-- Update `CHANGELOG.md` under `Unreleased`.
-- Add or update a report under `reports/` when the phase produces evidence.
+## Aturan keamanan kontribusi
 
-## PR Expectations
-
-A PR should include:
-
-- What changed.
-- Why it changed.
-- Files changed.
-- Commands run and results.
-- Security implications, if any.
-- Whether CI is expected to pass.
-- Any follow-up work or known limitations.
-
-Use [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) for the expected format.
-
-## Reports and Generated Artifacts
-
-Do not commit large generated outputs unless they are intentionally compact evidence. Keep these local/ignored:
-
-- `coverage/`
-- `playwright-report/`
-- `test-results/`
-- `repomix-output.*`
-- `semgrep-results.json`
-- `osv-results.json`
-- `gitleaks-report.json`
-- `gitleaks-dir-report.json`
-- `mutation-report/`
-- `.stryker-tmp/`
-
-Compact evidence under `reports/` is acceptable when it is useful for review and contains no secrets.
-
-## Commit Style
-
-Use concise conventional-style messages where practical:
-
-- `docs: update verification evidence`
-- `test: add skill manifest regression coverage`
-- `ci: add installer matrix checks`
-- `fix: harden installer sandbox paths`
-
-## Maintainer Review Notes
-
-Maintainers should verify that:
-
-- Claims match evidence.
-- Generated/private outputs are not staged.
-- Security-sensitive changes have local scan evidence.
-- Installer tests use sandbox targets.
-- Stryker was not run unless explicitly requested.
+- Jangan commit `.env` atau `.env.*`.
+- Jangan hardcode credential provider custom.
+- Jangan print `Authorization` header atau API key di test, log, docs, snapshot, atau report.
+- Jangan menjalankan Stryker mutation testing kecuali maintainer meminta eksplisit.
+- Jangan force-push branch shared tanpa instruksi eksplisit.

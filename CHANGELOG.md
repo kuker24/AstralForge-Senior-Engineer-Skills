@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 - Added Akses Satu Api manual API test script and documentation.
 - Added local Pi detection report (`reports/pi-akses-satu-detection.md`) covering Pi version, native provider API availability, env var status, and config locations.
 - Added missing `agents/openai.yaml` and `references/sources.md` support files across retained source skills so the substantive audit can validate every skill.
+- Refined `CONTRIBUTING.md` with explicit skill structure, 150-word minimum, audit commands, QA commands, and PR checklist.
 
 ### Changed
 - Set Akses Satu Api default model to `glm-4.6` because it is verified through `/v1/chat/completions`.
