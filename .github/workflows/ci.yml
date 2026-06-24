@@ -1,50 +1,97 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 permissions:
   contents: read
+  security-events: write
+  actions: read
 
 jobs:
-  quality:
-    name: Quality
+  typecheck:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - run: npm run typecheck
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+  test-unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - run: npm run test:coverage
+      - uses: actions/upload-artifact@v4
         with:
-          node-version: '26'
-          cache: npm
+          name: coverage-report
+          path: coverage/
+          if-no-files-found: ignore
 
-      - name: Install dependencies
-        run: npm ci
+  test-e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          if-no-files-found: ignore
 
-      - name: Typecheck
-        run: npm run typecheck
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Semgrep
+        uses: semgrep/semgrep-action@v1
+        with: { config: 'p/default' }
+      - name: OSV Scanner
+        uses: google/osv-scanner-action@v2
+        with: { scan-args: '--format json --output osv-results.json .' }
+      - name: Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env: { GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: security-reports
+          path: osv-results.json
+          if-no-files-found: ignore
 
-      - name: Unit tests
-        run: npm run test:unit
+  dead-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - run: npx knip --reporter json > knip-results.json || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: knip-report
+          path: knip-results.json
+          if-no-files-found: error
 
-      - name: Coverage
-        run: npm run test:coverage
-
-      - name: Verify source skills
-        run: npm run verify:skills
-
-      - name: Substantive skill audit
+  skill-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - run: npm run verify:skills
+      - run: npm run audit:skills
+      - name: Fail on non-PASS skill audit rows
         run: |
-          npm run audit:skills
           python - <<'PY'
           import csv
           import sys
@@ -62,10 +109,8 @@ jobs:
 
           print('Substantive skill audit passed')
           PY
-
-      - name: Upload skill audit artifacts
+      - uses: actions/upload-artifact@v4
         if: always()
-        uses: actions/upload-artifact@v4
         with:
           name: skill-audit
           path: |
@@ -73,9 +118,13 @@ jobs:
             reports/skill-audit-summary.md
           if-no-files-found: error
 
-      - name: Knip
-        run: npx knip
-
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
       - name: Install pre-commit and Gitleaks
         env:
           GITLEAKS_VERSION: 8.30.1
@@ -90,22 +139,4 @@ jobs:
           sudo install -m 0755 /tmp/gitleaks /usr/local/bin/gitleaks
           pre-commit --version
           gitleaks version
-
-      - name: Pre-commit hooks
-        run: pre-commit run --all-files
-
-      - name: Upload coverage artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage
-          path: coverage/
-          if-no-files-found: ignore
-
-      - name: Upload test results artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: test-results/
-          if-no-files-found: ignore
+      - run: pre-commit run --all-files

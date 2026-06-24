@@ -11,7 +11,7 @@
 
 ## Standards or Specifications
 
-- https://c4model.com/
+- https://www.infoq.com/articles/C4-architecture-model/
 
 ## Access Date
 
