@@ -3,7 +3,7 @@
 ## Official Documentation
 
 - github.com: https://github.com/openai/codex
-- docs.anthropic.com: https://docs.anthropic.com/en/docs/claude-code
+- docs.anthropic.com: https://github.com/anthropics/claude-code
 
 ## Repositories Referenced
 

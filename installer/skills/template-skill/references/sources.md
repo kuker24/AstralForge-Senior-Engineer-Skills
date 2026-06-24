@@ -11,7 +11,7 @@
 
 ## Standards or Specifications
 
-- https://docs.anthropic.com/en/docs/claude-code
+- https://github.com/anthropics/claude-code
 
 ## Access Date
 

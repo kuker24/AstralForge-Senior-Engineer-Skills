@@ -3,7 +3,7 @@
 ## Official Documentation
 
 - platform.openai.com: https://platform.openai.com/docs/guides/tools-web-search
-- docs.anthropic.com: https://docs.anthropic.com/en/docs/claude-code
+- docs.anthropic.com: https://github.com/anthropics/claude-code
 
 ## Repositories Referenced
 
