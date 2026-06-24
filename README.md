@@ -112,9 +112,9 @@ Current skill audit status:
 | Metric | Count |
 |--------|------:|
 | Total source skill folders | 83 |
-| Audit PASS | 25 |
-| Audit STUB | 12 |
-| Audit BROKEN | 46 |
+| Audit PASS | 83 |
+| Audit STUB | 0 |
+| Audit BROKEN | 0 |
 | Audit NEEDS_REVIEW | 0 |
 
 See [reports/skill-audit-summary.md](reports/skill-audit-summary.md) and [reports/skill-audit-results.csv](reports/skill-audit-results.csv).
@@ -139,6 +139,46 @@ These category counts describe the 83 source skill folders, not fully verified s
 | Full Stack | 21 |
 | Lainnya | 20 |
 | **Total** | **83** |
+
+---
+
+## 🧰 Pi Core Tools v3.1.0
+
+Fase v3.1.0 menambahkan core tools hemat token untuk Pi Code / Pi Agent tanpa mengubah tag atau GitHub Release `v3.0.0`.
+
+| Tool | Default Mode | Status | Verification Command | Evidence |
+|------|--------------|--------|----------------------|----------|
+| Context7 CLI + Skills | On demand; MCP off by default | Supported | `npx ctx7 --help` | [docs/tools/core-tools.md](docs/tools/core-tools.md) |
+| Serena MCP | Off in `minimal`; active for `coding` / `repo-review` | Supported / environment-dependent | `uv --version && serena --help` | [docs/tools/pi-core-tools.md](docs/tools/pi-core-tools.md) |
+| Repomix CLI | Manual/on demand for token reports | Supported | `npx repomix@latest --version` | [reports/tool-evidence/repomix-token-summary.md](reports/tool-evidence/repomix-token-summary.md) |
+| Token Profile Router | `minimal` default | Supported | file checks in `tests/core-tools-profile.test.ts` | [profiles/minimal.md](profiles/minimal.md) |
+| Skill Security Auditor | On demand / repo-review | Supported | `npm run audit:skill-security` | [reports/skill-security-audit.md](reports/skill-security-audit.md) |
+
+Token discipline:
+
+- Default profile is [`profiles/minimal.md`](profiles/minimal.md).
+- Expand context only when evidence or code navigation requires it.
+- Do not dump broad repo context into chat.
+- Do not enable MCP by default unless the selected profile requires it and the user has opted in.
+- Keep raw outputs such as `repomix-output.*`, scanner JSON, coverage, and Playwright reports ignored; commit only compact redacted evidence.
+
+Quick commands:
+
+```bash
+npm run quality:core-tools
+npm run pi:install-core-tools -- --dry-run
+npm run pi:verify-core-tools
+npm run pi:clean-local -- --dry-run
+```
+
+Release honesty:
+
+- `v3.0.0` release/tag is preserved at commit `17ea37e`.
+- No tag rewrite, release rewrite, or force-push is used for v3.1.0 work.
+- Final main evidence cleanup after release started from commit `77f2353` and later v3.1.0 changes are separate.
+- `gh release edit` has no `--target`; do not use it to rewrite release target history.
+
+Full docs: [docs/tools/core-tools.md](docs/tools/core-tools.md) and [docs/tools/pi-core-tools.md](docs/tools/pi-core-tools.md).
 
 ---
 
@@ -437,6 +477,8 @@ for the local Pi detection report.
 - [SECURITY.md](SECURITY.md) - Kebijakan security reporting dan local security checks
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) - Ekspektasi kolaborasi komunitas
 - [docs/providers/akses-satu-api.md](docs/providers/akses-satu-api.md) - Konfigurasi custom OpenAI-compatible provider Akses Satu Api
+- [docs/tools/core-tools.md](docs/tools/core-tools.md) - Core tools v3.1.0, mode default, token impact, dan security boundary
+- [docs/tools/pi-core-tools.md](docs/tools/pi-core-tools.md) - Pi core tools install/verify/cleanup runbook
 - [docs/releases/README.md](docs/releases/README.md) - Proses release dan readiness states
 - [docs/releases/push-ci-verification.md](docs/releases/push-ci-verification.md) - Runbook push dan verifikasi GitHub Actions
 - [docs/releases/v3.1.0-draft.md](docs/releases/v3.1.0-draft.md) - Draft release notes v3.1.0
@@ -453,6 +495,11 @@ for the local Pi detection report.
 - [reports/skill-audit-results.csv](reports/skill-audit-results.csv) - CSV hasil audit substansi skill
 - [reports/python-audit.txt](reports/python-audit.txt) - Audit footprint Python dan klasifikasi TOOLING/LEGACY/CORE
 - [reports/installer-audit.md](reports/installer-audit.md) - Audit installer dan rencana CI matrix
+- [reports/skill-security-audit.md](reports/skill-security-audit.md) - Semantic risk audit v3.1.0 untuk skills/profiles/config
+- [reports/pi-core-tools-install.md](reports/pi-core-tools-install.md) - Dry-run install evidence Pi core tools
+- [reports/pi-core-tools-verify.md](reports/pi-core-tools-verify.md) - Local Pi verification evidence
+- [reports/pi-local-cleanup.md](reports/pi-local-cleanup.md) - Local Pi cleanup dry-run evidence
+- [reports/repo-cleanup-v3.1.0.md](reports/repo-cleanup-v3.1.0.md) - Repo generated-output cleanup evidence
 - [reports/contribution-readiness.md](reports/contribution-readiness.md) - Evidence contribution/readiness docs
 - [reports/release-readiness-v3.1.0.md](reports/release-readiness-v3.1.0.md) - Readiness checklist draft v3.1.0
 - [reports/push-ci-verification-readiness.md](reports/push-ci-verification-readiness.md) - Evidence kesiapan verifikasi GitHub Actions pasca-push

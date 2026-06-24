@@ -223,7 +223,7 @@ def audit_skill(skill_dir: Path, link_results: dict[str, LinkResult]) -> dict[st
         "links_checked": len(checked),
         "broken_links": len(broken),
         "verdict": verdict,
-        "notes": "; ".join(notes),
+        "notes": "; ".join(notes) or "-",
     }
 
 
@@ -262,7 +262,7 @@ columns = [
     "notes",
 ]
 with csv_out.open("w", newline="", encoding="utf-8") as handle:
-    writer = csv.DictWriter(handle, fieldnames=columns)
+    writer = csv.DictWriter(handle, fieldnames=columns, lineterminator="\n")
     writer.writeheader()
     writer.writerows(rows)
 

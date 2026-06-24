@@ -69,7 +69,7 @@ Claude Code uses permission modes to control what operations are permitted. Set 
 - Cannot execute commands
 - Useful for code review and architecture analysis
 
-**Bypass Permissions Mode (`--permission-mode bypassPermissions`)**
+**High-risk mode — do not use by default (`--permission-mode bypassPermissions`)**
 
 - Skips ALL permission prompts
 - **⚠️ WARNING: Only use in externally sandboxed environments (containers, VMs)**

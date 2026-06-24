@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-06-24T23:06:36.262Z",
+  "scanner": "AstralForge Skill Security Auditor",
+  "scannedFileCount": 259,
+  "overallRisk": "PASS",
+  "counts": {
+    "PASS": 1,
+    "LOW": 0,
+    "MEDIUM": 0,
+    "HIGH": 0,
+    "CRITICAL": 0
+  },
+  "findings": []
+}

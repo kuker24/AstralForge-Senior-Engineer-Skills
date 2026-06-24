@@ -18,6 +18,12 @@
     "mutation": "stryker run",
     "verify:skills": "bash scripts/verify-source-skills.sh",
     "audit:skills": "bash scripts/audit-skills.sh",
+    "audit:skill-security": "tsx scripts/audit-skill-security.ts",
+    "pi:install-core-tools": "bash scripts/install-pi-core-tools.sh",
+    "pi:verify-core-tools": "bash scripts/verify-pi-core-tools.sh",
+    "pi:clean-local": "bash scripts/clean-pi-local.sh",
+    "token:report": "bash scripts/token-report.sh",
+    "quality:core-tools": "npm run verify:skills && npm run audit:skills && npm run audit:skill-security && npm run token:report",
     "release:check-actions": "bash scripts/check-github-actions.sh"
   },
   "devDependencies": {
@@ -27,6 +33,7 @@
     "@types/node": "^26.0.0",
     "@vitest/coverage-v8": "^4.1.9",
     "knip": "^6.17.1",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9"
   },

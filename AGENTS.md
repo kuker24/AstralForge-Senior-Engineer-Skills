@@ -15,8 +15,8 @@ AstralForge Senior Engineer Skills is a local-first AI engineering skills packag
 
 ## Akses Satu Api Custom Provider
 - Provider id: `akses-satu-api`. Base URL: `https://api.satuakses.top/v1`. Auth: `Authorization: Bearer $AKSES_SATU_API_KEY`.
-- Default model: `glm-4.6` (the only model verified through `POST /v1/chat/completions` in this environment).
-- Verified live models (all 11 union models, tested 2026-06-22 with `GET /v1/models` + `POST /v1/chat/completions`): `glm-4.6`, `claude-sonnet-4.6`, `cipher`, `idsa-v1.0`, `google-gemma-2-9b-it`, `mimo-v2.5`, `claude-opus-4.8`, `gpt-5.5`, `minimax-m3`, `mimo-v2.5-pro`, `deepseek-v4-pro`.
+- Default model: `glm-4.6` (previously recorded as verified through `POST /v1/chat/completions` and kept as the conservative default).
+- Previously recorded verified live models (all 11 union models, tested 2026-06-22 with `GET /v1/models` + `POST /v1/chat/completions`): `glm-4.6`, `claude-sonnet-4.6`, `cipher`, `idsa-v1.0`, `google-gemma-2-9b-it`, `mimo-v2.5`, `claude-opus-4.8`, `gpt-5.5`, `minimax-m3`, `mimo-v2.5-pro`, `deepseek-v4-pro`.
 - Configured (requested, not yet verified) models: none. The `AKSES_SATU_CONFIGURED_MODELS` export is reserved for future user-requested models that are not yet live.
 - Use `bash scripts/test-akses-satu-api.sh` for manual smoke test; the script must never print the API key and must classify `/responses` results honestly (no PASS for a model-list misroute).
 - Three Pi integration paths: native `pi --provider akses-satu-api` (after installer), `pi -e ./extensions/akses-satu-api-provider`, and `bash scripts/run-pi-akses-satu.sh` (launcher fallback).

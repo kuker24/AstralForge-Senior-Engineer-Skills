@@ -19,10 +19,12 @@ repo (`src/providers/akses-satu-api.ts`).
 
 ## Default Model
 
-`glm-4.6` is the default because it is the only model verified end-to-end
-through `POST /v1/chat/completions` in this environment. The other verified-live
-models are advertised as `enabled` in the installer config; configured-but-not-
-yet-verified models are kept in the union and may be tried on request.
+`glm-4.6` is the default because it was previously recorded as verified end-to-end
+through `POST /v1/chat/completions` and is the conservative default. The full
+11-model union was previously recorded as verified live on 2026-06-22 with
+`GET /v1/models` and `POST /v1/chat/completions`. Run
+`bash scripts/test-akses-satu-api.sh` before making any new live-verification
+claim.
 
 ## Set API key
 

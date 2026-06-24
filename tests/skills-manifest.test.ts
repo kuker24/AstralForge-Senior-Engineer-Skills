@@ -25,18 +25,59 @@ function field(frontmatter: string, key: string): string | null {
   return match?.[1]?.trim().replace(/^["']|["']$/g, '') ?? null;
 }
 
+function parseCsvLine(line: string): string[] {
+  const columns: string[] = [];
+  let current = '';
+  let inQuotes = false;
+
+  for (let index = 0; index < line.length; index += 1) {
+    const char = line[index];
+    const next = line[index + 1];
+
+    if (char === '"' && inQuotes && next === '"') {
+      current += '"';
+      index += 1;
+    } else if (char === '"') {
+      inQuotes = !inQuotes;
+    } else if (char === ',' && !inQuotes) {
+      columns.push(current);
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+
+  columns.push(current);
+  return columns;
+}
+
 function auditCounts(): Record<string, number> {
   const csv = readFileSync(join(repoRoot, 'reports/skill-audit-results.csv'), 'utf8').trim().split('\n');
+  const headers = parseCsvLine(csv[0]);
+  const verdictIndex = headers.indexOf('verdict');
   const counts: Record<string, number> = { PASS: 0, NEEDS_REVIEW: 0, STUB: 0, BROKEN: 0 };
+
+  expect(verdictIndex).toBeGreaterThanOrEqual(0);
+
   for (const line of csv.slice(1)) {
-    const columns = line.split(',');
-    const verdict = columns[12];
+    const columns = parseCsvLine(line);
+    const verdict = columns[verdictIndex];
     counts[verdict] = (counts[verdict] ?? 0) + 1;
   }
   return counts;
 }
 
 describe('source skills manifest', () => {
+  it('parses quoted CSV fields with commas safely', () => {
+    expect(parseCsvLine('name,notes,verdict')).toEqual(['name', 'notes', 'verdict']);
+    expect(parseCsvLine('skill,"broken links: https://example.com/a,b",PASS')).toEqual([
+      'skill',
+      'broken links: https://example.com/a,b',
+      'PASS',
+    ]);
+    expect(parseCsvLine('skill,"quoted ""value""",PASS')).toEqual(['skill', 'quoted "value"', 'PASS']);
+  });
+
   const skillFolders = readdirSync(skillsDir)
     .filter((name) => statSync(join(skillsDir, name)).isDirectory())
     .sort();
