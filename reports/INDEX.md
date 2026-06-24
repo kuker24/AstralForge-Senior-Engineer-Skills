@@ -6,15 +6,18 @@ This index classifies every tracked file under `reports/`. `REAL` means the file
 
 | File | Tool | Generated | Status | Notes |
 |------|------|-----------|--------|-------|
+| `reports/INDEX.md` | Reports index | 2026-06-24 | REAL | Self-index entry so every tracked report file is classified. |
 | `reports/akses-satu-api-provider.md` | Provider integration report | 2026-06-22 | REAL | Manual evidence report with commands and security results. |
 | `reports/ci-first-run.md` | GitHub Actions | 2026-06-24 | REAL | Contains clickable green CI run URL. |
 | `reports/ci-setup-evidence.md` | GitHub Actions setup | 2026-06-21 | REAL | Workflow setup evidence document. |
+| `reports/commit-history-snapshot.txt` | Git history | 2026-06-24 | REAL | Point-in-time `git log --oneline` snapshot with live history link. |
 | `reports/contribution-readiness.md` | Contribution docs validation | 2026-06-21 | REAL | Contributor-template evidence and validation logs. |
 | `reports/evidence-inventory.md` | Evidence inventory | 2026-06-21 | REAL | Repository claim/evidence ledger. |
 | `reports/global-installation-report.md` | Global installer | 2026-05-24 | REAL | Global installation evidence report. |
 | `reports/installer-audit.md` | Installer audit | 2026-06-21 | REAL | Sandbox installer audit evidence. |
 | `reports/pi-akses-satu-detection.md` | Pi provider detection | 2026-06-22 | REAL | Local Pi/Akses Satu detection report. |
 | `reports/push-ci-verification-readiness.md` | GitHub Actions verifier | 2026-06-21 | REAL | Runbook/script validation evidence. |
+| `reports/python-audit.txt` | Python audit | 2026-06-24 | REAL | `find`/`wc -l` output plus TOOLING/LEGACY/CORE classification. |
 | `reports/release-readiness-v3.1.0.md` | Release readiness | 2026-06-22 | REAL | Draft release readiness checklist. |
 | `reports/security-ci-setup-evidence.md` | Security CI setup | 2026-06-21 | REAL | Security workflow setup evidence. |
 | `reports/skill-audit-results.csv` | scripts/audit-skills.sh | 2026-06-24 | REAL | CSV output from substantive skill audit. |

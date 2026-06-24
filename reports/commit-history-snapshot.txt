@@ -1,3 +1,10 @@
+AstralForge commit history snapshot
+Generated: 2026-06-24
+Command: git log --oneline | head -20
+Live history: https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/commits/main
+
+a78d577 fix(audit): stabilize Claude Code reference links
+2c63d1d docs(history): add development history snapshot
 db5f564 docs(arch): explain Python tooling footprint
 17ea37e docs(release): format changelog for v3.0.0
 27e9305 fix(ci): stabilize audit links and gitleaks history
@@ -16,5 +23,3 @@ d168100 fix: keep actions watcher polling pending workflows
 e2082ea chore: add GitHub Actions verification runbook
 4f453d5 docs: draft v3.1.0 release readiness
 c907366 docs: add contribution and issue templates
-2afa9db docs: add dogfooding evidence for local tools
-3f598af ci: add installer verification workflow

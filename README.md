@@ -451,6 +451,7 @@ for the local Pi detection report.
 - [reports/tool-evidence/README.md](reports/tool-evidence/README.md) - Index dogfooding evidence tool lokal
 - [reports/skill-audit-summary.md](reports/skill-audit-summary.md) - Ringkasan audit substansi skill
 - [reports/skill-audit-results.csv](reports/skill-audit-results.csv) - CSV hasil audit substansi skill
+- [reports/python-audit.txt](reports/python-audit.txt) - Audit footprint Python dan klasifikasi TOOLING/LEGACY/CORE
 - [reports/installer-audit.md](reports/installer-audit.md) - Audit installer dan rencana CI matrix
 - [reports/contribution-readiness.md](reports/contribution-readiness.md) - Evidence contribution/readiness docs
 - [reports/release-readiness-v3.1.0.md](reports/release-readiness-v3.1.0.md) - Readiness checklist draft v3.1.0
