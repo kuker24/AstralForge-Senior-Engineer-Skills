@@ -21,7 +21,8 @@ This index classifies every tracked file under `reports/`. `REAL` means the file
 | `reports/pi-local-cleanup.md` | Pi local cleanup | 2026-06-24 | REAL | Dry-run cleanup evidence; no local files quarantined or deleted. |
 | `reports/push-ci-verification-readiness.md` | GitHub Actions verifier | 2026-06-21 | REAL | Runbook/script validation evidence. |
 | `reports/python-audit.txt` | Python audit | 2026-06-24 | REAL | `find`/`wc -l` output plus TOOLING/LEGACY/CORE classification. |
-| `reports/release-readiness-v3.1.0.md` | Release readiness | 2026-06-22 | REAL | Draft release readiness checklist. |
+| `reports/release-readiness-v3.1.0.md` | Release readiness | 2026-06-24 | REAL | Published v3.1.0 release readiness/evidence summary. |
+| `reports/release-v3.1.0-notes.md` | Release notes | 2026-06-24 | REAL | Published v3.1.0 release notes evidence. |
 | `reports/repo-cleanup-v3.1.0.md` | Repo cleanup | 2026-06-24 | REAL | Inventory and cleanup evidence for ignored/generated local outputs. |
 | `reports/security-ci-setup-evidence.md` | Security CI setup | 2026-06-21 | REAL | Security workflow setup evidence. |
 | `reports/skill-audit-results.csv` | scripts/audit-skills.sh | 2026-06-24 | REAL | CSV output from substantive skill audit. |

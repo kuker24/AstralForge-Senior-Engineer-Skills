@@ -45,10 +45,14 @@ This phase adds a read-only verification script and runbook for checking GitHub 
 
 ## Current Remote Status
 
-- Latest local commits remain unpushed.
-- GitHub-hosted workflow status remains pending until push.
-- This phase does not change package version or release publication status.
+This readiness report is retained as historical evidence for the push/CI verification tooling. The v3.1.0 release has since been published after maintainer-approved push, merge, hotfix, and final workflow verification.
+
+- Published release: https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/releases/tag/v3.1.0
+- Release target: `69bce2de8d24a23792a3b87114f11c7d52737efb`
+- CI: PASS — https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/runs/28136613415
+- Security: PASS — https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/runs/28136613414
+- Installers: PASS — https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/runs/28136613412
 
 ## Recommendation
 
-Use this script and runbook only after the maintainer explicitly approves pushing the local hardening commits. Until then, v3.1.0 remains draft/local-ready, not CI-ready or publish-ready.
+For future releases, continue using this script and runbook after explicit maintainer approval to push. Do not rewrite existing release tags; create a new release only after main workflows are green.

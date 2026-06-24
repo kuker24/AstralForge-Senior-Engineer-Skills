@@ -1,6 +1,6 @@
 # Skill Security Audit
 
-Generated: 2026-06-24T23:06:36.264Z
+Generated: 2026-06-24T23:51:43.356Z
 
 This deterministic local scanner checks skill and profile text for semantic security-risk patterns. It is an additional v3.1.0 guardrail, not an external certification.
 

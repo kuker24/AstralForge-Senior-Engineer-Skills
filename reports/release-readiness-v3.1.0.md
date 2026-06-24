@@ -1,84 +1,42 @@
 # v3.1.0 Release Readiness Report
 
-Date: 2026-06-22
-Phase: 10 — v3.1.0 release draft and readiness checklist
+Date: 2026-06-24
+Status: **Published**
+Published release: https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/releases/tag/v3.1.0
+Release target: `69bce2de8d24a23792a3b87114f11c7d52737efb`
 
 ## Readiness Summary
 
 | Dimension | Status | Notes |
 |-----------|--------|-------|
-| Release notes | Drafted | `docs/releases/v3.1.0-draft.md` |
-| Release process docs | Drafted | `docs/releases/README.md`, `docs/releases/push-ci-verification.md` |
-| Local baseline checks | PASS | Phase 10 final validation passed locally. |
-| Security evidence | Available from Phase 8 | Semgrep/OSV/Gitleaks had 0 findings in `reports/tool-evidence/`. |
-| Installer evidence | Available from Phase 7 | Local Linux shell sandbox checks passed; Windows covered by CI workflow. |
-| GitHub-hosted CI | Pending | Local commits have not been pushed in this phase. |
-| GitHub-hosted security workflow | Pending | Requires push and Actions run. |
-| GitHub-hosted installer workflow | Pending | Requires push and Actions run. |
-| Version bump | Not performed | `package.json` remains `3.0.0`; v3.1.0 is draft-only. |
-| Tag/release publish | Not performed | Requires explicit maintainer request. |
+| Release notes | Published | `docs/releases/v3.1.0.md`, `reports/release-v3.1.0-notes.md` |
+| Main CI | PASS | https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/runs/28136613415 |
+| Security workflow | PASS | https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/runs/28136613414 |
+| Installer workflow | PASS | https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/runs/28136613412 |
+| Skill audit | PASS | 83 PASS / 0 non-PASS |
+| Skill Security Auditor | PASS | `reports/skill-security-audit.md` |
+| Pi local install/verify | PASS | `reports/pi-core-tools-install.md`, `reports/pi-core-tools-verify.md` |
+| Tag/release publish | DONE | `v3.1.0` published; not draft; not prerelease |
 
-## Commits Planned for v3.1.0 Draft Scope
+## Published Scope
 
-These local commits are currently ahead of `origin/main` and form the draft v3.1.0 hardening scope:
+- Pi Core Tools integration for token-efficient agent workflows.
+- Context7 CLI + Skills documentation for on-demand library/API docs.
+- Serena MCP profile guidance for coding and repo-review modes.
+- Repomix token reporting and compressed-context workflow.
+- Token Profile Router profiles: `minimal`, `coding`, `repo-review`, `docs-research`.
+- Skill Security Auditor for deterministic semantic skill risk scanning.
+- Pi install, verify, and cleanup scripts with backup/dry-run safety.
+- ECMA/Open XML reference stabilization for `docx`, `pptx`, and `xlsx` skill audits.
 
-```txt
-c907366 docs: add contribution and issue templates
-2afa9db docs: add dogfooding evidence for local tools
-3f598af ci: add installer verification workflow
-9baa4c8 docs: document AstralForge architecture and stack boundaries
-c9f4249 docs: make verification status evidence-based
-de915f4 test: add substantive skill audit report
-4a23317 ci: add security scanning workflow
-38c0314 ci: add baseline quality workflow
-0b05d7c docs: add evidence inventory for AstralForge claims
-```
+## Release Safety
 
-## Evidence Inventory for Release Review
+- `v3.0.0` release/tag was not rewritten.
+- `v3.0.0` still targets `17ea37eaaa9095f0a1210898027ce4b0874c0b88`.
+- No force push was used.
+- Hermes and external self-healing agents remain out of scope.
 
-| Evidence | File |
-|----------|------|
-| Claim/evidence inventory | `reports/evidence-inventory.md` |
-| Baseline CI setup | `reports/ci-setup-evidence.md` |
-| Security CI setup | `reports/security-ci-setup-evidence.md` |
-| Installer audit | `reports/installer-audit.md` |
-| Substantive skill audit summary | `reports/skill-audit-summary.md` |
-| Substantive skill audit CSV | `reports/skill-audit-results.csv` |
-| Local tool dogfooding evidence | `reports/tool-evidence/README.md` |
-| Contribution readiness | `reports/contribution-readiness.md` |
-| Architecture and stack boundaries | `ARCHITECTURE.md` |
-| Push/CI verification runbook | `docs/releases/push-ci-verification.md` |
-| Push/CI readiness report | `reports/push-ci-verification-readiness.md` |
+## Known Notes
 
-## Validation Evidence
-
-Final Phase 10 validation commands:
-
-| Command | Status | Evidence |
-|---------|--------|----------|
-| `npm run typecheck` | PASS | `/tmp/astralforge-phase10-final-typecheck.log` |
-| `npm run test:unit` | PASS | `/tmp/astralforge-phase10-final-test-unit.log` |
-| `npm run test:coverage` | PASS | `/tmp/astralforge-phase10-final-test-coverage.log` |
-| `npm run verify:skills` | PASS | `/tmp/astralforge-phase10-final-verify-skills.log` |
-| Release docs presence/link checks | PASS | `/tmp/astralforge-phase10-release-doc-check.log` |
-| `pre-commit run --all-files` | PASS | `/tmp/astralforge-phase10-final-precommit.log` |
-
-## Release Blockers Before Publishing
-
-- Maintainer has not requested push, tag, or GitHub release publication.
-- Local commits are still unpushed relative to `origin/main`.
-- GitHub-hosted CI/security/installer workflows have not run for the latest local commits.
-- `package.json` still says `3.0.0`; a final version-bump decision is required before an actual `v3.1.0` tag.
-- Current skill audit is 83 PASS / 0 STUB / 0 BROKEN / 0 NEEDS_REVIEW.
-
-## Non-Goals for This Phase
-
-- No push to GitHub.
-- No tag creation.
-- No GitHub Release publication.
-- No Stryker mutation run.
-- No claim that all 83 skills are fully verified.
-
-## Recommendation
-
-Treat v3.1.0 as **Draft / local-ready**. It should become **CI-ready** only after the maintainer explicitly requests a push and all GitHub Actions workflows pass on the remote commit.
+- Context7 CLI help is verified, but `npx ctx7 setup` may require interactive/manual setup.
+- The package remains `private: true`; this release is a GitHub release for repository distribution and evidence, not an npm package publication.

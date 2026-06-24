@@ -53,6 +53,10 @@ bash installer/install-pi-linux.sh --dry-run --pi-home "$(mktemp -d)/pi-home" --
 
 - [`push-ci-verification.md`](push-ci-verification.md) — read-only post-push GitHub Actions verification flow.
 
-## Drafts
+## Published Releases
 
-- [`v3.1.0-draft.md`](v3.1.0-draft.md) — current v3.1.0 release draft.
+- [`v3.1.0.md`](v3.1.0.md) — published v3.1.0 release evidence.
+
+## Superseded Drafts
+
+- [`v3.1.0-draft.md`](v3.1.0-draft.md) — retained compatibility pointer to the published v3.1.0 release evidence.

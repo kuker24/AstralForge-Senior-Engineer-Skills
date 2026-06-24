@@ -104,12 +104,14 @@ A release can move from CI-ready to publish-ready only when:
 - GitHub CI, Security, and Installers workflows are green for the release commit.
 - Release notes still disclose known limitations and skill audit gaps.
 
-## Current v3.1.0 Draft Status
+## Current v3.1.0 Status
 
-As of this runbook creation:
+As of publication:
 
-- Local-ready: yes.
-- Pushed: no.
-- GitHub-hosted CI status: pending.
-- Tag/release: not created.
+- Published release: https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/releases/tag/v3.1.0
+- Release target: `69bce2de8d24a23792a3b87114f11c7d52737efb`
+- GitHub-hosted CI status: PASS.
+- GitHub-hosted Security status: PASS.
+- GitHub-hosted Installers status: PASS.
 - Current skill audit is 83 PASS / 0 STUB / 0 BROKEN / 0 NEEDS_REVIEW.
+- `v3.0.0` release/tag remains preserved at `17ea37eaaa9095f0a1210898027ce4b0874c0b88`.

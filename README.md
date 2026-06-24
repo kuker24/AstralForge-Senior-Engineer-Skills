@@ -22,8 +22,8 @@ Status verifikasi dibedakan secara eksplisit: **Verified**, **Supported**, **Man
 | Component | Description |
 |-----------|-------------|
 | **Skills** | 83 source skill folders; all 83 currently pass the substantive local audit |
-| **Installer** | Pi installer package files are present; sandbox/CI installer verification is pending |
-| **Global Install** | Global install scripts are present; sandbox/CI installer verification is pending |
+| **Installer** | Pi installer package files are present; sandbox/CI installer verification is green on main for v3.1.0 |
+| **Global Install** | Global install scripts are present; sandbox/CI installer verification is green on main for v3.1.0 |
 
 ---
 
@@ -43,8 +43,8 @@ Repo ini juga menyertakan konfigurasi lokal untuk tool pendukung coding AI agent
 | Knip | Verified | `npx knip` | [Tool evidence](reports/tool-evidence/README.md), [CI setup](reports/ci-setup-evidence.md), `knip.json` |
 | ADR | Verified | Review `docs/adr/` | [ADR index](docs/adr/README.md) |
 | Skill substantive audit | Verified | `npm run audit:skills` | [Skill audit summary](reports/skill-audit-summary.md) |
-| GitHub Actions CI | Supported | `.github/workflows/ci.yml` | [CI setup](reports/ci-setup-evidence.md); remote green run pending |
-| GitHub Actions Security | Supported | `.github/workflows/security.yml` | [Security CI setup](reports/security-ci-setup-evidence.md); remote green run pending |
+| GitHub Actions CI | Verified | `.github/workflows/ci.yml` | Green main run: https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/runs/28136613415 |
+| GitHub Actions Security | Verified | `.github/workflows/security.yml` | Green main run: https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/actions/runs/28136613414 |
 | Playwright Test | Supported | `npx playwright test --project=chromium` | [Tool evidence](reports/tool-evidence/README.md); placeholder smoke test only |
 | Repomix | Supported | `repomix --compress` | [Tool evidence](reports/tool-evidence/README.md); full output intentionally ignored |
 | OMNI | Supported | `omni stats --detail` | Local integration documented in [Evidence inventory](reports/evidence-inventory.md) |
@@ -481,7 +481,8 @@ for the local Pi detection report.
 - [docs/tools/pi-core-tools.md](docs/tools/pi-core-tools.md) - Pi core tools install/verify/cleanup runbook
 - [docs/releases/README.md](docs/releases/README.md) - Proses release dan readiness states
 - [docs/releases/push-ci-verification.md](docs/releases/push-ci-verification.md) - Runbook push dan verifikasi GitHub Actions
-- [docs/releases/v3.1.0-draft.md](docs/releases/v3.1.0-draft.md) - Draft release notes v3.1.0
+- [docs/releases/v3.1.0.md](docs/releases/v3.1.0.md) - Published release evidence v3.1.0
+- [docs/releases/v3.1.0-draft.md](docs/releases/v3.1.0-draft.md) - Superseded draft pointer for v3.1.0
 - [ARCHITECTURE.md](ARCHITECTURE.md) - Arsitektur repo dan batas stack
 - [installer/README.md](installer/README.md) - Dokumentasi installer Pi
 - [SKILLS_MANIFEST.md](SKILLS_MANIFEST.md) - Daftar lengkap semua skill
