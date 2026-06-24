@@ -1,311 +1,138 @@
-# AstralForge Architecture
+# Architecture
 
-AstralForge Senior Engineer Skills is a local-first AI engineering skills package. It combines portable skill definitions with installer scripts, local QA/security gates, evidence reports, and GitHub Actions workflows.
+AstralForge Senior Engineer Skills is a local-first AI engineering skills package. The repository is intentionally polyglot because skill content, installer scripts, QA gates, and optional helper utilities have different jobs.
 
-The repository is intentionally polyglot because each layer has a different job:
+## Tech Stack
 
-- Markdown/YAML define AI agent skills and metadata.
-- Shell/PowerShell install and verify skills across local agent ecosystems.
-- TypeScript/Node power repository quality gates and CI-friendly tests.
-- Python supports skill-specific utilities and document/media tooling.
-- Reports under `reports/` store evidence and audit outputs.
+### Node.js / TypeScript (Core QA Toolchain)
 
-## High-Level Diagram
+All primary engineering validation gates run through Node.js/TypeScript and npm scripts:
 
-```txt
-User / AI Agent
-   |
-   v
-AstralForge Senior Engineer Skills
-   |
-   +--> Skill definitions: Markdown + YAML
-   |      - skills/*/SKILL.md
-   |      - skills/*/agents/openai.yaml where present
-   |      - skills/*/references/sources.md where present
-   |
-   +--> Installer scripts: shell / PowerShell
-   |      - install.sh, install.ps1
-   |      - install-global.sh
-   |      - installer/install-pi-linux.sh
-   |      - installer/install-pi-windows.ps1
-   |
-   +--> Local QA: Node/TypeScript
-   |      - Vitest tests in tests/
-   |      - TypeScript strict typecheck
-   |      - Knip repository cleanup checks
-   |
-   +--> Security: local scanners
-   |      - Semgrep CE
-   |      - OSV-Scanner
-   |      - Gitleaks
-   |
-   +--> Evidence: reports/
-   |      - evidence inventory
-   |      - CI/security setup evidence
-   |      - skill audit reports
-   |
-   +--> CI: GitHub Actions
-          - .github/workflows/ci.yml
-          - .github/workflows/security.yml
-```
+- TypeScript typecheck: `npm run typecheck`
+- Vitest unit and repository policy tests: `npm run test:unit`
+- Vitest coverage: `npm run test:coverage`
+- Playwright package smoke test: `npm run test:e2e`
+- Knip dead-code/dependency report: `npx knip`
+- Source skill verifier: `npm run verify:skills`
+- Substantive skill audit: `npm run audit:skills`
 
-## Repository Layers
+The GitHub Actions CI workflow in `.github/workflows/ci.yml` runs these checks in separate jobs and uploads coverage, Playwright, Knip, and skill-audit artifacts where relevant.
 
-### 1. Skill Package Layer
+### Python (Tooling / Build / Skill Helpers)
 
-Primary paths:
+GitHub's language bar reports Python as the largest language because this repository vendors many skill-specific helper scripts, especially for document/media workflows. The Python audit is stored in [`reports/python-audit.txt`](reports/python-audit.txt).
 
-- `skills/`
-- `SKILLS_MANIFEST.md`
-- `MISSING_SKILLS_CHECKLIST.md`
-- `reports/skill-audit-results.csv`
-- `reports/skill-audit-summary.md`
+Audit result:
 
-Purpose:
+| Category | Count | Meaning |
+|----------|------:|---------|
+| TOOLING | 312 | Skill helper scripts, installer mirrored copies, and source reference snapshots. |
+| LEGACY | 0 | No Python files were classified as unused legacy files. |
+| CORE | 0 | The core QA/CI toolchain is Node.js/TypeScript and shell scripts, not Python. |
 
-- Store source skill definitions.
-- Make skill metadata auditable.
-- Track whether skills are substantive or need review.
+Python is used for:
 
-Current evidence:
+- Office document utilities under `skills/docx`, `skills/pptx`, and `skills/xlsx`.
+- PDF/image/media helper scripts for file-oriented skills.
+- MCP and skill-packaging evaluation utilities.
+- Mirrored installer copies under `installer/skills/`.
+- Source reference snapshots under `sources/` used for provenance and comparison.
 
-- Total source skill folders: 83.
-- Source/frontmatter verifier: `npm run verify:skills`.
-- Substantive audit: `bash scripts/audit-skills.sh`.
-- Current substantive audit result: 25 PASS, 12 STUB, 46 BROKEN, 0 NEEDS_REVIEW.
+Python helpers are not the main runtime of this repository and are not executed automatically by the primary CI jobs. They are invoked only by their owning skill workflows or reviewed as packaged skill assets.
 
-Boundary:
+### Shell Scripts and PowerShell
 
-- A folder under `skills/` is a source skill folder.
-- A skill is not considered substantively verified unless it passes the audit criteria in `reports/skill-audit-summary.md`.
+Shell and PowerShell scripts handle local installation, verification, and manual smoke tests:
 
-### 2. Installer Layer
-
-Primary paths:
-
-- `install.sh`
-- `install.ps1`
-- `install-global.sh`
-- `verify.sh`
-- `verify-global.sh`
-- `installer/`
-
-Purpose:
-
-- Package and install skills/configs for Pi/OpenCode/Claude/Codex/Agents.
-- Keep cross-platform installation scripts near the package content.
-
-Current evidence:
-
-- Installer files exist.
-- Installer package includes `installer/skills/`, `installer/extensions/`, `installer/config/`, `installer/prompts/`, and `installer/agents/`.
-- Dedicated sandbox installer CI is not implemented yet.
-
-Boundary:
-
-- Installer scripts should not be treated as fully verified until the installer verification phase adds sandbox-safe tests and CI matrix coverage.
-
-### 3. Local QA / Security Tooling Layer
-
-Primary paths:
-
-- `package.json`
-- `tsconfig.json`
-- `vitest.config.ts`
-- `.pre-commit-config.yaml`
-- `knip.json`
-- `.gitleaks.toml`
-- `scripts/ai-quality-checks.sh`
-- `scripts/ai-senior-checks.sh`
-- `scripts/verify-source-skills.sh`
-- `scripts/audit-skills.sh`
-
-Purpose:
-
-- Provide reproducible local quality gates.
-- Keep reports local and ignored unless a phase intentionally creates a redacted evidence report.
-- Avoid login/cloud/API-key requirements for local validation.
-
-Typical commands:
-
-```bash
-npm run typecheck
-npm run test:unit
-npm run test:coverage
-npm run verify:skills
-bash scripts/audit-skills.sh
-pre-commit run --all-files
-```
-
-Security commands:
-
-```bash
-semgrep scan --config p/default --metrics=off --json --json-output=semgrep-results.json
-osv-scanner scan source -r . --format json --output-file osv-results.json
-gitleaks git --redact --report-format json --report-path gitleaks-report.json .
-```
-
-Boundary:
-
-- StrykerJS is installed and configured but is manual-only. Do not run `npm run mutation` or `npx stryker run` unless explicitly requested.
-
-## Node / TypeScript Role
-
-Node and TypeScript are used for repository-level validation, not for shipping an application runtime.
-
-Primary responsibilities:
-
-- Run Vitest checks against repository structure and config.
-- Run strict `tsc --noEmit` over tests/config.
-- Provide npm scripts for CI and local quality gates.
-- Run Knip against JS/TS project configuration.
-
-Important files:
-
-- `package.json`
-- `package-lock.json`
-- `tsconfig.json`
-- `vitest.config.ts`
-- `tests/`
-
-Recommendation:
-
-- Keep Node/TS tooling at the repository root because it powers cross-cutting quality gates and CI.
-- Do not present this repository as a runtime Node app.
-
-## Python Role
-
-Python files are skill utilities, validators, converters, media helpers, and evaluation helpers. They are not a single Python application.
-
-Audit command used in phase 6:
-
-```bash
-find . -type f -name "*.py" \
-  -not -path "./node_modules/*" \
-  -not -path "./.git/*"
-```
-
-Phase 6 local evidence files:
-
-- `/tmp/astralforge-phase6-python-files-all.txt`
-- `/tmp/astralforge-phase6-python-files-tracked.txt`
-- `/tmp/astralforge-phase6-python-summary.txt`
-
-Summary from this audit:
-
-| Scope | Python files |
-|-------|-------------:|
-| All working-tree Python files found by the command | 312 |
-| Tracked repository Python files | 198 |
-| Local ignored upstream clones under `sources/` | 114 |
-
-### Python File Groups
-
-| Group | Tracked files | Purpose | Recommendation |
-|-------|--------------:|---------|----------------|
-| `skills/docx` + `installer/skills/docx` | 30 | Office document unpacking, validation, redlining helpers, schema-aware checks | Keep in skill package; later deduplicate source/installer copies if a packaging build step is introduced |
-| `skills/pptx` + `installer/skills/pptx` | 32 | PowerPoint processing, validation, and Office schema utilities | Keep; later deduplicate source/installer copies |
-| `skills/xlsx` + `installer/skills/xlsx` | 26 | Spreadsheet processing and Office schema utilities | Keep; later deduplicate source/installer copies |
-| `skills/skill-creator` + `installer/skills/skill-creator` | 24 | Skill validation, benchmarking, packaging, and eval helper scripts | Keep; strong candidate for future shared utility package |
-| `skills/claude-skill-creator` + `installer/skills/claude-skill-creator` | 20 | Skill generation/evaluation support scripts | Keep; consider consolidating with `skill-creator` after audit |
-| `skills/pdf` + `installer/skills/pdf` | 16 | PDF extraction/filling/form helpers | Keep in PDF skill |
-| `skills/slack-gif-creator` + `installer/skills/slack-gif-creator` | 8 | GIF validation/media helper utilities | Keep in skill |
-| `skills/webapp-testing` + `installer/skills/webapp-testing` | 8 | Browser/server automation helpers | Keep; subprocess helper was hardened to avoid `shell=True` by default |
-| `skills/skill-installer` + `installer/skills/skill-installer` | 6 | GitHub download/install helpers | Keep; URL handling is host-allowlisted |
-| `skills/ui-ux-pro-max` + `installer/skills/ui-ux-pro-max` | 6 | UI/UX data/design helper scripts | Keep in skill |
-| `skills/mcp-builder` + `installer/skills/mcp-builder` | 4 | MCP evaluation/connection helpers | Keep; XML parsing uses `defusedxml` |
-| Other single/double script skill groups | 18 | Skill-specific validators, generation helpers, or examples | Keep until each skill is individually audited |
-| `sources/` local ignored clone files | 114 | Upstream reference clone content, not part of committed repo | Do not commit; exclude from repo architecture decisions |
-
-### Python Keep / Move / Remove Recommendation
-
-- Keep Python utilities in their owning skill directories for now.
-- Do not move files automatically; duplication between `skills/` and `installer/skills/` is a packaging concern and should be handled by a later installer/build phase.
-- Do not remove Python files based only on this architecture audit.
-- Future cleanup should first decide whether installer content is generated from `skills/` or intentionally materialized.
-
-## Shell / PowerShell Installer Role
-
-Shell and PowerShell scripts support local installation and verification across operating systems.
-
-Primary responsibilities:
-
-- Copy or link skill folders into agent-specific skill directories.
-- Verify skill package structure.
-- Support Linux/macOS and Windows users.
-
-Important files:
-
-- `install.sh`
-- `install.ps1`
-- `install-global.sh`
-- `verify.sh`
-- `verify.ps1`
-- `verify-global.sh`
+- `install.sh`, `verify.sh`
+- `install-global.sh`, `verify-global.sh`
 - `installer/install-pi-linux.sh`
 - `installer/install-pi-windows.ps1`
+- `scripts/ai-checks.sh`, `scripts/ai-quality-checks.sh`, `scripts/ai-senior-checks.sh`
+- `scripts/test-akses-satu-api.sh`
 
-Recommendation:
+Installer scripts support sandbox targets for CI and local verification. Real-home installation is used only when explicitly requested.
 
-- Keep scripts in place until the installer verification phase adds sandbox support and a CI matrix.
-- Avoid running installer scripts against a real `$HOME` in CI.
+### Markdown / YAML / JSON
 
-## CI Role
+- `skills/*/SKILL.md` defines operational skill behavior.
+- `skills/*/agents/openai.yaml` defines agent metadata and trigger hints.
+- `skills/*/references/sources.md` records relevant sources and license notes.
+- `installer/config/*.json` configures Pi settings, models, and presets.
+- `reports/` stores evidence, audit output, and verification records.
 
-GitHub Actions provide remote evidence for quality/security workflows after commits are pushed.
+## Folder Structure
 
-Current workflows:
+```txt
+AstralForge-Senior-Engineer-Skills/
+├── .github/workflows/        # GitHub Actions CI, security, installer checks
+├── docs/                     # ADRs, release docs, provider docs
+├── e2e/                      # Playwright package smoke test
+├── installer/                # Complete Pi installer payload
+│   ├── agents/
+│   ├── config/
+│   ├── extensions/
+│   ├── prompts/
+│   └── skills/               # Mirrored installable skill payload
+├── reports/                  # Evidence, audit output, readiness reports
+├── scripts/                  # Local QA, audit, smoke-test scripts
+├── skills/                   # Source skill set, 83 retained folders
+├── sources/                  # Source/reference snapshots for provenance
+├── tests/                    # Vitest repository policy tests
+├── package.json              # Node QA toolchain entrypoint
+└── tsconfig.json             # TypeScript configuration
+```
 
-- `.github/workflows/ci.yml`
-  - typecheck
-  - unit tests
-  - coverage command
-  - skill verification
-  - Knip
-  - pre-commit
-- `.github/workflows/security.yml`
-  - Semgrep
-  - OSV-Scanner
-  - Gitleaks
+## Data Flow
 
-Boundary:
+```txt
+User / Maintainer
+  │
+  ├─ edits skills/<name>/SKILL.md + agents/openai.yaml + references/sources.md
+  │
+  ├─ runs local gates
+  │     npm run typecheck
+  │     npm run test:coverage
+  │     npm run verify:skills
+  │     npm run audit:skills
+  │     pre-commit run --all-files
+  │
+  ├─ installs package locally when needed
+  │     install.sh / install-global.sh / installer/install-pi-*.sh
+  │
+  └─ AI agent consumes installed skill files from local skill directories
+        ~/.pi/agent/skills
+        ~/.config/opencode/skills
+        ~/.claude/skills
+        ~/.codex/skills
+        ~/.agents/skills
+```
 
-- Workflow definitions are present locally.
-- A workflow is considered verified only after it runs successfully in GitHub Actions.
+## Skill Quality Model
 
-## Evidence Layer
+A retained source skill is considered locally audit-passing only when `scripts/audit-skills.sh` validates:
 
-Primary paths:
+- `SKILL.md` exists.
+- Frontmatter exists and `name` matches the folder.
+- `description` is non-empty.
+- Body has at least 150 substantive words.
+- No unfinished marker phrases are present.
+- `agents/openai.yaml` exists and is non-empty.
+- `references/sources.md` exists and includes HTTP URLs.
+- Reference links pass the audit link checker.
 
-- `reports/evidence-inventory.md`
-- `reports/ci-setup-evidence.md`
-- `reports/security-ci-setup-evidence.md`
-- `reports/skill-audit-results.csv`
-- `reports/skill-audit-summary.md`
+Current status: 83 retained source skills, 83 PASS, 0 NEEDS_REVIEW, 0 STUB, 0 BROKEN.
 
-Purpose:
+## Security and Evidence Boundaries
 
-- Document what is verified versus merely configured.
-- Store compact, reviewable evidence.
-- Avoid committing large raw outputs or sensitive reports.
+- API keys and provider credentials must come from environment variables.
+- `.env` and `.env.*` are ignored; `.env.example` may contain placeholders only.
+- Authorization headers and API key values must never be printed in logs, docs, tests, or reports.
+- Generated local outputs such as `coverage/`, `playwright-report/`, `test-results/`, and raw scanner reports remain ignored unless intentionally committed as compact evidence under `reports/`.
+- StrykerJS mutation testing is manual-only and is not part of default CI.
 
-Ignored local outputs include:
+## Known Limitations
 
-- `semgrep-results.json`
-- `osv-results.json`
-- `gitleaks-report.json`
-- `gitleaks-dir-report.json`
-- `repomix-output.*`
-- `coverage/`
-- `playwright-report/`
-- `test-results/`
-- `.stryker-tmp/`
-- `mutation-report/`
-
-## Current Known Boundaries
-
-- The repository has verified local quality gates, but CI green status requires GitHub-hosted workflow runs after push.
-- The skill package has 83 source folders, but only 25 pass the current substantive audit.
-- Installer scripts exist, but sandboxed installer verification is pending.
-- StrykerJS is configured but intentionally manual-only.
-- Playwright is configured with a placeholder skipped test, not a real application E2E flow.
+- Playwright currently verifies package wiring with a skipped placeholder smoke test; this repository is not a runnable web application.
+- The language bar is dominated by Python because of bundled helper scripts and mirrored skill assets, not because Python is the primary QA/CI runtime.
+- The local substantive audit is evidence for repository quality gates; it is not an external certification of every upstream tool or source.

@@ -1,0 +1,646 @@
+# Python Audit
+
+Date: 2026-06-24
+
+## Raw line-count command output
+
+```txt
+  69949 total
+    956 ./sources/openai-skills/skills/.curated/security-ownership-map/scripts/build_ownership_map.py
+    926 ./sources/openai-skills/skills/.system/imagegen/scripts/image_gen.py
+    926 ./skills/imagegen/scripts/image_gen.py
+    926 ./installer/skills/imagegen/scripts/image_gen.py
+    907 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/cli.py
+    847 ./sources/anthropic-skills/skills/xlsx/scripts/office/validators/base.py
+    847 ./sources/anthropic-skills/skills/pptx/scripts/office/validators/base.py
+    847 ./sources/anthropic-skills/skills/docx/scripts/office/validators/base.py
+    847 ./skills/xlsx/scripts/office/validators/base.py
+    847 ./skills/pptx/scripts/office/validators/base.py
+    847 ./skills/docx/scripts/office/validators/base.py
+    847 ./installer/skills/xlsx/scripts/office/validators/base.py
+    847 ./installer/skills/pptx/scripts/office/validators/base.py
+    847 ./installer/skills/docx/scripts/office/validators/base.py
+    830 ./sources/openai-skills/skills/.curated/hatch-pet/scripts/prepare_pet_run.py
+    585 ./sources/openai-skills/skills/.curated/screenshot/scripts/take_screenshot.py
+    544 ./sources/openai-skills/skills/.curated/security-ownership-map/scripts/community_maintainers.py
+    528 ./sources/openai-skills/skills/.curated/speech/scripts/text_to_speech.py
+    509 ./sources/openai-skills/skills/.curated/gh-fix-ci/scripts/inspect_pr_checks.py
+    509 ./skills/gh-fix-ci/scripts/inspect_pr_checks.py
+    509 ./installer/skills/gh-fix-ci/scripts/inspect_pr_checks.py
+    487 ./skills/ui-ux-pro-max/scripts/design_system.py
+    487 ./installer/skills/ui-ux-pro-max/scripts/design_system.py
+    483 ./sources/openai-skills/skills/.curated/security-ownership-map/scripts/query_ownership.py
+    471 ./sources/anthropic-skills/skills/skill-creator/eval-viewer/generate_review.py
+    471 ./skills/skill-creator/eval-viewer/generate_review.py
+    471 ./skills/claude-skill-creator/eval-viewer/generate_review.py
+    471 ./installer/skills/skill-creator/eval-viewer/generate_review.py
+    471 ./installer/skills/claude-skill-creator/eval-viewer/generate_review.py
+    446 ./sources/anthropic-skills/skills/xlsx/scripts/office/validators/docx.py
+    446 ./sources/anthropic-skills/skills/pptx/scripts/office/validators/docx.py
+    446 ./sources/anthropic-skills/skills/docx/scripts/office/validators/docx.py
+    446 ./skills/xlsx/scripts/office/validators/docx.py
+    446 ./skills/pptx/scripts/office/validators/docx.py
+    446 ./skills/docx/scripts/office/validators/docx.py
+    446 ./installer/skills/xlsx/scripts/office/validators/docx.py
+    446 ./installer/skills/pptx/scripts/office/validators/docx.py
+    446 ./installer/skills/docx/scripts/office/validators/docx.py
+    440 ./skills/imagegen/scripts/remove_chroma_key.py
+    440 ./installer/skills/imagegen/scripts/remove_chroma_key.py
+    408 ./sources/openai-skills/skills/.curated/hatch-pet/scripts/extract_strip_frames.py
+    401 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/common.py
+    401 ./sources/anthropic-skills/skills/skill-creator/scripts/aggregate_benchmark.py
+    401 ./skills/skill-creator/scripts/aggregate_benchmark.py
+    401 ./skills/claude-skill-creator/scripts/aggregate_benchmark.py
+    401 ./installer/skills/skill-creator/scripts/aggregate_benchmark.py
+    401 ./installer/skills/claude-skill-creator/scripts/aggregate_benchmark.py
+    400 ./skills/skill-creator/scripts/init_skill.py
+    400 ./installer/skills/skill-creator/scripts/init_skill.py
+    397 ./sources/openai-skills/skills/.system/skill-creator/scripts/init_skill.py
+    393 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/skills.py
+    373 ./sources/anthropic-skills/skills/mcp-builder/scripts/evaluation.py
+    373 ./skills/mcp-builder/scripts/evaluation.py
+    373 ./installer/skills/mcp-builder/scripts/evaluation.py
+    328 ./sources/anthropic-skills/skills/skill-creator/scripts/run_loop.py
+    328 ./skills/skill-creator/scripts/run_loop.py
+    328 ./skills/claude-skill-creator/scripts/run_loop.py
+    328 ./installer/skills/skill-creator/scripts/run_loop.py
+    328 ./installer/skills/claude-skill-creator/scripts/run_loop.py
+    326 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/agents.py
+    326 ./sources/anthropic-skills/skills/skill-creator/scripts/generate_report.py
+    326 ./skills/skill-creator/scripts/generate_report.py
+    326 ./skills/claude-skill-creator/scripts/generate_report.py
+    326 ./installer/skills/skill-creator/scripts/generate_report.py
+    326 ./installer/skills/claude-skill-creator/scripts/generate_report.py
+    318 ./sources/anthropic-skills/skills/docx/scripts/comment.py
+    318 ./skills/docx/scripts/comment.py
+    318 ./installer/skills/docx/scripts/comment.py
+    310 ./sources/anthropic-skills/skills/skill-creator/scripts/run_eval.py
+    310 ./skills/skill-creator/scripts/run_eval.py
+    310 ./skills/claude-skill-creator/scripts/run_eval.py
+    310 ./installer/skills/skill-creator/scripts/run_eval.py
+    310 ./installer/skills/claude-skill-creator/scripts/run_eval.py
+    308 ./sources/openai-skills/skills/.system/skill-installer/scripts/install-skill-from-github.py
+    308 ./skills/skill-installer/scripts/install-skill-from-github.py
+    308 ./installer/skills/skill-installer/scripts/install-skill-from-github.py
+    306 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/utils/util.py
+    301 ./sources/openai-skills/skills/.system/plugin-creator/scripts/create_basic_plugin.py
+    301 ./skills/plugin-creator/scripts/create_basic_plugin.py
+    301 ./installer/skills/plugin-creator/scripts/create_basic_plugin.py
+    289 ./sources/anthropic-skills/skills/pptx/scripts/thumbnail.py
+    289 ./skills/pptx/scripts/thumbnail.py
+    289 ./installer/skills/pptx/scripts/thumbnail.py
+    286 ./sources/anthropic-skills/skills/pptx/scripts/clean.py
+    286 ./skills/pptx/scripts/clean.py
+    286 ./installer/skills/pptx/scripts/clean.py
+    276 ./sources/openai-skills/skills/.curated/transcribe/scripts/transcribe_diarize.py
+    275 ./sources/anthropic-skills/skills/xlsx/scripts/office/validators/pptx.py
+    275 ./sources/anthropic-skills/skills/pptx/scripts/office/validators/pptx.py
+    275 ./sources/anthropic-skills/skills/docx/scripts/office/validators/pptx.py
+    275 ./skills/xlsx/scripts/office/validators/pptx.py
+    275 ./skills/pptx/scripts/office/validators/pptx.py
+    275 ./skills/docx/scripts/office/validators/pptx.py
+    275 ./installer/skills/xlsx/scripts/office/validators/pptx.py
+    275 ./installer/skills/pptx/scripts/office/validators/pptx.py
+    275 ./installer/skills/docx/scripts/office/validators/pptx.py
+    269 ./sources/anthropic-skills/skills/slack-gif-creator/core/gif_builder.py
+    269 ./skills/slack-gif-creator/core/gif_builder.py
+    269 ./installer/skills/slack-gif-creator/core/gif_builder.py
+    257 ./skills/ui-ux-pro-max/scripts/core.py
+    257 ./installer/skills/ui-ux-pro-max/scripts/core.py
+    256 ./sources/openai-skills/skills/.curated/hatch-pet/scripts/inspect_frames.py
+    247 ./sources/anthropic-skills/skills/xlsx/scripts/office/validators/redlining.py
+    247 ./sources/anthropic-skills/skills/skill-creator/scripts/improve_description.py
+    247 ./sources/anthropic-skills/skills/pptx/scripts/office/validators/redlining.py
+    247 ./sources/anthropic-skills/skills/docx/scripts/office/validators/redlining.py
+    247 ./skills/xlsx/scripts/office/validators/redlining.py
+    247 ./skills/skill-creator/scripts/improve_description.py
+    247 ./skills/pptx/scripts/office/validators/redlining.py
+    247 ./skills/docx/scripts/office/validators/redlining.py
+    247 ./skills/claude-skill-creator/scripts/improve_description.py
+    247 ./installer/skills/xlsx/scripts/office/validators/redlining.py
+    247 ./installer/skills/skill-creator/scripts/improve_description.py
+    247 ./installer/skills/pptx/scripts/office/validators/redlining.py
+    247 ./installer/skills/docx/scripts/office/validators/redlining.py
+    247 ./installer/skills/claude-skill-creator/scripts/improve_description.py
+    238 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/hooks.py
+    237 ./sources/openai-skills/skills/.curated/gh-address-comments/scripts/fetch_comments.py
+    234 ./sources/anthropic-skills/skills/slack-gif-creator/core/easing.py
+    234 ./skills/slack-gif-creator/core/easing.py
+    234 ./installer/skills/slack-gif-creator/core/easing.py
+    226 ./skills/skill-creator/scripts/generate_openai_yaml.py
+    226 ./installer/skills/skill-creator/scripts/generate_openai_yaml.py
+    225 ./sources/openai-skills/skills/.system/skill-creator/scripts/generate_openai_yaml.py
+    222 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/mcps.py
+    211 ./skills/api-patterns/scripts/api_validator.py
+    211 ./installer/skills/api-patterns/scripts/api_validator.py
+    200 ./sources/openai-skills/skills/.curated/security-ownership-map/scripts/run_ownership_map.py
+    199 ./sources/anthropic-skills/skills/xlsx/scripts/office/helpers/merge_runs.py
+    199 ./sources/anthropic-skills/skills/pptx/scripts/office/helpers/merge_runs.py
+    199 ./sources/anthropic-skills/skills/docx/scripts/office/helpers/merge_runs.py
+    199 ./skills/xlsx/scripts/office/helpers/merge_runs.py
+    199 ./skills/pptx/scripts/office/helpers/merge_runs.py
+    199 ./skills/docx/scripts/office/helpers/merge_runs.py
+    199 ./installer/skills/xlsx/scripts/office/helpers/merge_runs.py
+    199 ./installer/skills/pptx/scripts/office/helpers/merge_runs.py
+    199 ./installer/skills/docx/scripts/office/helpers/merge_runs.py
+    197 ./sources/anthropic-skills/skills/xlsx/scripts/office/helpers/simplify_redlines.py
+    197 ./sources/anthropic-skills/skills/pptx/scripts/office/helpers/simplify_redlines.py
+    197 ./sources/anthropic-skills/skills/docx/scripts/office/helpers/simplify_redlines.py
+    197 ./skills/xlsx/scripts/office/helpers/simplify_redlines.py
+    197 ./skills/pptx/scripts/office/helpers/simplify_redlines.py
+    197 ./skills/docx/scripts/office/helpers/simplify_redlines.py
+    197 ./installer/skills/xlsx/scripts/office/helpers/simplify_redlines.py
+    197 ./installer/skills/pptx/scripts/office/helpers/simplify_redlines.py
+    197 ./installer/skills/docx/scripts/office/helpers/simplify_redlines.py
+    195 ./sources/anthropic-skills/skills/pptx/scripts/add_slide.py
+    195 ./skills/pptx/scripts/add_slide.py
+    195 ./installer/skills/pptx/scripts/add_slide.py
+    184 ./sources/anthropic-skills/skills/xlsx/scripts/recalc.py
+    184 ./skills/xlsx/scripts/recalc.py
+    184 ./installer/skills/xlsx/scripts/recalc.py
+    183 ./sources/anthropic-skills/skills/xlsx/scripts/office/soffice.py
+    183 ./sources/anthropic-skills/skills/pptx/scripts/office/soffice.py
+    183 ./sources/anthropic-skills/skills/docx/scripts/office/soffice.py
+    183 ./skills/xlsx/scripts/office/soffice.py
+    183 ./skills/pptx/scripts/office/soffice.py
+    183 ./skills/docx/scripts/office/soffice.py
+    183 ./installer/skills/xlsx/scripts/office/soffice.py
+    183 ./installer/skills/pptx/scripts/office/soffice.py
+    183 ./installer/skills/docx/scripts/office/soffice.py
+    176 ./sources/anthropic-skills/skills/slack-gif-creator/core/frame_composer.py
+    176 ./skills/slack-gif-creator/core/frame_composer.py
+    176 ./skills/nanobanana-skill/nanobanana.py
+    176 ./installer/skills/slack-gif-creator/core/frame_composer.py
+    176 ./installer/skills/nanobanana-skill/nanobanana.py
+    173 ./skills/lint-and-validate/scripts/type_coverage.py
+    173 ./installer/skills/lint-and-validate/scripts/type_coverage.py
+    172 ./skills/lint-and-validate/scripts/lint_runner.py
+    172 ./skills/database-design/scripts/schema_validator.py
+    172 ./installer/skills/lint-and-validate/scripts/lint_runner.py
+    172 ./installer/skills/database-design/scripts/schema_validator.py
+    169 ./sources/openai-skills/skills/.curated/hatch-pet/scripts/compose_atlas.py
+    159 ./sources/anthropic-skills/skills/xlsx/scripts/office/pack.py
+    159 ./sources/anthropic-skills/skills/pptx/scripts/office/pack.py
+    159 ./sources/anthropic-skills/skills/docx/scripts/office/pack.py
+    159 ./skills/xlsx/scripts/office/pack.py
+    159 ./skills/pptx/scripts/office/pack.py
+    159 ./skills/docx/scripts/office/pack.py
+    159 ./installer/skills/xlsx/scripts/office/pack.py
+    159 ./installer/skills/pptx/scripts/office/pack.py
+    159 ./installer/skills/docx/scripts/office/pack.py
+    157 ./sources/openai-skills/skills/.curated/hatch-pet/scripts/validate_atlas.py
+    151 ./sources/anthropic-skills/skills/mcp-builder/scripts/connections.py
+    151 ./skills/mcp-builder/scripts/connections.py
+    151 ./installer/skills/mcp-builder/scripts/connections.py
+    150 ./sources/openai-skills/skills/.curated/hatch-pet/scripts/derive_running_left_from_running_right.py
+    136 ./sources/anthropic-skills/skills/slack-gif-creator/core/validators.py
+    136 ./sources/anthropic-skills/skills/skill-creator/scripts/package_skill.py
+    136 ./skills/slack-gif-creator/core/validators.py
+    136 ./skills/skill-creator/scripts/package_skill.py
+    136 ./skills/claude-skill-creator/scripts/package_skill.py
+    136 ./installer/skills/slack-gif-creator/core/validators.py
+    136 ./installer/skills/skill-creator/scripts/package_skill.py
+    136 ./installer/skills/claude-skill-creator/scripts/package_skill.py
+    135 ./sources/anthropic-skills/skills/docx/scripts/accept_changes.py
+    135 ./skills/docx/scripts/accept_changes.py
+    135 ./installer/skills/docx/scripts/accept_changes.py
+    134 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/codex_config.py
+    132 ./sources/anthropic-skills/skills/xlsx/scripts/office/unpack.py
+    132 ./sources/anthropic-skills/skills/pptx/scripts/office/unpack.py
+    132 ./sources/anthropic-skills/skills/docx/scripts/office/unpack.py
+    132 ./skills/xlsx/scripts/office/unpack.py
+    132 ./skills/pptx/scripts/office/unpack.py
+    132 ./skills/docx/scripts/office/unpack.py
+    132 ./installer/skills/xlsx/scripts/office/unpack.py
+    132 ./installer/skills/pptx/scripts/office/unpack.py
+    132 ./installer/skills/docx/scripts/office/unpack.py
+    130 ./sources/openai-skills/skills/.curated/jupyter-notebook/scripts/new_notebook.py
+    128 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/utils/scan.py
+    122 ./sources/anthropic-skills/skills/pdf/scripts/extract_form_field_info.py
+    122 ./skills/pdf/scripts/extract_form_field_info.py
+    122 ./installer/skills/pdf/scripts/extract_form_field_info.py
+    115 ./sources/anthropic-skills/skills/pdf/scripts/extract_form_structure.py
+    115 ./skills/pdf/scripts/extract_form_structure.py
+    115 ./installer/skills/pdf/scripts/extract_form_structure.py
+    111 ./sources/anthropic-skills/skills/xlsx/scripts/office/validate.py
+    111 ./sources/anthropic-skills/skills/pptx/scripts/office/validate.py
+    111 ./sources/anthropic-skills/skills/docx/scripts/office/validate.py
+    111 ./skills/xlsx/scripts/office/validate.py
+    111 ./skills/pptx/scripts/office/validate.py
+    111 ./skills/docx/scripts/office/validate.py
+    111 ./installer/skills/xlsx/scripts/office/validate.py
+    111 ./installer/skills/pptx/scripts/office/validate.py
+    111 ./installer/skills/docx/scripts/office/validate.py
+    107 ./sources/openai-skills/skills/.system/skill-installer/scripts/list-skills.py
+    107 ./sources/anthropic-skills/skills/pdf/scripts/fill_pdf_form_with_annotations.py
+    107 ./skills/skill-installer/scripts/list-skills.py
+    107 ./skills/pdf/scripts/fill_pdf_form_with_annotations.py
+    107 ./installer/skills/skill-installer/scripts/list-skills.py
+    107 ./installer/skills/pdf/scripts/fill_pdf_form_with_annotations.py
+    106 ./skills/webapp-testing/scripts/with_server.py
+    106 ./installer/skills/webapp-testing/scripts/with_server.py
+    105 ./sources/anthropic-skills/skills/webapp-testing/scripts/with_server.py
+    102 ./sources/anthropic-skills/skills/skill-creator/scripts/quick_validate.py
+    102 ./skills/skill-creator/scripts/quick_validate.py
+    102 ./skills/claude-skill-creator/scripts/quick_validate.py
+    102 ./installer/skills/skill-creator/scripts/quick_validate.py
+    102 ./installer/skills/claude-skill-creator/scripts/quick_validate.py
+    101 ./sources/openai-skills/skills/.system/skill-creator/scripts/quick_validate.py
+     98 ./sources/anthropic-skills/skills/pdf/scripts/fill_fillable_fields.py
+     98 ./skills/pdf/scripts/fill_fillable_fields.py
+     98 ./installer/skills/pdf/scripts/fill_fillable_fields.py
+     96 ./sources/openai-skills/skills/.curated/hatch-pet/scripts/make_contact_sheet.py
+     81 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/instructions.py
+     78 ./sources/openai-skills/skills/.curated/hatch-pet/scripts/render_animation_previews.py
+     76 ./skills/ui-ux-pro-max/scripts/search.py
+     76 ./installer/skills/ui-ux-pro-max/scripts/search.py
+     65 ./sources/anthropic-skills/skills/pdf/scripts/check_bounding_boxes.py
+     65 ./skills/pdf/scripts/check_bounding_boxes.py
+     65 ./installer/skills/pdf/scripts/check_bounding_boxes.py
+     47 ./sources/anthropic-skills/skills/skill-creator/scripts/utils.py
+     47 ./skills/skill-creator/scripts/utils.py
+     47 ./skills/claude-skill-creator/scripts/utils.py
+     47 ./installer/skills/skill-creator/scripts/utils.py
+     47 ./installer/skills/claude-skill-creator/scripts/utils.py
+     41 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/settings.py
+     39 ./sources/anthropic-skills/skills/webapp-testing/examples/element_discovery.py
+     39 ./skills/webapp-testing/examples/element_discovery.py
+     39 ./installer/skills/webapp-testing/examples/element_discovery.py
+     38 ./skills/skill-installer/scripts/github_utils.py
+     38 ./installer/skills/skill-installer/scripts/github_utils.py
+     37 ./sources/anthropic-skills/skills/pdf/scripts/create_validation_image.py
+     37 ./skills/pdf/scripts/create_validation_image.py
+     37 ./installer/skills/pdf/scripts/create_validation_image.py
+     34 ./sources/anthropic-skills/skills/webapp-testing/examples/console_logging.py
+     34 ./skills/webapp-testing/examples/console_logging.py
+     34 ./installer/skills/webapp-testing/examples/console_logging.py
+     33 ./sources/anthropic-skills/skills/pdf/scripts/convert_pdf_to_images.py
+     33 ./skills/pdf/scripts/convert_pdf_to_images.py
+     33 ./installer/skills/pdf/scripts/convert_pdf_to_images.py
+     32 ./sources/anthropic-skills/skills/webapp-testing/examples/static_html_automation.py
+     32 ./skills/webapp-testing/examples/static_html_automation.py
+     32 ./installer/skills/webapp-testing/examples/static_html_automation.py
+     25 ./sources/openai-skills/skills/.curated/figma-code-connect-components/scripts/normalize_node_id.py
+     21 ./sources/openai-skills/skills/.system/skill-installer/scripts/github_utils.py
+     16 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/plugins.py
+     15 ./sources/anthropic-skills/skills/xlsx/scripts/office/validators/__init__.py
+     15 ./sources/anthropic-skills/skills/pptx/scripts/office/validators/__init__.py
+     15 ./sources/anthropic-skills/skills/docx/scripts/office/validators/__init__.py
+     15 ./skills/xlsx/scripts/office/validators/__init__.py
+     15 ./skills/pptx/scripts/office/validators/__init__.py
+     15 ./skills/docx/scripts/office/validators/__init__.py
+     15 ./installer/skills/xlsx/scripts/office/validators/__init__.py
+     15 ./installer/skills/pptx/scripts/office/validators/__init__.py
+     15 ./installer/skills/docx/scripts/office/validators/__init__.py
+     12 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate-to-codex.py
+     11 ./sources/anthropic-skills/skills/pdf/scripts/check_fillable_fields.py
+     11 ./skills/pdf/scripts/check_fillable_fields.py
+     11 ./installer/skills/pdf/scripts/check_fillable_fields.py
+      6 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/__init__.py
+      1 ./sources/openai-skills/skills/.curated/migrate-to-codex/scripts/utils/__init__.py
+      1 ./sources/anthropic-skills/skills/docx/scripts/__init__.py
+      1 ./skills/docx/scripts/__init__.py
+      1 ./installer/skills/docx/scripts/__init__.py
+      0 ./sources/anthropic-skills/skills/xlsx/scripts/office/helpers/__init__.py
+      0 ./sources/anthropic-skills/skills/skill-creator/scripts/__init__.py
+      0 ./sources/anthropic-skills/skills/pptx/scripts/office/helpers/__init__.py
+      0 ./sources/anthropic-skills/skills/pptx/scripts/__init__.py
+      0 ./sources/anthropic-skills/skills/docx/scripts/office/helpers/__init__.py
+      0 ./skills/xlsx/scripts/office/helpers/__init__.py
+      0 ./skills/skill-creator/scripts/__init__.py
+      0 ./skills/pptx/scripts/office/helpers/__init__.py
+      0 ./skills/pptx/scripts/__init__.py
+      0 ./skills/docx/scripts/office/helpers/__init__.py
+      0 ./skills/claude-skill-creator/scripts/__init__.py
+      0 ./installer/skills/xlsx/scripts/office/helpers/__init__.py
+      0 ./installer/skills/skill-creator/scripts/__init__.py
+      0 ./installer/skills/pptx/scripts/office/helpers/__init__.py
+      0 ./installer/skills/pptx/scripts/__init__.py
+      0 ./installer/skills/docx/scripts/office/helpers/__init__.py
+      0 ./installer/skills/claude-skill-creator/scripts/__init__.py
+```
+
+## Categorization
+
+| Category | Count | Meaning |
+|----------|------:|---------|
+| TOOLING | 312 | Skill-specific helper scripts for document, spreadsheet, presentation, media, MCP, and skill packaging workflows. |
+| LEGACY | 0 | No Python files were classified as unused legacy files in this audit. |
+| CORE | 0 | The core QA/CI toolchain is Node.js/TypeScript and shell scripts, not Python. |
+
+## Files
+
+| File | Category | Rationale |
+|------|----------|-----------|
+| `installer/skills/api-patterns/scripts/api_validator.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/claude-skill-creator/eval-viewer/generate_review.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/claude-skill-creator/scripts/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/claude-skill-creator/scripts/aggregate_benchmark.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/claude-skill-creator/scripts/generate_report.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/claude-skill-creator/scripts/improve_description.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/claude-skill-creator/scripts/package_skill.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/claude-skill-creator/scripts/quick_validate.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/claude-skill-creator/scripts/run_eval.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/claude-skill-creator/scripts/run_loop.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/claude-skill-creator/scripts/utils.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/database-design/scripts/schema_validator.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/accept_changes.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/comment.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/helpers/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/helpers/merge_runs.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/helpers/simplify_redlines.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/pack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/soffice.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/unpack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/validate.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/validators/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/validators/base.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/validators/docx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/validators/pptx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/docx/scripts/office/validators/redlining.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/gh-fix-ci/scripts/inspect_pr_checks.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/imagegen/scripts/image_gen.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/imagegen/scripts/remove_chroma_key.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/lint-and-validate/scripts/lint_runner.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/lint-and-validate/scripts/type_coverage.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/mcp-builder/scripts/connections.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/mcp-builder/scripts/evaluation.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/nanobanana-skill/nanobanana.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pdf/scripts/check_bounding_boxes.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pdf/scripts/check_fillable_fields.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pdf/scripts/convert_pdf_to_images.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pdf/scripts/create_validation_image.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pdf/scripts/extract_form_field_info.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pdf/scripts/extract_form_structure.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pdf/scripts/fill_fillable_fields.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pdf/scripts/fill_pdf_form_with_annotations.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/plugin-creator/scripts/create_basic_plugin.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/add_slide.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/clean.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/helpers/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/helpers/merge_runs.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/helpers/simplify_redlines.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/pack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/soffice.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/unpack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/validate.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/validators/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/validators/base.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/validators/docx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/validators/pptx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/office/validators/redlining.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/pptx/scripts/thumbnail.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/eval-viewer/generate_review.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/scripts/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/scripts/aggregate_benchmark.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/scripts/generate_openai_yaml.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/scripts/generate_report.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/scripts/improve_description.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/scripts/init_skill.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/scripts/package_skill.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/scripts/quick_validate.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/scripts/run_eval.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/scripts/run_loop.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-creator/scripts/utils.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-installer/scripts/github_utils.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-installer/scripts/install-skill-from-github.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/skill-installer/scripts/list-skills.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/slack-gif-creator/core/easing.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/slack-gif-creator/core/frame_composer.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/slack-gif-creator/core/gif_builder.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/slack-gif-creator/core/validators.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/ui-ux-pro-max/scripts/core.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/ui-ux-pro-max/scripts/design_system.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/ui-ux-pro-max/scripts/search.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/webapp-testing/examples/console_logging.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/webapp-testing/examples/element_discovery.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/webapp-testing/examples/static_html_automation.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/webapp-testing/scripts/with_server.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/helpers/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/helpers/merge_runs.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/helpers/simplify_redlines.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/pack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/soffice.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/unpack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/validate.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/validators/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/validators/base.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/validators/docx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/validators/pptx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/office/validators/redlining.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `installer/skills/xlsx/scripts/recalc.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `skills/api-patterns/scripts/api_validator.py` | TOOLING | Repository helper script. |
+| `skills/claude-skill-creator/eval-viewer/generate_review.py` | TOOLING | Repository helper script. |
+| `skills/claude-skill-creator/scripts/__init__.py` | TOOLING | Repository helper script. |
+| `skills/claude-skill-creator/scripts/aggregate_benchmark.py` | TOOLING | Repository helper script. |
+| `skills/claude-skill-creator/scripts/generate_report.py` | TOOLING | Repository helper script. |
+| `skills/claude-skill-creator/scripts/improve_description.py` | TOOLING | Repository helper script. |
+| `skills/claude-skill-creator/scripts/package_skill.py` | TOOLING | Repository helper script. |
+| `skills/claude-skill-creator/scripts/quick_validate.py` | TOOLING | Repository helper script. |
+| `skills/claude-skill-creator/scripts/run_eval.py` | TOOLING | Repository helper script. |
+| `skills/claude-skill-creator/scripts/run_loop.py` | TOOLING | Repository helper script. |
+| `skills/claude-skill-creator/scripts/utils.py` | TOOLING | Repository helper script. |
+| `skills/database-design/scripts/schema_validator.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/__init__.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/accept_changes.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/comment.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/helpers/__init__.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/helpers/merge_runs.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/helpers/simplify_redlines.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/pack.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/soffice.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/unpack.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/validate.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/validators/__init__.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/validators/base.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/validators/docx.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/validators/pptx.py` | TOOLING | Repository helper script. |
+| `skills/docx/scripts/office/validators/redlining.py` | TOOLING | Repository helper script. |
+| `skills/gh-fix-ci/scripts/inspect_pr_checks.py` | TOOLING | Repository helper script. |
+| `skills/imagegen/scripts/image_gen.py` | TOOLING | Repository helper script. |
+| `skills/imagegen/scripts/remove_chroma_key.py` | TOOLING | Repository helper script. |
+| `skills/lint-and-validate/scripts/lint_runner.py` | TOOLING | Repository helper script. |
+| `skills/lint-and-validate/scripts/type_coverage.py` | TOOLING | Repository helper script. |
+| `skills/mcp-builder/scripts/connections.py` | TOOLING | Repository helper script. |
+| `skills/mcp-builder/scripts/evaluation.py` | TOOLING | Repository helper script. |
+| `skills/nanobanana-skill/nanobanana.py` | TOOLING | Repository helper script. |
+| `skills/pdf/scripts/check_bounding_boxes.py` | TOOLING | Repository helper script. |
+| `skills/pdf/scripts/check_fillable_fields.py` | TOOLING | Repository helper script. |
+| `skills/pdf/scripts/convert_pdf_to_images.py` | TOOLING | Repository helper script. |
+| `skills/pdf/scripts/create_validation_image.py` | TOOLING | Repository helper script. |
+| `skills/pdf/scripts/extract_form_field_info.py` | TOOLING | Repository helper script. |
+| `skills/pdf/scripts/extract_form_structure.py` | TOOLING | Repository helper script. |
+| `skills/pdf/scripts/fill_fillable_fields.py` | TOOLING | Repository helper script. |
+| `skills/pdf/scripts/fill_pdf_form_with_annotations.py` | TOOLING | Repository helper script. |
+| `skills/plugin-creator/scripts/create_basic_plugin.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/__init__.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/add_slide.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/clean.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/helpers/__init__.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/helpers/merge_runs.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/helpers/simplify_redlines.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/pack.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/soffice.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/unpack.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/validate.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/validators/__init__.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/validators/base.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/validators/docx.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/validators/pptx.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/office/validators/redlining.py` | TOOLING | Repository helper script. |
+| `skills/pptx/scripts/thumbnail.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/eval-viewer/generate_review.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/scripts/__init__.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/scripts/aggregate_benchmark.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/scripts/generate_openai_yaml.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/scripts/generate_report.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/scripts/improve_description.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/scripts/init_skill.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/scripts/package_skill.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/scripts/quick_validate.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/scripts/run_eval.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/scripts/run_loop.py` | TOOLING | Repository helper script. |
+| `skills/skill-creator/scripts/utils.py` | TOOLING | Repository helper script. |
+| `skills/skill-installer/scripts/github_utils.py` | TOOLING | Repository helper script. |
+| `skills/skill-installer/scripts/install-skill-from-github.py` | TOOLING | Repository helper script. |
+| `skills/skill-installer/scripts/list-skills.py` | TOOLING | Repository helper script. |
+| `skills/slack-gif-creator/core/easing.py` | TOOLING | Repository helper script. |
+| `skills/slack-gif-creator/core/frame_composer.py` | TOOLING | Repository helper script. |
+| `skills/slack-gif-creator/core/gif_builder.py` | TOOLING | Repository helper script. |
+| `skills/slack-gif-creator/core/validators.py` | TOOLING | Repository helper script. |
+| `skills/ui-ux-pro-max/scripts/core.py` | TOOLING | Repository helper script. |
+| `skills/ui-ux-pro-max/scripts/design_system.py` | TOOLING | Repository helper script. |
+| `skills/ui-ux-pro-max/scripts/search.py` | TOOLING | Repository helper script. |
+| `skills/webapp-testing/examples/console_logging.py` | TOOLING | Repository helper script. |
+| `skills/webapp-testing/examples/element_discovery.py` | TOOLING | Repository helper script. |
+| `skills/webapp-testing/examples/static_html_automation.py` | TOOLING | Repository helper script. |
+| `skills/webapp-testing/scripts/with_server.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/helpers/__init__.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/helpers/merge_runs.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/helpers/simplify_redlines.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/pack.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/soffice.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/unpack.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/validate.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/validators/__init__.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/validators/base.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/validators/docx.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/validators/pptx.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/office/validators/redlining.py` | TOOLING | Repository helper script. |
+| `skills/xlsx/scripts/recalc.py` | TOOLING | Repository helper script. |
+| `sources/anthropic-skills/skills/docx/scripts/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/accept_changes.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/comment.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/helpers/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/helpers/merge_runs.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/helpers/simplify_redlines.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/pack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/soffice.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/unpack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/validate.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/validators/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/validators/base.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/validators/docx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/validators/pptx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/docx/scripts/office/validators/redlining.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/mcp-builder/scripts/connections.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/mcp-builder/scripts/evaluation.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pdf/scripts/check_bounding_boxes.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pdf/scripts/check_fillable_fields.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pdf/scripts/convert_pdf_to_images.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pdf/scripts/create_validation_image.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pdf/scripts/extract_form_field_info.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pdf/scripts/extract_form_structure.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pdf/scripts/fill_fillable_fields.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pdf/scripts/fill_pdf_form_with_annotations.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/add_slide.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/clean.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/helpers/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/helpers/merge_runs.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/helpers/simplify_redlines.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/pack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/soffice.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/unpack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/validate.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/validators/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/validators/base.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/validators/docx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/validators/pptx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/office/validators/redlining.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/pptx/scripts/thumbnail.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/skill-creator/eval-viewer/generate_review.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/skill-creator/scripts/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/skill-creator/scripts/aggregate_benchmark.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/skill-creator/scripts/generate_report.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/skill-creator/scripts/improve_description.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/skill-creator/scripts/package_skill.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/skill-creator/scripts/quick_validate.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/skill-creator/scripts/run_eval.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/skill-creator/scripts/run_loop.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/skill-creator/scripts/utils.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/slack-gif-creator/core/easing.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/slack-gif-creator/core/frame_composer.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/slack-gif-creator/core/gif_builder.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/slack-gif-creator/core/validators.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/webapp-testing/examples/console_logging.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/webapp-testing/examples/element_discovery.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/webapp-testing/examples/static_html_automation.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/webapp-testing/scripts/with_server.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/helpers/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/helpers/merge_runs.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/helpers/simplify_redlines.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/pack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/soffice.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/unpack.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/validate.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/validators/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/validators/base.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/validators/docx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/validators/pptx.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/office/validators/redlining.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/anthropic-skills/skills/xlsx/scripts/recalc.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/figma-code-connect-components/scripts/normalize_node_id.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/gh-address-comments/scripts/fetch_comments.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/gh-fix-ci/scripts/inspect_pr_checks.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/hatch-pet/scripts/compose_atlas.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/hatch-pet/scripts/derive_running_left_from_running_right.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/hatch-pet/scripts/extract_strip_frames.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/hatch-pet/scripts/inspect_frames.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/hatch-pet/scripts/make_contact_sheet.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/hatch-pet/scripts/prepare_pet_run.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/hatch-pet/scripts/render_animation_previews.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/hatch-pet/scripts/validate_atlas.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/jupyter-notebook/scripts/new_notebook.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/cli.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/agents.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/codex_config.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/common.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/hooks.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/instructions.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/mcps.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/plugins.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/settings.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate/skills.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/migrate-to-codex.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/utils/__init__.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/utils/scan.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/migrate-to-codex/scripts/utils/util.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/screenshot/scripts/take_screenshot.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/security-ownership-map/scripts/build_ownership_map.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/security-ownership-map/scripts/community_maintainers.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/security-ownership-map/scripts/query_ownership.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/security-ownership-map/scripts/run_ownership_map.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/speech/scripts/text_to_speech.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.curated/transcribe/scripts/transcribe_diarize.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.system/imagegen/scripts/image_gen.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.system/plugin-creator/scripts/create_basic_plugin.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.system/skill-creator/scripts/generate_openai_yaml.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.system/skill-creator/scripts/init_skill.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.system/skill-creator/scripts/quick_validate.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.system/skill-installer/scripts/github_utils.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.system/skill-installer/scripts/install-skill-from-github.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
+| `sources/openai-skills/skills/.system/skill-installer/scripts/list-skills.py` | TOOLING | Source skill helper script used by the owning skill workflow. |
