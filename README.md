@@ -458,6 +458,7 @@ for the local Pi detection report.
 - [reports/akses-satu-api-provider.md](reports/akses-satu-api-provider.md) - Evidence integrasi provider Akses Satu Api
 - [reports/source-skill-index.md](reports/source-skill-index.md) - Index sumber skill
 - [reports/global-installation-report.md](reports/global-installation-report.md) - Report instalasi global
+- [reports/commit-history-snapshot.txt](reports/commit-history-snapshot.txt) - Snapshot commit history terbaru
 
 ---
 
@@ -479,6 +480,14 @@ Lihat [CONTRIBUTING.md](CONTRIBUTING.md) sebelum membuka PR. Ringkasnya:
 
 ---
 
+## Development History
+
+View full commit history → https://github.com/kuker24/AstralForge-Senior-Engineer-Skills/commits/main
+
+Snapshot evidence: [reports/commit-history-snapshot.txt](reports/commit-history-snapshot.txt)
+
+---
+
 ## 📞 Support
 
 - GitHub Issues: [Create Issue](../../issues)
@@ -488,6 +497,6 @@ Lihat [CONTRIBUTING.md](CONTRIBUTING.md) sebelum membuka PR. Ringkasnya:
 ---
 
 **Version**: 3.0.0
-**Last Updated**: 2026-06-22
+**Last Updated**: 2026-06-24
 **Total Source Skill Folders**: 83
 **Substantive Audit PASS**: 83

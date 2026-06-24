@@ -1,0 +1,20 @@
+db5f564 docs(arch): explain Python tooling footprint
+17ea37e docs(release): format changelog for v3.0.0
+27e9305 fix(ci): stabilize audit links and gitleaks history
+b9aac07 docs(contributing): add skill contribution standards
+151dbec chore(reports): add evidence index for reports directory
+212a4b0 docs(ci): add first green run evidence
+9b8462e fix(ci): use OSV scanner sub-action
+2725429 fix(ci): use resolvable OSV scanner action
+1386c04 feat(ci): add GitHub Actions workflow for QA pipeline
+275a585 test: harden all source skills to pass audit
+66a8a25 [pi] Work in progress
+2a599d7 [pi] BERHASIL
+1f3ad20 [pi] Work in progress
+678d8f5 [pi] Work in progress
+d168100 fix: keep actions watcher polling pending workflows
+e2082ea chore: add GitHub Actions verification runbook
+4f453d5 docs: draft v3.1.0 release readiness
+c907366 docs: add contribution and issue templates
+2afa9db docs: add dogfooding evidence for local tools
+3f598af ci: add installer verification workflow
