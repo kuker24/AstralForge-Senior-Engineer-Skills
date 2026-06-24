@@ -2,7 +2,7 @@
 
 ## Official Documentation
 
-- modelcontextprotocol.io: https://modelcontextprotocol.io/docs
+- modelcontextprotocol.io: https://modelcontextprotocol.io/introduction
 - github.com: https://github.com/modelcontextprotocol/typescript-sdk
 
 ## Repositories Referenced

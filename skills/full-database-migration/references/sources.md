@@ -4,7 +4,7 @@
 
 - **Prisma Migrations**: https://www.prisma.io/docs/concepts/components/prisma-migrate
 - **PostgreSQL ALTER TABLE**: https://www.postgresql.org/docs/current/sql-altertable.html
-- **Zero-Downtime Migrations**: https://planetscale.com/blog/safely-making-database-schema-changes
+- **Prisma Production Migrations**: https://www.prisma.io/docs/orm/prisma-migrate/workflows/development-and-production
 
 ## Repositories Referenced
 
